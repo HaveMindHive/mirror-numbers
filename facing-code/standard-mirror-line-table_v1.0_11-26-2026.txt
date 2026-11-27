@@ -1,0 +1,44 @@
+  1s   R 0,1,0     T 0,1,0     | carried   10m | block mirror  10   R 5,0,5     T 3,4,3
+  2s P R 1,0,1     T 1,0,1     | carried    9m | block mirror   9   R 4,5,4     T 3,3,3
+  3s P R 1,2,1     T 1,1,1     | carried    8m | block mirror   8   R 4,0,4     T 3,2,3
+  4s   R 2,0,2     T 1,2,1     | carried    7m | block mirror   7 P R 3,4,3     T 2,3,2
+  5s P R 2,3,2     T 2,1,2     | carried    6m | block mirror   6   R 3,0,3     T 2,2,2
+  6s   R 3,0,3     T 2,2,2     | carried    5m | block mirror   5 P R 2,3,2     T 2,1,2
+  7s P R 3,4,3     T 2,3,2     | carried    4m | block mirror   4   R 2,0,2     T 1,2,1
+  8s   R 4,0,4     T 3,2,3     | carried    3m | block mirror   3 P R 1,2,1     T 1,1,1
+  9s   R 4,5,4     T 3,3,3     | carried    2m | block mirror   2 P R 1,0,1     T 1,0,1
+ 10s   R 5,0,5     T 3,4,3     | carried    1m | block mirror   1   R 0,1,0     T 0,1,0
+ 11s P R 5,6,5     T 4,3,4     | carried    0m | block mirror   0   R 0,0,0     T 0,0,0
+ 12s   R 6,0,6     T 4,4,4     | carried   -1m | block mirror  21   R 10,11,10  T 7,7,7
+ 13s P R 6,7,6     T 4,5,4     | carried   -2m | block mirror  20   R 10,0,10   T 7,6,7
+ 14s   R 7,0,7     T 5,4,5     | carried   -3m | block mirror  19 P R 9,10,9    T 6,7,6
+ 15s   R 7,8,7     T 5,5,5     | carried   -4m | block mirror  18   R 9,0,9     T 6,6,6
+ 16s   R 8,0,8     T 5,6,5     | carried   -5m | block mirror  17 P R 8,9,8     T 6,5,6
+ 17s P R 8,9,8     T 6,5,6     | carried   -6m | block mirror  16   R 8,0,8     T 5,6,5
+ 18s   R 9,0,9     T 6,6,6     | carried   -7m | block mirror  15   R 7,8,7     T 5,5,5
+ 19s P R 9,10,9    T 6,7,6     | carried   -8m | block mirror  14   R 7,0,7     T 5,4,5
+ 20s   R 10,0,10   T 7,6,7     | carried   -9m | block mirror  13 P R 6,7,6     T 4,5,4
+ 21s   R 10,11,10  T 7,7,7     | carried  -10m | block mirror  12   R 6,0,6     T 4,4,4
+ 22s   R 11,0,11   T 7,8,7     | carried  -11m | block mirror  11 P R 5,6,5     T 4,3,4
+ 23s P R 11,12,11  T 8,7,8     | carried  -12m | block mirror  32   R 16,0,16   T 11,10,11
+ 24s   R 12,0,12   T 8,8,8     | carried  -13m | block mirror  31 P R 15,16,15  T 10,11,10
+ 25s   R 12,13,12  T 8,9,8     | carried  -14m | block mirror  30   R 15,0,15   T 10,10,10
+ 26s   R 13,0,13   T 9,8,9     | carried  -15m | block mirror  29 P R 14,15,14  T 10,9,10
+ 27s   R 13,14,13  T 9,9,9     | carried  -16m | block mirror  28   R 14,0,14   T 9,10,9
+ 28s   R 14,0,14   T 9,10,9    | carried  -17m | block mirror  27   R 13,14,13  T 9,9,9
+ 29s P R 14,15,14  T 10,9,10   | carried  -18m | block mirror  26   R 13,0,13   T 9,8,9
+ 30s   R 15,0,15   T 10,10,10  | carried  -19m | block mirror  25   R 12,13,12  T 8,9,8
+ 31s P R 15,16,15  T 10,11,10  | carried  -20m | block mirror  24   R 12,0,12   T 8,8,8
+ 32s   R 16,0,16   T 11,10,11  | carried  -21m | block mirror  23 P R 11,12,11  T 8,7,8
+ 33s   R 16,17,16  T 11,11,11  | carried  -22m | block mirror  22   R 11,0,11   T 7,8,7
+ 34s   R 17,0,17   T 11,12,11  | carried  -23m | block mirror  43 P R 21,22,21  T 14,15,14
+ 35s   R 17,18,17  T 12,11,12  | carried  -24m | block mirror  42   R 21,0,21   T 14,14,14
+ 36s   R 18,0,18   T 12,12,12  | carried  -25m | block mirror  41 P R 20,21,20  T 14,13,14
+ 37s P R 18,19,18  T 12,13,12  | carried  -26m | block mirror  40   R 20,0,20   T 13,14,13
+ 38s   R 19,0,19   T 13,12,13  | carried  -27m | block mirror  39   R 19,20,19  T 13,13,13
+ 39s   R 19,20,19  T 13,13,13  | carried  -28m | block mirror  38   R 19,0,19   T 13,12,13
+ 40s   R 20,0,20   T 13,14,13  | carried  -29m | block mirror  37 P R 18,19,18  T 12,13,12
+ 41s P R 20,21,20  T 14,13,14  | carried  -30m | block mirror  36   R 18,0,18   T 12,12,12
+ 42s   R 21,0,21   T 14,14,14  | carried  -31m | block mirror  35   R 17,18,17  T 12,11,12
+ 43s P R 21,22,21  T 14,15,14  | carried  -32m | block mirror  34   R 17,0,17   T 11,12,11
+ 44s   R 22,0,22   T 15,14,15  | carried  -33m | block mirror  33   R 16,17,16  T 11,11,11

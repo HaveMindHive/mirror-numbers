@@ -1,0 +1,40 @@
+  1   w3    units   1 centre 1 path 1      01|
+  2 P w3    units   2 centre 0 path 2      10|
+  3 P w3    units   3 centre 1 path 3      11|
+  4   w9    units   4 centre 0 path E      101,00|
+  5 P w9    units   7 centre 1 path O3     101,11|
+  6   w9    units   6 centre 0 path E      111,00|
+  7 P w27   units  10 centre 0 path OE     010,010,010,,101,00|
+  8   w27   units   8 centre 0 path E      101,000,101,,000,00|
+  9   w27   units  15 centre 1 path OO3    101,000,101,,101,11|
+ 10   w27   units  14 centre 0 path E      101,111,101,,000,00|
+ 11 P w27   units  20 centre 0 path OE     101,111,101,,111,00|
+ 12   w27   units  12 centre 0 path E      111,000,111,,000,00|
+ 13 P w81   units  22 centre 0 path OOE    010,010,010,,000,000,000,,010,010,010,,,010,010,010,,101,00|
+ 14   w81   units  20 centre 0 path E      010,010,010,,101,000,101,,010,010,010,,,000,000,000,,000,00|
+ 15   w81   units  28 centre 0 path OE     010,010,010,,101,000,101,,010,010,010,,,101,000,101,,000,00|
+ 16   w81   units  16 centre 0 path E      101,000,101,,000,000,000,,101,000,101,,,000,000,000,,000,00|
+ 17 P w81   units  31 centre 1 path OOO3   101,000,101,,000,000,000,,101,000,101,,,101,000,101,,101,11|
+ 18   w81   units  30 centre 0 path E      101,000,101,,101,111,101,,101,000,101,,,000,000,000,,000,00|
+ 19 P w81   units  44 centre 0 path OE     101,000,101,,101,111,101,,101,000,101,,,101,111,101,,000,00|
+ 20   w81   units  28 centre 0 path E      101,111,101,,000,000,000,,101,111,101,,,000,000,000,,000,00|
+ 21   w81   units  48 centre 0 path OOE    101,111,101,,000,000,000,,101,111,101,,,101,111,101,,111,00|
+ 22   w81   units  40 centre 0 path E      101,111,101,,111,000,111,,101,111,101,,,000,000,000,,000,00|
+ 23 P w81   units  52 centre 0 path OE     101,111,101,,111,000,111,,101,111,101,,,111,000,111,,000,00|
+ 24   w81   units  24 centre 0 path E      111,000,111,,000,000,000,,111,000,111,,,000,000,000,,000,00|
+ 25   w243  units  46 centre 0 path OOOE   
+ 26   w243  units  44 centre 0 path E      
+ 27   w243  units  64 centre 0 path OE     
+ 28   w243  units  40 centre 0 path E      
+ 29 P w243  units  68 centre 0 path OOE    
+ 30   w243  units  56 centre 0 path E      
+ 31 P w243  units  72 centre 0 path OE     
+ 32   w243  units  32 centre 0 path E      
+ 33   w243  units  63 centre 1 path OOOO3  
+ 34   w243  units  62 centre 0 path E      
+ 35   w243  units  92 centre 0 path OE     
+ 36   w243  units  60 centre 0 path E      
+ 37 P w243  units 104 centre 0 path OOE    
+ 38   w243  units  88 centre 0 path E      
+ 39   w243  units 116 centre 0 path OE     
+ 40   w243  units  56 centre 0 path E      

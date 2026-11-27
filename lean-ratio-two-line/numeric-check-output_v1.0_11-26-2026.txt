@@ -1,0 +1,2 @@
+iff mismatches: [] eq2n: []
+a=0 checks: u(2)= 2 (2^1-1=1)  u(4)= 4 (2*(3-1)=4)

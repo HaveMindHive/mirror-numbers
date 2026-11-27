@@ -1,0 +1,132 @@
+TWO PARTS (Fable 4th run, 11-26-2026). Every odd n read as halving (neighbours' blocks) beside turn (own blocks).
+
+1. THE TIE. Halving k, k+1, k of odd n: wing w = (n-1)/2, centre c = (n+1)/2, and c^2 - w^2 = (c-w)(c+w) = 1 x n.
+   A turn face a x b (a <= b, both odd, ab = n) is the SAME shape: n = ((a+b)/2)^2 - ((b-a)/2)^2, centre (a+b)/2, wing (b-a)/2,
+   centre - wing = a (the block). The halving picture is the turn face 1 x n read as a square difference (block 1).
+   So: pictures of n with centre^2 - wing^2 = n  <->  turn faces of n, one to one. A prime has one face (1 x p), so one picture:
+   its halving. An odd composite has one more picture per face; the extra pictures carry its own blocks as centre - wing.
+   5: faces [(1, 5)]  pictures (centre, wing) [(3, 2)]  turn 5 x 1
+   11: faces [(1, 11)]  pictures (centre, wing) [(6, 5)]  turn 11 x 1
+   55: faces [(1, 55), (5, 11)]  pictures (centre, wing) [(28, 27), (8, 3)]  turn 5 x 11
+   121: faces [(1, 121), (11, 11)]  pictures (centre, wing) [(61, 60), (11, 0)]  turn 11 x 11
+   1729: faces [(1, 1729), (7, 247), (13, 133), (19, 91)]  pictures (centre, wing) [(865, 864), (127, 120), (73, 60), (55, 36)]  turn 7 x 247
+   111121111: faces [(1, 111121111), (41, 2710271), (73, 1522207), (137, 811103), (271, 410041), (2993, 37127), (5617, 19783), (10001, 11111)]  pictures (centre, wing) [(55560556, 55560555), (1355156, 1355115), (761140, 761067), (405620, 405483), (205156, 204885), (20060, 17067), (12700, 7083), (10556, 555)]  turn 41 x 2710271
+   Checked odd n < 5000: pictures = faces one to one; halving = the 1-face; exactly one picture iff prime. 55 = 28^2 - 27^2 = 8^2 - 3^2.
+   Neighbours never carry a block of n (gcd(n, n+-1) = 1, proven): the halving reads what sits AROUND n, the turn reads n.
+   Wing x centre = (n^2 - 1)/4 = (n-1)(n+1)/4: the left-outs' product, halved twice.
+
+2. PER FAMILY (p mod 12, read from p): where the 2 and 3 of the left-outs sit in the halving picture (w, c mod 6):
+   p =  1 mod 12: (w mod 6, c mod 6, w mod 4, c mod 4) = [(0, 1, 0, 1), (0, 1, 2, 3)]
+   p =  5 mod 12: (w mod 6, c mod 6, w mod 4, c mod 4) = [(2, 3, 0, 1), (2, 3, 2, 3)]
+   p =  7 mod 12: (w mod 6, c mod 6, w mod 4, c mod 4) = [(3, 4, 1, 2), (3, 4, 3, 0)]
+   p = 11 mod 12: (w mod 6, c mod 6, w mod 4, c mod 4) = [(5, 0, 1, 2), (5, 0, 3, 0)]
+   p = 1 mod 12: wing carries 2 and 3 (p-1 = 12m), centre odd off 3.   p = 11 mod 12: centre carries 2 and 3, wing odd off 3.
+   p = 5 mod 12: wing even, centre carries 3 (odd).   p = 7 mod 12: wing carries 3 (odd), centre even.
+   (6k+1 family = 1, 7 mod 12: 3 sits in the wing; 6k-1 family = 5, 11 mod 12: 3 sits in the centre; the circle p = +-1 mod 12
+   puts 2 AND 3 on one side, the off-circle 5, 7 splits them.) 8 | p^2 - 1 and 3 | p^2 - 1 for p off 2,3: 6 | w x c.
+
+3. THE OPPOSITE (odd composite n = a x b): own blocks in the turn faces, left-outs in the halving, and the extra pictures.
+   The smallest face q x n/q has centre (q + n/q)/2 and wing (n/q - q)/2; the halving centre (n+1)/2 is larger by (q-1)(n/q-1)/2.
+   25 = 5 x 5: pictures [(13, 12), (5, 0)]  centre gap halving - face = 8 = (q-1)(n/q-1)/2 = 8
+   35 = 5 x 7: pictures [(18, 17), (6, 1)]  centre gap halving - face = 12 = (q-1)(n/q-1)/2 = 12
+   55 = 5 x 11: pictures [(28, 27), (8, 3)]  centre gap halving - face = 20 = (q-1)(n/q-1)/2 = 20
+   121 = 11 x 11: pictures [(61, 60), (11, 0)]  centre gap halving - face = 50 = (q-1)(n/q-1)/2 = 50
+   1729 = 7 x 247: pictures [(865, 864), (127, 120), (73, 60), (55, 36)]  centre gap halving - face = 738 = (q-1)(n/q-1)/2 = 738
+   checked 40408 odd composites < 1e5: no block of n in n-1 or n+1 (0 cases); 157 squares have a wing-0 picture (c = sqrt n).
+
+4. DECIMAL UNIT LINE. 11 = the one of 10s: d x 11 = 10d + d = 'dd' (d < 10). 55 = 5 x 11 = five 11s = the 5-turn of the 10s unit.
+   Base+1 mirrors 10^k + 1 and the blocks they carry (these are the strands the decimal line names, in decimal order):
+     10^1+1 = 11 = {11: 1}
+     10^2+1 = 101 = {101: 1}
+     10^3+1 = 1001 = {7: 1, 11: 1, 13: 1}
+     10^4+1 = 10001 = {73: 1, 137: 1}
+     10^5+1 = 100001 = {11: 1, 9091: 1}
+     10^6+1 = 1000001 = {101: 1, 9901: 1}
+     10^7+1 = 10000001 = {11: 1, 909091: 1}
+     10^8+1 = 100000001 = {17: 1, 5882353: 1}
+     10^9+1 = 1000000001 = {7: 1, 11: 1, 13: 1, 19: 1, 52579: 1}
+   (k ones) x (10^(k-1)+1) = (k-1 ones) 2 (k-1 ones):
+     R2 x 11 = 121 = {11: 2}
+     R3 x 101 = 11211 = {3: 1, 37: 1, 101: 1}
+     R4 x 1001 = 1112111 = {7: 1, 11: 2, 13: 1, 101: 1}
+     R5 x 10001 = 111121111 = {41: 1, 73: 1, 137: 1, 271: 1}
+     R6 x 100001 = 11111211111 = {3: 1, 7: 1, 11: 2, 13: 1, 37: 1, 9091: 1}
+     R7 x 1000001 = 1111112111111 = {101: 1, 239: 1, 4649: 1, 9901: 1}
+     R8 x 10000001 = 111111121111111 = {11: 2, 73: 1, 101: 1, 137: 1, 909091: 1}
+     R9 x 100000001 = 11111111211111111 = {3: 2, 17: 1, 37: 1, 333667: 1, 5882353: 1}
+   Proven (Lean repunit_mirror, over 9x): (10^k - 1)(10^(k-1) + 1) = (10^(k-1) - 1) 10^k + 18 x 10^(k-1) + (10^(k-1) - 1).
+   444,555,444 = 111 x 4005004 = 111 x (4,5,4 spread by 1000): True; 111 = 3 x 37; 4005004 = {2: 2, 359: 1, 2789: 1}
+   A candidate y read in units of 11: y = 11a + r is the 11-strand seat rule (r = 0 closed, h = 5p mod 11). In units of 101:
+   the 101-strand (h = -p x 51 mod 101 ... 2 x 51 = 102 = 1 mod 101). 1001 = 7 x 11 x 13 adds nothing beyond 7, 11, 13;
+   10001 adds 73 and 137; 100001 adds 9091; 1000001 adds 9901. The decimal line is the strand ladder in decimal order.
+
+5. THE NUT. Candidate y = p + 2h. Its halving picture is p's halving shifted by h: wing_y = w_p + h, centre_y = c_p + h (proven).
+   y's left-outs: y-1 = 2(w_p + h), y+1 = 2(c_p + h). Their small blocks are read from p and h:
+     r | y-1  iff  h = -w_p mod r;   r | y+1  iff  h = -c_p mod r;   r | y (seat closed)  iff  h = -(w_p + c_p) 2^-1 = -p 2^-1 mod r.
+   What the real next prime's left-outs carry, given p's: the REPEAT reading (q-1 carries r where p-1 carried r  <=>  q = p mod r):
+     r =  3: next prime in the SAME seat mod 3 (q = p mod 3) share 0.4187; flat would be 1/2 = 0.5000; shortfall x0.837
+     r =  5: next prime in the SAME seat mod 5 (q = p mod 5) share 0.1541; flat would be 1/4 = 0.2500; shortfall x0.616
+     r =  7: next prime in the SAME seat mod 7 (q = p mod 7) share 0.0772; flat would be 1/6 = 0.1667; shortfall x0.463
+     r = 11: next prime in the SAME seat mod 11 (q = p mod 11) share 0.0312; flat would be 1/10 = 0.1000; shortfall x0.312
+     r = 13: next prime in the SAME seat mod 13 (q = p mod 13) share 0.0163; flat would be 1/12 = 0.0833; shortfall x0.196
+   Reading: the next prime moves its small-r seat more often than flat; the left-out that carried r below p (p-1 or p+1) does not
+   come back in the same position as often. Same fact by a different route: Lemke Oliver and Soundararajan's consecutive-prime bias (2016).
+   In h: q = p mod r  <=>  h = 0 mod r. So the fair ordering 'demote h = 0 mod r among open seats' is the two-part reading of the hop.
+
+6. IS NEAREST-FIRST RIGHT? The HAZARD: P(the open seat at distance h holds q | seats 1..h-1 did not), stack to 13, band [1e5,1e6):
+     h    :     1     2     3     4     5     6     7     8     9    10    11    12    13    14    15    16    17    18    19    20    21    22    23    24    25    26    27    28    29    30
+     haz  : 0.392 0.390 0.392 0.396 0.399 0.396 0.403 0.396 0.401 0.414 0.420 0.406 0.414 0.402 0.413 0.437 0.441 0.405 0.448 0.419 0.411 0.461 0.481 0.378 0.409 0.354 0.437 0.394 0.394 0.442
+   mean hazard over h <= 10: 0.3958; h = 0 mod 3 seats (3..30) mean 0.4081, others 0.4132
+   Reading: the hazard is near FLAT (0.39 to 0.45 for h <= 20, rising slowly), with small dips on h = 0 mod 3 (the 3-seat repeat). A flat
+   hazard z means the chance that q sits at the k-th open seat is z(1-z)^(k-1): the nearest open seat is the likeliest in every
+   family, and any residue reading that moves a seat back one place trades a factor 1-z = 0.6 for a dip of a few hundredths.
+   This is WHY nearest-first holds and why the stack (not the ordering) closes the range.
+
+6b. RANGE FROM THE HAZARD (exact tie between the stack and the 90/99 table). z = (1/ln x) x prod r/(r-1) over the stack (the share of
+   open seats that are prime); seats to 90% = ceil(ln 0.1 / ln(1-z)), to 99% = ceil(ln 0.01 / ln(1-z)); first-named share = z.
+     (2, 3)                             |   z 0.372 ->  5/10 |   z 0.290 ->  7/14 |   z 0.237 ->  9/18
+     (2, 3, 5)                          |   z 0.465 ->  4/ 8 |   z 0.362 ->  6/11 |   z 0.296 ->  7/14
+     (2, 3, 5, 7)                       |   z 0.543 ->  3/ 6 |   z 0.422 ->  5/ 9 |   z 0.345 ->  6/11
+     (2, 3, 5, 7, 11)                   |   z 0.597 ->  3/ 6 |   z 0.464 ->  4/ 8 |   z 0.380 ->  5/10
+     (2, 3, 5, 7, 11, 13)               |   z 0.647 ->  3/ 5 |   z 0.503 ->  4/ 7 |   z 0.412 ->  5/ 9
+     (2, 3, 5, 7, 11, 13, 17, 19, 23)   |   z 0.759 ->  2/ 4 |   z 0.590 ->  3/ 6 |   z 0.483 ->  4/ 7
+   (measured in 7 below; the same fact by a different route: Mertens' product and the prime density.)
+
+7. RANGE CLOSING (90% / 99% seats, mean rank, share named first) per band. Stack = seat rules; orderings on the open seats:
+     stack / ordering                               |              [1e3,1e4) |              [1e4,1e5) |              [1e5,1e6)
+     (2, 3) nearest                                 |      6/ 10  2.83 0.313 |      7/ 13  3.59 0.243 |      9/ 17  4.35 0.201
+     (2, 3, 5, 7, 11, 13) nearest                   |      3/  5  1.63 0.612 |      4/  7  2.06 0.473 |      5/  9  2.51 0.391
+     (2, 3, 5, 7, 11, 13, 17, 19, 23) nearest       |      2/  4  1.39 0.722 |      3/  6  1.76 0.562 |      4/  8  2.14 0.463
+   two-part REPEAT reading on top of the stack to 13 (demote h = 0 mod r by eps seats):
+   (eps < 1 cannot change an integer order; eps 1.2 moves the repeat seat one open place back, 2.2 two places)
+     to 13, demote h=0 mod (3,) eps 1.2             |      3/  5  1.70 0.574 |      4/  7  2.11 0.454 |      5/  9  2.55 0.377
+     to 13, demote h=0 mod (3,) eps 2.2             |      3/  6  1.77 0.529 |      4/  7  2.17 0.430 |      5/  9  2.59 0.361
+     to 13, demote h=0 mod (3, 5) eps 1.2           |      3/  6  1.69 0.574 |      4/  7  2.11 0.453 |      5/  9  2.54 0.377
+     to 13, demote h=0 mod (5, 7, 11, 13) eps 1.2   |      3/  5  1.66 0.594 |      4/  7  2.10 0.460 |      5/  9  2.53 0.383
+     to 13, demote h=0 mod (3, 5, 7, 11, 13) eps 1.2 |      3/  5  1.67 0.580 |      4/  7  2.09 0.457 |      5/  9  2.53 0.379
+   learned ceiling for residue readings (P(q at open seat h | key) read from the band below; first band learns on [1e2,1e3)):
+     to 13, learned P(h | p mod 6)                  |      4/ 18  2.34 0.606 |      4/ 11  2.18 0.473 |      5/  9  2.52 0.391
+     to 13, learned P(h | p mod 30)                 |      5/ 19  2.49 0.591 |      4/ 16  2.34 0.473 |      5/ 10  2.54 0.391
+     to 13, learned P(h | p mod 60)                 |      7/ 23  2.94 0.567 |      4/ 19  2.55 0.472 |      5/ 12  2.59 0.391
+   decimal unit line as the stack order (same number of rules as the size-order stack):
+     (2, 3, 11) decimal line 1                      |      5/  9  2.57 0.348 |      7/ 12  3.26 0.270 |      8/ 15  3.96 0.224
+     (2, 3, 5) size order 1                         |      4/  8  2.26 0.423 |      6/ 10  2.87 0.322 |      7/ 13  3.48 0.268
+     (2, 3, 11, 101) decimal line 2                 |      5/  9  2.54 0.352 |      6/ 11  3.23 0.273 |      8/ 15  3.92 0.226
+     (2, 3, 5, 7) size order 2                      |      4/  6  1.94 0.509 |      5/  9  2.46 0.387 |      6/ 11  2.99 0.323
+     (2, 3, 7, 11, 13, 101, 73, 137) decimal line to 10^4+1 |      4/  6  1.97 0.477 |      5/  9  2.50 0.374 |      6/ 11  3.04 0.306
+     (2, 3, 5, 7, 11, 13, 17, 19) size order 8 rules |      2/  5  1.45 0.687 |      3/  6  1.84 0.535 |      4/  8  2.23 0.442
+   predicted from the hazard (6b) vs measured, top band, nearest-first:
+     (2, 3)                             predicted  9/18 first 0.237 | measured  9/17 first 0.201
+     (2, 3, 5, 7, 11, 13)               predicted  5/ 9 first 0.412 | measured  5/ 9 first 0.391
+     (2, 3, 5, 7, 11, 13, 17, 19, 23)   predicted  4/ 7 first 0.483 | measured  4/ 8 first 0.463
+
+   Top band, stack to 13: nearest-first names first 0.3910; best two-part / learned ordering 0.3831 (to 13, demote h=0 mod (5, 7, 11, 13) eps 1.2).
+   Reading: the repeat reading (demote the same-seat hop) lowers the first-named share whenever it changes the order, and the
+   learned ceiling (any reading from p mod 60 and h) does not pass nearest-first: with a near-flat hazard the order is settled,
+   and the range closes by adding seat rules (strands of passed places), exactly as the hazard formula says. The decimal line
+   names the same strands in a worse order (11 before 5: a 1/10 share before a 1/4 share), so size order stays the stack order.
+
+   Lean: PRIMES_Fold_v1.0_11-20-2026/lean-two-parts_v1.0_11-26-2026/TwoParts.lean (halving_square, face_square, centre_gap, prime_one_picture,
+   neighbour_up/down, candidate_shift, wing_add_centre, five_left_outs, repeat_three/five/seven, family_*, wing_centre_six_*, eleven_unit, repunit_mirror).
+
+[14s]

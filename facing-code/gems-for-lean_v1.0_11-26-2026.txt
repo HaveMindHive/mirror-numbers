@@ -1,0 +1,54 @@
+GEMS FOR LEAN (tUrUq's unit count, 11-26-2026). From pysr-consistent_v1.0_11-26-2026.py (asserts run them).
+u: u(1),u(2),u(3) = 1,2,3; u(2k) = 2u(k); u(2k+1) = 2u(k) + u(k+1).   v: the same recursion from v(1),v(2) = 1,2 (3 = 1,2,1, no word), v(0) = u(0) = 0.
+d(c) = 2u(c) - u(c+1) (the step, formula sheet #8).
+Ranked by how provable x how interesting.
+
+G1  TWO-POINT LAW (exact; PySR recovered it from (u(c), d(c), v(2^a+j), v(j)) at loss 0, held-out error 0)
+    For c >= 2, a >= 0, 0 <= j <= 2^a:   u(c*2^a + j) = u(c) * v(2^a + j) - d(c) * v(j).
+    Checked: 1,634,586 cases (2 <= c < 400, a < 12, every j). c = 1 is the word exception (3 = 111); for c = 1 use c = 2, a-1.
+    Why: both sides obey the same halving recursion in j at fixed c (n -> 2n, 2n+1 maps j -> 2j, 2j+1 and a -> a+1), and agree at
+    j = 0 (u(c 2^a) = 2^a u(c), v(2^a) = 2^a) and j = 1 (u(c 2^a + 1) = 2^(a+1) u(c) - d(c), induction on a). Linear in (u(c), u(c+1)).
+    Contains: the strands (#6), the class-by-8 law (#9: a = 3, j = 1,3,5,7 gives 14u(k)+u(k+1), 16u(k)+4u(k+1), ...), so #9 becomes [L].
+    Lean sketch:
+      theorem two_point (c a j : Nat) (hc : 2 ≤ c) (hj : j ≤ 2 ^ a) :
+          (u (c * 2 ^ a + j) : Int) = u c * v (2 ^ a + j) - (2 * u c - u (c + 1)) * v j
+    Proof plan: strong induction on a; inside, induction on j by halving (j = 2i or 2i+1, i ≤ 2^(a-1)); lemma
+      u_pow_one : u (c * 2^a + 1) = 2^(a+1) * u c - d c   (c ≥ 2).
+
+G2  BLOCK SUM (exact; follows from G1 by summing j; PySR got only an approximate form in 60 s)
+    For c >= 2, a >= 0:   3 * sum_{j < 2^a} u(c*2^a + j) = u(c) (4*5^a - 2^a) - d(c) (5^a - 2^a).
+    with  3 * sum_{j<2^a} v(2^a + j) = 4*5^a - 2^a  and  3 * sum_{j<2^a} v(j) = 5^a - 2^a.
+    Checked: 2,980 (c < 300, a < 10) and the v sums a < 14. Each halving step multiplies the block total by 5 (the 2,1 / 2 doubling
+    of a pair sums to 2+2+1 = 5). The octave sum #10 (17*5^a - 5*2^a)/15 is the c = 1 (word) case.
+    Lean sketch:
+      theorem v_sum_low (a : Nat) : 3 * (∑ j in Finset.range (2^a), v j) = 5^a - 2^a
+      theorem v_sum_high (a : Nat) : 3 * (∑ j in Finset.range (2^a), v (2^a + j)) = 4 * 5^a - 2^a
+      theorem block_sum (c a : Nat) (hc : 2 ≤ c) :
+          3 * (∑ j in Finset.range (2^a), (u (c * 2^a + j) : Int)) = u c * (4 * 5^a - 2^a) - (2 * u c - u (c+1)) * (5^a - 2^a)
+    Proof plan: v sums by induction on a (split range into even/odd j, recursion gives S_{a+1} = 5 S_a + boundary term); block_sum from G1.
+
+G3  RECORD BLOCK OF THE PACKED PLACES (exact at every record point to 1e7; computer, 212/212)
+    At each X where the packed-place budget first rises (mapped-out table), the places needed are exactly the places that hold
+    every block up to the largest prime r with r^2 <= nextprime(X), packed from the small end under X.
+    I.e. the hop that forces a new place is always the one whose gap holds r^2 for the newest r. Plain math:
+      B_rec(X) = places_needed(X, prevprime(isqrt(nextprime(X)))).
+    Lean sketch (statement shape; needs the packing function defined):
+      theorem record_needs_square (p q : Nat) (hp : p.Prime) (hq : q = nextPrime p) (hrec : IsRecord p) :
+          placesNeeded p (needBlock p q) = placesNeeded p (prevPrime (Nat.sqrt q))
+    Why: the largest smallest-block among odd seats of a gap is at most sqrt(q) and equals the newest block exactly when its
+    square sits in the gap; a record can only come from that. Provable part: needBlock p q <= Nat.sqrt q (smallest block of a
+    composite y < q is <= sqrt y). Record = equality is the checked part (harder).
+
+G4  FLIP BALANCE SEEN IN THE GAP COUNTS (proven already as flips_balance; new reading)
+    #(gaps = 2 mod 6) - #(gaps = 4 mod 6) over consecutive primes from 5 up to p is in {-1, 0, +1}: gap 2 mod 6 = hop 6k-1 -> 6k+1,
+    gap 4 mod 6 = 6k+1 -> 6k-1. (Checked full walks: [1e4,1e5) 2491/2490, [1e7,1e8) 1427186/1427186, 5..1e8 1616470/1616470... per walk.) Lean: corollary of flips_balance + half_gap_walls.
+      theorem gap_class_balance (n : Nat) : |(#{i < n | g i % 6 = 2} : Int) - #{i < n | g i % 6 = 4}| ≤ 1
+
+G5  RULE-BREAKER COUNT (exact to 1e6; computer)
+    Every member of the five 2-scale strands 2^a, 2^a+1, 2^a+2, 3*2^a, 3*2^a+1 (<= 1e6) is a rule-breaker, and only 10 breakers
+    are off them: 11, 15, 22, 36, 44, 88, 272, 2112, 4224, 8448. So C(x) = #(strand members <= x, deduped) + #(those 10 <= x):
+    slope 5 per doubling, not the fitted 5.547 (the line fit absorbs small-number overlap). Lean shape: membership of each strand
+    in each breaking rule is already proven (self_count, mod-4 law, ratio-two line); the "only 10 off-strand" part is checked to 1e6.
+
+Not gems (approximate, keep out of Lean): z = (1/ln x) prod_{r<=R} r/(r-1) * prod_{r>R}(1 - 1/(r-1)^2); B ~ per-place law + 1.2;
+gap shape (u + 1.617) e^(-u) e^(-u/2.115); lead ~ 1.2 sqrt x / ln x. See pysr-consistent_v1.0_11-26-2026.txt.

@@ -1,0 +1,169 @@
+⚠ [18178/18216] Replayed MirrorNumbersAll.UnitCountingLaws
+warning: MirrorNumbersAll/UnitCountingLaws.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18179/18216] Ran MirrorNumbersAll.UnitCountingLaws:irArts
+warning: MirrorNumbersAll/UnitCountingLaws.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18180/18216] Replayed MirrorNumbersAll.RatioTwoLine
+warning: MirrorNumbersAll/RatioTwoLine.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18181/18216] Ran MirrorNumbersAll.RatioTwoLine:irArts
+warning: MirrorNumbersAll/RatioTwoLine.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18182/18216] Replayed MirrorNumbersAll.TwoMirrors
+warning: MirrorNumbersAll/TwoMirrors.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18183/18216] Ran MirrorNumbersAll.TwoMirrors:irArts
+warning: MirrorNumbersAll/TwoMirrors.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18184/18216] Replayed MirrorNumbersAll.TurnRoots
+warning: MirrorNumbersAll/TurnRoots.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MirrorNumbersAll/TurnRoots.lean:71:12: This simp argument is unused:
+  h1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hn, h2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: MirrorNumbersAll/TurnRoots.lean:157:45: `simp` already closes the goal
+
+Hint: Use `simp` instead of `simpa`:
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [18185/18216] Ran MirrorNumbersAll.TurnRoots:irArts
+warning: MirrorNumbersAll/TurnRoots.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18186/18216] Replayed MirrorNumbersAll.ManyTurns
+warning: MirrorNumbersAll/ManyTurns.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MirrorNumbersAll/ManyTurns.lean:68:12: This simp argument is unused:
+  h1
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hn, h2]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: MirrorNumbersAll/ManyTurns.lean:232:0: 'ManyTurns.line_never' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: MirrorNumbersAll/ManyTurns.lean:233:0: 'ManyTurns.below_classify' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [18187/18216] Ran MirrorNumbersAll.ManyTurns:irArts
+warning: MirrorNumbersAll/ManyTurns.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18188/18216] Replayed MirrorNumbersAll.HandOff
+warning: MirrorNumbersAll/HandOff.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18189/18216] Ran MirrorNumbersAll.HandOff:irArts
+warning: MirrorNumbersAll/HandOff.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18190/18216] Replayed MirrorNumbersAll.WallMirror
+warning: MirrorNumbersAll/WallMirror.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18191/18216] Ran MirrorNumbersAll.WallMirror:irArts
+warning: MirrorNumbersAll/WallMirror.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18192/18216] Replayed MirrorNumbersAll.RuleHierarchy
+warning: MirrorNumbersAll/RuleHierarchy.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18193/18216] Ran MirrorNumbersAll.RuleHierarchy:irArts
+warning: MirrorNumbersAll/RuleHierarchy.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18194/18216] Replayed MirrorNumbersAll.TwoParts
+warning: MirrorNumbersAll/TwoParts.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18195/18216] Ran MirrorNumbersAll.TwoParts:irArts
+warning: MirrorNumbersAll/TwoParts.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18196/18216] Replayed MirrorNumbersAll.TwoZero
+warning: MirrorNumbersAll/TwoZero.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MirrorNumbersAll/TwoZero.lean:101:128: Unused tactic linter: `done` does not change the goal.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [18197/18216] Ran MirrorNumbersAll.TwoZero:irArts
+warning: MirrorNumbersAll/TwoZero.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18198/18216] Replayed MirrorNumbersAll.TheSolve
+warning: MirrorNumbersAll/TheSolve.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18199/18216] Ran MirrorNumbersAll.TheSolve:irArts
+warning: MirrorNumbersAll/TheSolve.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18200/18216] Replayed MirrorNumbersAll.UnifiedCode
+warning: MirrorNumbersAll/UnifiedCode.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MirrorNumbersAll/UnifiedCode.lean:267:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: MirrorNumbersAll/UnifiedCode.lean:267:48: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: MirrorNumbersAll/UnifiedCode.lean:267:48: Unused tactic linter: `<;>` can be replaced with `;`.
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: MirrorNumbersAll/UnifiedCode.lean:269:19: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: MirrorNumbersAll/UnifiedCode.lean:274:43: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: MirrorNumbersAll/UnifiedCode.lean:274:43: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: MirrorNumbersAll/UnifiedCode.lean:274:43: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: MirrorNumbersAll/UnifiedCode.lean:278:19: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: MirrorNumbersAll/UnifiedCode.lean:285:6: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: MirrorNumbersAll/UnifiedCode.lean:285:17: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+⚠ [18201/18216] Ran MirrorNumbersAll.UnifiedCode:irArts
+warning: MirrorNumbersAll/UnifiedCode.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18202/18216] Replayed MirrorNumbersAll.PrimeHandOff
+warning: MirrorNumbersAll/PrimeHandOff.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18203/18216] Ran MirrorNumbersAll.PrimeHandOff:irArts
+warning: MirrorNumbersAll/PrimeHandOff.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18204/18216] Replayed MirrorNumbersAll.Gems
+warning: MirrorNumbersAll/Gems.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18205/18216] Ran MirrorNumbersAll.Gems:irArts
+warning: MirrorNumbersAll/Gems.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18206/18216] Built MirrorNumbersAll.WallWalk (7.0s)
+warning: MirrorNumbersAll/WallWalk.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18207/18216] Ran MirrorNumbersAll.WallWalk:irArts
+warning: MirrorNumbersAll/WallWalk.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18208/18216] Built MirrorNumbersAll.NineCubes (8.3s)
+warning: MirrorNumbersAll/NineCubes.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18209/18216] Ran MirrorNumbersAll.NineCubes:irArts
+warning: MirrorNumbersAll/NineCubes.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18210/18216] Built MirrorNumbersAll.PySRFinds (11s)
+warning: MirrorNumbersAll/PySRFinds.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+warning: MirrorNumbersAll/PySRFinds.lean:112:32: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: MirrorNumbersAll/PySRFinds.lean:117:32: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: MirrorNumbersAll/PySRFinds.lean:133:32: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: MirrorNumbersAll/PySRFinds.lean:137:32: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: MirrorNumbersAll/PySRFinds.lean:185:18: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+warning: MirrorNumbersAll/PySRFinds.lean:200:22: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: MirrorNumbersAll/PySRFinds.lean:203:48: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+warning: MirrorNumbersAll/PySRFinds.lean:239:30: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+⚠ [18211/18216] Ran MirrorNumbersAll.PySRFinds:irArts
+warning: MirrorNumbersAll/PySRFinds.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18212/18216] Built MirrorNumbersAll.Upgrades (7.2s)
+warning: MirrorNumbersAll/Upgrades.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+⚠ [18213/18216] Ran MirrorNumbersAll.Upgrades:irArts
+warning: MirrorNumbersAll/Upgrades.lean: imports `Mathlib` from package `mathlib`, which is designed for use with the module system; consider adding `module` to the start of this file
+✔ [18214/18216] Built MirrorNumbersAll (5.3s)
+Build completed successfully (18216 jobs).

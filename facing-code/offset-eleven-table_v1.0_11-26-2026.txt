@@ -1,0 +1,385 @@
+== 1. first block 0..O, pair n <-> O - n, primes only ==
+(clean even = odd core on the ratio-2 line [self 1|3, 2^a+1, 3*2^a+1, 11/15] or 2p; below-line = u(m) < 2m)
+-- dec b^k+1
+   dec b^k+1 O=11       primes=5      ->prime 0   ->comp 4      ->1 0 ->0 1 ->odd 1     ->even 3      [2mod4 0 (half prime 1) 0mod4 0 2^a 2 wall 1] clean 3/3 = self 3 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 3 | first fray 
+   dec b^k+1 O=101      primes=26     ->prime 0   ->comp 25     ->1 0 ->0 1 ->odd 1     ->even 24     [2mod4 13 (half prime 5) 0mod4 6 2^a 2 wall 3] clean 18/24 = self 5 2^a+1 4 3*2^a+1 2 11/15 4 2p 3 | below-line 15 | first fray 11->90 17->84 23->78 31->70 47->54 59->42
+   dec b^k+1 O=1001     primes=168    ->prime 0   ->comp 168    ->1 0 ->0 0 ->odd 1     ->even 167    [2mod4 87 (half prime 33) 0mod4 73 2^a 2 wall 5] clean 54/167 = self 7 2^a+1 8 3*2^a+1 3 11/15 6 2p 30 | below-line 24 | first fray 5->996 7->994 11->990 13->988 17->984 23->978
+   dec b^k+1 O=10001    primes=1229   ->prime 0   ->comp 1229   ->1 0 ->0 0 ->odd 1     ->even 1228   [2mod4 619 (half prime 114) 0mod4 609 2^a 0 wall 0] clean 147/1228 = self 0 2^a+1 18 3*2^a+1 11 11/15 5 2p 113 | below-line 34 | first fray 5->9996 7->9994 11->9990 13->9988 17->9984 19->9982
+   dec b^k+1 O=100001   primes=9592   ->prime 0   ->comp 9592   ->1 0 ->0 0 ->odd 1     ->even 9591   [2mod4 4808 (half prime 715) 0mod4 4777 2^a 1 wall 5] clean 759/9591 = self 6 2^a+1 22 3*2^a+1 12 11/15 6 2p 713 | below-line 46 | first fray 5->99996 7->99994 11->99990 13->99988 17->99984 23->99978
+-- dec b^k
+     dec b^k O=10       primes=4      ->prime 3   ->comp 1      ->1 0 ->0 0 ->odd 3     ->even 1      [2mod4 0 (half prime 0) 0mod4 0 2^a 1 wall 0] clean 1/1 = self 1 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 1 | first fray 
+     dec b^k O=100      primes=25     ->prime 12  ->comp 13     ->1 0 ->0 0 ->odd 24    ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 1 11/15 0 2p 0 | below-line 1 | first fray 
+     dec b^k O=1000     primes=168    ->prime 56  ->comp 112    ->1 0 ->0 0 ->odd 167   ->even 1      [2mod4 1 (half prime 1) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 1 | below-line 0 | first fray 
+     dec b^k O=10000    primes=1229   ->prime 254 ->comp 975    ->1 0 ->0 0 ->odd 1228  ->even 1      [2mod4 1 (half prime 1) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 1 | below-line 0 | first fray 
+     dec b^k O=100000   primes=9592   ->prime 1620 ->comp 7972   ->1 0 ->0 0 ->odd 9591  ->even 1      [2mod4 1 (half prime 1) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 1 | below-line 0 | first fray 
+-- dec b^k-1
+   dec b^k-1 O=9        primes=4      ->prime 2   ->comp 2      ->1 0 ->0 0 ->odd 1     ->even 3      [2mod4 0 (half prime 1) 0mod4 0 2^a 2 wall 1] clean 3/3 = self 3 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 3 | first fray 
+   dec b^k-1 O=99       primes=25     ->prime 2   ->comp 23     ->1 0 ->0 0 ->odd 1     ->even 24     [2mod4 10 (half prime 9) 0mod4 10 2^a 3 wall 1] clean 21/24 = self 4 2^a+1 5 3*2^a+1 4 11/15 1 2p 7 | below-line 14 | first fray 7->92 23->76 29->70
+   dec b^k-1 O=999      primes=168    ->prime 2   ->comp 166    ->1 0 ->0 0 ->odd 1     ->even 167    [2mod4 79 (half prime 39) 0mod4 82 2^a 6 wall 0] clean 66/167 = self 6 2^a+1 7 3*2^a+1 12 11/15 4 2p 37 | below-line 29 | first fray 3->996 5->994 7->992 11->988 13->986 19->980
+   dec b^k-1 O=9999     primes=1229   ->prime 0   ->comp 1229   ->1 0 ->0 0 ->odd 1     ->even 1228   [2mod4 609 (half prime 235) 0mod4 614 2^a 5 wall 0] clean 271/1228 = self 5 2^a+1 12 3*2^a+1 22 11/15 0 2p 232 | below-line 39 | first fray 3->9996 5->9994 7->9992 11->9988 17->9982 19->9980
+   dec b^k-1 O=99999    primes=9592   ->prime 0   ->comp 9592   ->1 0 ->0 0 ->odd 1     ->even 9591   [2mod4 4783 (half prime 1339) 0mod4 4803 2^a 5 wall 0] clean 1386/9591 = self 5 2^a+1 11 3*2^a+1 29 11/15 3 2p 1338 | below-line 48 | first fray 3->99996 5->99994 7->99992 11->99988 19->99980 23->99976
+-- bin 2^k+1
+   bin 2^k+1 O=5        primes=3      ->prime 2   ->comp 0      ->1 0 ->0 1 ->odd 1     ->even 1      [2mod4 0 (half prime 0) 0mod4 0 2^a 1 wall 0] clean 1/1 = self 1 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 1 | first fray 
+   bin 2^k+1 O=9        primes=4      ->prime 2   ->comp 2      ->1 0 ->0 0 ->odd 1     ->even 3      [2mod4 0 (half prime 1) 0mod4 0 2^a 2 wall 1] clean 3/3 = self 3 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 3 | first fray 
+   bin 2^k+1 O=17       primes=7      ->prime 0   ->comp 6      ->1 0 ->0 1 ->odd 1     ->even 5      [2mod4 2 (half prime 3) 0mod4 0 2^a 1 wall 2] clean 5/5 = self 3 2^a+1 1 3*2^a+1 1 11/15 0 2p 0 | below-line 5 | first fray 
+   bin 2^k+1 O=33       primes=11     ->prime 2   ->comp 9      ->1 0 ->0 0 ->odd 1     ->even 10     [2mod4 5 (half prime 4) 0mod4 2 2^a 3 wall 0] clean 10/10 = self 3 2^a+1 2 3*2^a+1 3 11/15 2 2p 0 | below-line 10 | first fray 
+   bin 2^k+1 O=65       primes=18     ->prime 0   ->comp 18     ->1 0 ->0 0 ->odd 1     ->even 17     [2mod4 8 (half prime 6) 0mod4 4 2^a 1 wall 4] clean 15/17 = self 5 2^a+1 3 3*2^a+1 2 11/15 2 2p 3 | below-line 12 | first fray 11->54 23->42
+   bin 2^k+1 O=129      primes=31     ->prime 2   ->comp 29     ->1 0 ->0 0 ->odd 1     ->even 30     [2mod4 15 (half prime 10) 0mod4 12 2^a 3 wall 0] clean 23/30 = self 3 2^a+1 3 3*2^a+1 7 11/15 2 2p 8 | below-line 15 | first fray 3->126 5->124 13->116 19->110 37->92 53->76
+   bin 2^k+1 O=257      primes=55     ->prime 0   ->comp 54     ->1 0 ->0 1 ->odd 1     ->even 53     [2mod4 28 (half prime 11) 0mod4 21 2^a 2 wall 2] clean 26/53 = self 4 2^a+1 6 3*2^a+1 3 11/15 4 2p 9 | below-line 17 | first fray 5->252 7->250 11->246 13->244 19->238 23->234
+   bin 2^k+1 O=513      primes=97     ->prime 0   ->comp 97     ->1 0 ->0 0 ->odd 1     ->even 96     [2mod4 51 (half prime 28) 0mod4 42 2^a 3 wall 0] clean 46/96 = self 3 2^a+1 7 3*2^a+1 12 11/15 2 2p 22 | below-line 24 | first fray 3->510 5->508 7->506 13->500 17->496 19->494
+   bin 2^k+1 O=1025     primes=172    ->prime 0   ->comp 172    ->1 0 ->0 0 ->odd 1     ->even 171    [2mod4 87 (half prime 32) 0mod4 75 2^a 3 wall 6] clean 52/171 = self 9 2^a+1 6 3*2^a+1 5 11/15 2 2p 30 | below-line 22 | first fray 3->1022 5->1020 11->1014 13->1012 17->1008 23->1002
+   bin 2^k+1 O=2049     primes=309    ->prime 0   ->comp 309    ->1 0 ->0 0 ->odd 1     ->even 308    [2mod4 159 (half prime 68) 0mod4 148 2^a 1 wall 0] clean 96/308 = self 1 2^a+1 10 3*2^a+1 16 11/15 4 2p 65 | below-line 31 | first fray 3->2046 5->2044 13->2036 17->2032 19->2030 29->2020
+   bin 2^k+1 O=4097     primes=564    ->prime 0   ->comp 564    ->1 0 ->0 0 ->odd 1     ->even 563    [2mod4 286 (half prime 60) 0mod4 271 2^a 1 wall 5] clean 85/563 = self 6 2^a+1 9 3*2^a+1 8 11/15 4 2p 58 | below-line 27 | first fray 3->4094 5->4092 7->4090 11->4086 13->4084 17->4080
+   bin 2^k+1 O=8193     primes=1028   ->prime 2   ->comp 1026   ->1 0 ->0 0 ->odd 1     ->even 1027   [2mod4 517 (half prime 190) 0mod4 506 2^a 4 wall 0] clean 218/1027 = self 4 2^a+1 7 3*2^a+1 16 11/15 4 2p 187 | below-line 31 | first fray 3->8190 5->8188 13->8180 17->8176 19->8174 23->8170
+   bin 2^k+1 O=16385    primes=1900   ->prime 0   ->comp 1900   ->1 0 ->0 0 ->odd 1     ->even 1899   [2mod4 958 (half prime 216) 0mod4 933 2^a 4 wall 4] clean 256/1899 = self 8 2^a+1 19 3*2^a+1 11 11/15 3 2p 215 | below-line 41 | first fray 5->16380 7->16378 11->16374 13->16372 17->16368 19->16366
+   bin 2^k+1 O=32769    primes=3512   ->prime 0   ->comp 3512   ->1 0 ->0 0 ->odd 1     ->even 3511   [2mod4 1765 (half prime 611) 0mod4 1745 2^a 1 wall 0] clean 655/3511 = self 1 2^a+1 16 3*2^a+1 29 11/15 0 2p 609 | below-line 46 | first fray 3->32766 5->32764 11->32758 13->32756 17->32752 19->32750
+   bin 2^k+1 O=65537    primes=6543   ->prime 0   ->comp 6542   ->1 0 ->0 1 ->odd 1     ->even 6541   [2mod4 3284 (half prime 466) 0mod4 3252 2^a 3 wall 2] clean 500/6541 = self 5 2^a+1 12 3*2^a+1 13 11/15 4 2p 466 | below-line 34 | first fray 3->65534 5->65532 7->65530 11->65526 13->65524 17->65520
+   bin 2^k+1 O=131073   primes=12251  ->prime 2   ->comp 12249  ->1 0 ->0 0 ->odd 1     ->even 12250  [2mod4 6155 (half prime 1610) 0mod4 6089 2^a 6 wall 0] clean 1658/12250 = self 6 2^a+1 14 3*2^a+1 25 11/15 6 2p 1607 | below-line 51 | first fray 3->131070 5->131068 7->131066 11->131062 13->131060 17->131056
+   bin 2^k+1 O=262145   primes=23000  ->prime 0   ->comp 23000  ->1 0 ->0 0 ->odd 1     ->even 22999  [2mod4 11526 (half prime 2160) 0mod4 11464 2^a 0 wall 9] clean 2203/22999 = self 9 2^a+1 27 3*2^a+1 11 11/15 0 2p 2156 | below-line 47 | first fray 5->262140 7->262138 11->262134 13->262132 17->262128 23->262122
+   bin 2^k+1 O=524289   primes=43390  ->prime 2   ->comp 43388  ->1 0 ->0 0 ->odd 1     ->even 43389  [2mod4 21730 (half prime 5075) 0mod4 21655 2^a 4 wall 0] clean 5136/43389 = self 4 2^a+1 13 3*2^a+1 40 11/15 6 2p 5073 | below-line 63 | first fray 3->524286 5->524284 7->524282 13->524276 17->524272 19->524270
+   bin 2^k+1 O=1048577  primes=82025  ->prime 0   ->comp 82025  ->1 0 ->0 0 ->odd 1     ->even 82024  [2mod4 41071 (half prime 4753) 0mod4 40947 2^a 3 wall 3] clean 4800/82024 = self 6 2^a+1 24 3*2^a+1 13 11/15 7 2p 4750 | below-line 50 | first fray 5->1048572 7->1048570 11->1048566 13->1048564 17->1048560 19->1048558
+-- bin 2^k
+     bin 2^k O=4        primes=2      ->prime 1   ->comp 0      ->1 1 ->0 0 ->odd 1     ->even 1      [2mod4 0 (half prime 0) 0mod4 0 2^a 1 wall 0] clean 1/1 = self 1 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 1 | first fray 
+     bin 2^k O=8        primes=4      ->prime 2   ->comp 1      ->1 1 ->0 0 ->odd 3     ->even 1      [2mod4 0 (half prime 1) 0mod4 0 2^a 0 wall 1] clean 1/1 = self 1 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 1 | first fray 
+     bin 2^k O=16       primes=6      ->prime 4   ->comp 2      ->1 0 ->0 0 ->odd 5     ->even 1      [2mod4 1 (half prime 1) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 1 11/15 0 2p 0 | below-line 1 | first fray 
+     bin 2^k O=32       primes=11     ->prime 4   ->comp 6      ->1 1 ->0 0 ->odd 10    ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 1 2p 0 | below-line 1 | first fray 
+     bin 2^k O=64       primes=18     ->prime 10  ->comp 8      ->1 0 ->0 0 ->odd 17    ->even 1      [2mod4 1 (half prime 1) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 1 | below-line 0 | first fray 
+     bin 2^k O=128      primes=31     ->prime 6   ->comp 24     ->1 1 ->0 0 ->odd 30    ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->126
+     bin 2^k O=256      primes=54     ->prime 16  ->comp 38     ->1 0 ->0 0 ->odd 53    ->even 1      [2mod4 1 (half prime 1) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 1 | below-line 0 | first fray 
+     bin 2^k O=512      primes=97     ->prime 22  ->comp 75     ->1 0 ->0 0 ->odd 96    ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->510
+     bin 2^k O=1024     primes=172    ->prime 44  ->comp 128    ->1 0 ->0 0 ->odd 171   ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->1022
+     bin 2^k O=2048     primes=309    ->prime 50  ->comp 259    ->1 0 ->0 0 ->odd 308   ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->2046
+     bin 2^k O=4096     primes=564    ->prime 106 ->comp 458    ->1 0 ->0 0 ->odd 563   ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->4094
+     bin 2^k O=8192     primes=1028   ->prime 152 ->comp 875    ->1 1 ->0 0 ->odd 1027  ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->8190
+     bin 2^k O=16384    primes=1900   ->prime 302 ->comp 1598   ->1 0 ->0 0 ->odd 1899  ->even 1      [2mod4 1 (half prime 1) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 1 | below-line 0 | first fray 
+     bin 2^k O=32768    primes=3512   ->prime 488 ->comp 3024   ->1 0 ->0 0 ->odd 3511  ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->32766
+     bin 2^k O=65536    primes=6542   ->prime 870 ->comp 5672   ->1 0 ->0 0 ->odd 6541  ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->65534
+     bin 2^k O=131072   primes=12251  ->prime 1498 ->comp 10752  ->1 1 ->0 0 ->odd 12250 ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->131070
+     bin 2^k O=262144   primes=23000  ->prime 2628 ->comp 20372  ->1 0 ->0 0 ->odd 22999 ->even 1      [2mod4 1 (half prime 1) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 1 | below-line 0 | first fray 
+     bin 2^k O=524288   primes=43390  ->prime 4734 ->comp 38655  ->1 1 ->0 0 ->odd 43389 ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->524286
+     bin 2^k O=1048576  primes=82025  ->prime 8478 ->comp 73547  ->1 0 ->0 0 ->odd 82024 ->even 1      [2mod4 1 (half prime 1) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 1 | below-line 0 | first fray 
+-- bin 2^k-1
+   bin 2^k-1 O=3        primes=2      ->prime 0   ->comp 0      ->1 1 ->0 1 ->odd 1     ->even 0      [2mod4 0 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/0 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 
+   bin 2^k-1 O=7        primes=4      ->prime 2   ->comp 1      ->1 0 ->0 1 ->odd 1     ->even 2      [2mod4 0 (half prime 0) 0mod4 0 2^a 2 wall 0] clean 2/2 = self 2 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 2 | first fray 
+   bin 2^k-1 O=15       primes=6      ->prime 2   ->comp 4      ->1 0 ->0 0 ->odd 1     ->even 5      [2mod4 1 (half prime 1) 0mod4 0 2^a 3 wall 1] clean 5/5 = self 4 2^a+1 1 3*2^a+1 0 11/15 0 2p 0 | below-line 5 | first fray 
+   bin 2^k-1 O=31       primes=11     ->prime 2   ->comp 8      ->1 0 ->0 1 ->odd 1     ->even 9      [2mod4 3 (half prime 2) 0mod4 2 2^a 2 wall 2] clean 9/9 = self 4 2^a+1 2 3*2^a+1 3 11/15 0 2p 0 | below-line 9 | first fray 
+   bin 2^k-1 O=63       primes=18     ->prime 2   ->comp 16     ->1 0 ->0 0 ->odd 1     ->even 17     [2mod4 7 (half prime 6) 0mod4 6 2^a 4 wall 0] clean 17/17 = self 4 2^a+1 4 3*2^a+1 4 11/15 3 2p 2 | below-line 15 | first fray 
+   bin 2^k-1 O=127      primes=31     ->prime 0   ->comp 30     ->1 0 ->0 1 ->odd 1     ->even 29     [2mod4 14 (half prime 6) 0mod4 12 2^a 0 wall 3] clean 21/29 = self 3 2^a+1 5 3*2^a+1 5 11/15 4 2p 4 | below-line 17 | first fray 3->124 11->116 13->114 17->110 19->108 37->90
+   bin 2^k-1 O=255      primes=54     ->prime 0   ->comp 54     ->1 0 ->0 0 ->odd 1     ->even 53     [2mod4 24 (half prime 18) 0mod4 24 2^a 5 wall 0] clean 33/53 = self 5 2^a+1 0 3*2^a+1 10 11/15 4 2p 14 | below-line 19 | first fray 3->252 5->250 7->248 11->244 13->242 17->238
+   bin 2^k-1 O=511      primes=97     ->prime 2   ->comp 95     ->1 0 ->0 0 ->odd 1     ->even 96     [2mod4 44 (half prime 13) 0mod4 44 2^a 4 wall 4] clean 36/96 = self 8 2^a+1 10 3*2^a+1 3 11/15 3 2p 12 | below-line 24 | first fray 3->508 5->506 7->504 11->500 13->498 17->494
+   bin 2^k-1 O=1023     primes=172    ->prime 2   ->comp 170    ->1 0 ->0 0 ->odd 1     ->even 171    [2mod4 82 (half prime 48) 0mod4 86 2^a 3 wall 0] clean 71/171 = self 3 2^a+1 9 3*2^a+1 16 11/15 0 2p 43 | below-line 28 | first fray 3->1020 7->1016 11->1012 13->1010 19->1004 23->1000
+   bin 2^k-1 O=2047     primes=309    ->prime 0   ->comp 309    ->1 0 ->0 0 ->odd 1     ->even 308    [2mod4 149 (half prime 34) 0mod4 154 2^a 1 wall 4] clean 68/308 = self 5 2^a+1 13 3*2^a+1 10 11/15 7 2p 33 | below-line 35 | first fray 3->2044 7->2040 11->2036 13->2034 17->2030 19->2028
+   bin 2^k-1 O=4095     primes=564    ->prime 2   ->comp 562    ->1 0 ->0 0 ->odd 1     ->even 563    [2mod4 275 (half prime 187) 0mod4 283 2^a 5 wall 0] clean 209/563 = self 5 2^a+1 5 3*2^a+1 9 11/15 7 2p 183 | below-line 26 | first fray 3->4092 5->4090 7->4088 11->4084 13->4082 19->4076
+   bin 2^k-1 O=8191     primes=1028   ->prime 0   ->comp 1027   ->1 0 ->0 1 ->odd 1     ->even 1026   [2mod4 509 (half prime 93) 0mod4 513 2^a 1 wall 3] clean 124/1026 = self 4 2^a+1 18 3*2^a+1 5 11/15 5 2p 92 | below-line 32 | first fray 3->8188 7->8184 11->8180 13->8178 17->8174 19->8172
+   bin 2^k-1 O=16383    primes=1900   ->prime 2   ->comp 1898   ->1 0 ->0 0 ->odd 1     ->even 1899   [2mod4 940 (half prime 315) 0mod4 954 2^a 5 wall 0] clean 354/1899 = self 5 2^a+1 10 3*2^a+1 23 11/15 5 2p 311 | below-line 43 | first fray 3->16380 5->16378 7->16376 11->16372 13->16370 17->16366
+   bin 2^k-1 O=32767    primes=3512   ->prime 0   ->comp 3512   ->1 0 ->0 0 ->odd 1     ->even 3511   [2mod4 1746 (half prime 322) 0mod4 1761 2^a 0 wall 4] clean 360/3511 = self 4 2^a+1 19 3*2^a+1 11 11/15 6 2p 320 | below-line 40 | first fray 3->32764 7->32760 11->32756 13->32754 17->32750 19->32748
+   bin 2^k-1 O=65535    primes=6542   ->prime 0   ->comp 6542   ->1 0 ->0 0 ->odd 1     ->even 6541   [2mod4 3257 (half prime 1288) 0mod4 3281 2^a 3 wall 0] clean 1318/6541 = self 3 2^a+1 0 3*2^a+1 26 11/15 3 2p 1286 | below-line 32 | first fray 3->65532 5->65530 7->65528 11->65524 13->65522 17->65518
+   bin 2^k-1 O=131071   primes=12251  ->prime 0   ->comp 12250  ->1 0 ->0 1 ->odd 1     ->even 12249  [2mod4 6094 (half prime 790) 0mod4 6148 2^a 2 wall 5] clean 831/12249 = self 7 2^a+1 19 3*2^a+1 12 11/15 4 2p 789 | below-line 42 | first fray 3->131068 5->131066 7->131064 11->131060 13->131058 17->131054
+   bin 2^k-1 O=262143   primes=23000  ->prime 0   ->comp 23000  ->1 0 ->0 0 ->odd 1     ->even 22999  [2mod4 11472 (half prime 3639) 0mod4 11518 2^a 9 wall 0] clean 3687/22999 = self 9 2^a+1 23 3*2^a+1 15 11/15 5 2p 3635 | below-line 52 | first fray 3->262140 5->262138 7->262136 11->262132 13->262130 19->262124
+   bin 2^k-1 O=524287   primes=43390  ->prime 0   ->comp 43389  ->1 0 ->0 1 ->odd 1     ->even 43388  [2mod4 21658 (half prime 2513) 0mod4 21725 2^a 1 wall 4] clean 2573/43388 = self 5 2^a+1 26 3*2^a+1 23 11/15 8 2p 2511 | below-line 62 | first fray 3->524284 5->524282 7->524280 11->524276 13->524274 17->524270
+   bin 2^k-1 O=1048575  primes=82025  ->prime 2   ->comp 82023  ->1 0 ->0 0 ->odd 1     ->even 82024  [2mod4 40951 (half prime 13957) 0mod4 41061 2^a 12 wall 0] clean 14016/82024 = self 12 2^a+1 8 3*2^a+1 41 11/15 0 2p 13955 | below-line 61 | first fray 3->1048572 5->1048570 7->1048568 11->1048564 13->1048562 17->1048558
+-- wall 3*2^k+1
+wall 3*2^k+1 O=7        primes=4      ->prime 2   ->comp 1      ->1 0 ->0 1 ->odd 1     ->even 2      [2mod4 0 (half prime 0) 0mod4 0 2^a 2 wall 0] clean 2/2 = self 2 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 2 | first fray 
+wall 3*2^k+1 O=13       primes=6      ->prime 2   ->comp 3      ->1 0 ->0 1 ->odd 1     ->even 4      [2mod4 1 (half prime 2) 0mod4 0 2^a 2 wall 1] clean 4/4 = self 3 2^a+1 1 3*2^a+1 0 11/15 0 2p 0 | below-line 4 | first fray 
+wall 3*2^k+1 O=25       primes=9      ->prime 2   ->comp 7      ->1 0 ->0 0 ->odd 1     ->even 8      [2mod4 3 (half prime 3) 0mod4 1 2^a 2 wall 2] clean 8/8 = self 4 2^a+1 2 3*2^a+1 1 11/15 1 2p 0 | below-line 8 | first fray 
+wall 3*2^k+1 O=49       primes=15     ->prime 2   ->comp 13     ->1 0 ->0 0 ->odd 1     ->even 14     [2mod4 6 (half prime 4) 0mod4 3 2^a 3 wall 2] clean 13/14 = self 5 2^a+1 3 3*2^a+1 1 11/15 2 2p 2 | below-line 11 | first fray 7->42
+wall 3*2^k+1 O=97       primes=25     ->prime 0   ->comp 24     ->1 0 ->0 1 ->odd 1     ->even 23     [2mod4 13 (half prime 6) 0mod4 8 2^a 1 wall 1] clean 18/23 = self 2 2^a+1 5 3*2^a+1 4 11/15 3 2p 4 | below-line 14 | first fray 5->92 7->90 13->84 19->78 43->54
+wall 3*2^k+1 O=193      primes=44     ->prime 2   ->comp 41     ->1 0 ->0 1 ->odd 1     ->even 42     [2mod4 22 (half prime 7) 0mod4 17 2^a 1 wall 2] clean 21/42 = self 3 2^a+1 5 3*2^a+1 4 11/15 4 2p 5 | below-line 16 | first fray 3->190 5->188 7->186 11->182 13->180 19->174
+wall 3*2^k+1 O=385      primes=76     ->prime 2   ->comp 74     ->1 0 ->0 0 ->odd 1     ->even 75     [2mod4 38 (half prime 18) 0mod4 30 2^a 3 wall 4] clean 33/75 = self 7 2^a+1 8 3*2^a+1 3 11/15 0 2p 15 | below-line 18 | first fray 5->380 7->378 11->374 13->372 17->368 19->366
+wall 3*2^k+1 O=769      primes=136    ->prime 0   ->comp 135    ->1 0 ->0 1 ->odd 1     ->even 134    [2mod4 70 (half prime 16) 0mod4 58 2^a 3 wall 3] clean 35/134 = self 6 2^a+1 7 3*2^a+1 5 11/15 3 2p 14 | below-line 21 | first fray 5->764 7->762 13->756 17->752 19->750 29->740
+wall 3*2^k+1 O=1537     primes=242    ->prime 0   ->comp 242    ->1 0 ->0 0 ->odd 1     ->even 241    [2mod4 124 (half prime 30) 0mod4 112 2^a 1 wall 4] clean 54/241 = self 5 2^a+1 10 3*2^a+1 9 11/15 4 2p 26 | below-line 28 | first fray 3->1534 5->1532 7->1530 11->1526 13->1524 17->1520
+wall 3*2^k+1 O=3073     primes=439    ->prime 0   ->comp 439    ->1 0 ->0 0 ->odd 1     ->even 438    [2mod4 221 (half prime 57) 0mod4 212 2^a 1 wall 4] clean 83/438 = self 5 2^a+1 9 3*2^a+1 8 11/15 7 2p 54 | below-line 29 | first fray 3->3070 5->3068 7->3066 13->3060 17->3056 19->3054
+wall 3*2^k+1 O=6145     primes=801    ->prime 2   ->comp 799    ->1 0 ->0 0 ->odd 1     ->even 800    [2mod4 407 (half prime 97) 0mod4 388 2^a 2 wall 3] clean 119/800 = self 5 2^a+1 10 3*2^a+1 5 11/15 3 2p 96 | below-line 23 | first fray 3->6142 5->6140 7->6138 13->6132 17->6128 19->6126
+wall 3*2^k+1 O=12289    primes=1470   ->prime 0   ->comp 1469   ->1 0 ->0 1 ->odd 1     ->even 1468   [2mod4 744 (half prime 131) 0mod4 717 2^a 3 wall 4] clean 163/1468 = self 7 2^a+1 12 3*2^a+1 10 11/15 5 2p 129 | below-line 34 | first fray 5->12284 7->12282 11->12278 13->12276 17->12272 19->12270
+wall 3*2^k+1 O=24577    primes=2725   ->prime 0   ->comp 2725   ->1 0 ->0 0 ->odd 1     ->even 2724   [2mod4 1368 (half prime 256) 0mod4 1351 2^a 0 wall 5] clean 297/2724 = self 5 2^a+1 20 3*2^a+1 12 11/15 7 2p 253 | below-line 44 | first fray 3->24574 5->24572 7->24570 11->24566 13->24564 17->24560
+wall 3*2^k+1 O=49153    primes=5051   ->prime 0   ->comp 5051   ->1 0 ->0 0 ->odd 1     ->even 5050   [2mod4 2538 (half prime 418) 0mod4 2509 2^a 2 wall 1] clean 457/5050 = self 3 2^a+1 14 3*2^a+1 15 11/15 9 2p 416 | below-line 41 | first fray 3->49150 5->49148 7->49146 13->49140 17->49136 19->49134
+wall 3*2^k+1 O=98305    primes=9439   ->prime 0   ->comp 9439   ->1 0 ->0 0 ->odd 1     ->even 9438   [2mod4 4733 (half prime 838) 0mod4 4698 2^a 2 wall 5] clean 875/9438 = self 7 2^a+1 18 3*2^a+1 13 11/15 2 2p 835 | below-line 40 | first fray 3->98302 5->98300 7->98298 11->98294 13->98292 17->98288
+wall 3*2^k+1 O=196609   primes=17704  ->prime 0   ->comp 17704  ->1 0 ->0 0 ->odd 1     ->even 17703  [2mod4 8874 (half prime 1326) 0mod4 8822 2^a 3 wall 4] clean 1368/17703 = self 7 2^a+1 25 3*2^a+1 9 11/15 4 2p 1323 | below-line 45 | first fray 3->196606 5->196604 7->196602 13->196596 17->196592 19->196590
+wall 3*2^k+1 O=393217   primes=33335  ->prime 0   ->comp 33335  ->1 0 ->0 0 ->odd 1     ->even 33334  [2mod4 16699 (half prime 2221) 0mod4 16632 2^a 1 wall 2] clean 2273/33334 = self 3 2^a+1 25 3*2^a+1 20 11/15 8 2p 2217 | below-line 56 | first fray 3->393214 5->393212 7->393210 11->393206 13->393204 17->393200
+wall 3*2^k+1 O=786433   primes=62947  ->prime 2   ->comp 62944  ->1 0 ->0 1 ->odd 1     ->even 62945  [2mod4 31540 (half prime 3535) 0mod4 31397 2^a 3 wall 5] clean 3582/62945 = self 8 2^a+1 19 3*2^a+1 19 11/15 4 2p 3532 | below-line 50 | first fray 3->786430 5->786428 7->786426 11->786422 13->786420 17->786416
+-- wall 3*2^k
+  wall 3*2^k O=6        primes=3      ->prime 1   ->comp 1      ->1 1 ->0 0 ->odd 2     ->even 1      [2mod4 0 (half prime 0) 0mod4 0 2^a 1 wall 0] clean 1/1 = self 1 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 1 | first fray 
+  wall 3*2^k O=12       primes=5      ->prime 2   ->comp 2      ->1 1 ->0 0 ->odd 4     ->even 1      [2mod4 1 (half prime 1) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 1 3*2^a+1 0 11/15 0 2p 0 | below-line 1 | first fray 
+  wall 3*2^k O=24       primes=9      ->prime 6   ->comp 2      ->1 1 ->0 0 ->odd 8     ->even 1      [2mod4 1 (half prime 1) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 1 2p 0 | below-line 1 | first fray 
+  wall 3*2^k O=48       primes=15     ->prime 10  ->comp 4      ->1 1 ->0 0 ->odd 14    ->even 1      [2mod4 1 (half prime 1) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 1 | below-line 0 | first fray 
+  wall 3*2^k O=96       primes=24     ->prime 14  ->comp 10     ->1 0 ->0 0 ->odd 23    ->even 1      [2mod4 1 (half prime 1) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 1 | below-line 0 | first fray 
+  wall 3*2^k O=192      primes=43     ->prime 22  ->comp 20     ->1 1 ->0 0 ->odd 42    ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->190
+  wall 3*2^k O=384      primes=76     ->prime 38  ->comp 37     ->1 1 ->0 0 ->odd 75    ->even 1      [2mod4 1 (half prime 1) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 1 | below-line 0 | first fray 
+  wall 3*2^k O=768      primes=135    ->prime 62  ->comp 73     ->1 0 ->0 0 ->odd 134   ->even 1      [2mod4 1 (half prime 1) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 1 | below-line 0 | first fray 
+  wall 3*2^k O=1536     primes=242    ->prime 94  ->comp 148    ->1 0 ->0 0 ->odd 241   ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->1534
+  wall 3*2^k O=3072     primes=439    ->prime 158 ->comp 281    ->1 0 ->0 0 ->odd 438   ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->3070
+  wall 3*2^k O=6144     primes=801    ->prime 290 ->comp 510    ->1 1 ->0 0 ->odd 800   ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->6142
+  wall 3*2^k O=12288    primes=1469   ->prime 452 ->comp 1017   ->1 0 ->0 0 ->odd 1468  ->even 1      [2mod4 1 (half prime 1) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 1 | below-line 0 | first fray 
+  wall 3*2^k O=24576    primes=2725   ->prime 794 ->comp 1931   ->1 0 ->0 0 ->odd 2724  ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->24574
+  wall 3*2^k O=49152    primes=5051   ->prime 1350 ->comp 3701   ->1 0 ->0 0 ->odd 5050  ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->49150
+  wall 3*2^k O=98304    primes=9439   ->prime 2370 ->comp 7069   ->1 0 ->0 0 ->odd 9438  ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->98302
+  wall 3*2^k O=196608   primes=17704  ->prime 4220 ->comp 13484  ->1 0 ->0 0 ->odd 17703 ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->196606
+  wall 3*2^k O=393216   primes=33335  ->prime 7358 ->comp 25977  ->1 0 ->0 0 ->odd 33334 ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->393214
+  wall 3*2^k O=786432   primes=62946  ->prime 13278 ->comp 49667  ->1 1 ->0 0 ->odd 62945 ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->786430
+-- wall 3*2^k-1
+wall 3*2^k-1 O=5        primes=3      ->prime 2   ->comp 0      ->1 0 ->0 1 ->odd 1     ->even 1      [2mod4 0 (half prime 0) 0mod4 0 2^a 1 wall 0] clean 1/1 = self 1 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 1 | first fray 
+wall 3*2^k-1 O=11       primes=5      ->prime 0   ->comp 4      ->1 0 ->0 1 ->odd 1     ->even 3      [2mod4 0 (half prime 1) 0mod4 0 2^a 2 wall 1] clean 3/3 = self 3 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 3 | first fray 
+wall 3*2^k-1 O=23       primes=9      ->prime 0   ->comp 8      ->1 0 ->0 1 ->odd 1     ->even 7      [2mod4 2 (half prime 2) 0mod4 1 2^a 2 wall 2] clean 7/7 = self 4 2^a+1 3 3*2^a+1 0 11/15 0 2p 0 | below-line 7 | first fray 
+wall 3*2^k-1 O=47       primes=15     ->prime 0   ->comp 14     ->1 0 ->0 1 ->odd 1     ->even 13     [2mod4 5 (half prime 3) 0mod4 4 2^a 2 wall 2] clean 12/13 = self 4 2^a+1 5 3*2^a+1 1 11/15 2 2p 0 | below-line 12 | first fray 5->42
+wall 3*2^k-1 O=95       primes=24     ->prime 0   ->comp 24     ->1 0 ->0 0 ->odd 1     ->even 23     [2mod4 9 (half prime 5) 0mod4 8 2^a 2 wall 4] clean 16/23 = self 6 2^a+1 4 3*2^a+1 2 11/15 2 2p 2 | below-line 14 | first fray 3->92 5->90 11->84 17->78 19->76 41->54
+wall 3*2^k-1 O=191      primes=43     ->prime 0   ->comp 42     ->1 0 ->0 1 ->odd 1     ->even 41     [2mod4 19 (half prime 6) 0mod4 19 2^a 1 wall 2] clean 21/41 = self 3 2^a+1 8 3*2^a+1 3 11/15 3 2p 4 | below-line 17 | first fray 3->188 5->186 7->184 11->180 17->174 19->172
+wall 3*2^k-1 O=383      primes=76     ->prime 0   ->comp 75     ->1 0 ->0 1 ->odd 1     ->even 74     [2mod4 35 (half prime 9) 0mod4 34 2^a 3 wall 2] clean 26/74 = self 5 2^a+1 8 3*2^a+1 3 11/15 3 2p 7 | below-line 19 | first fray 3->380 5->378 7->376 11->372 13->370 17->366
+wall 3*2^k-1 O=767      primes=135    ->prime 0   ->comp 135    ->1 0 ->0 0 ->odd 1     ->even 134    [2mod4 63 (half prime 18) 0mod4 66 2^a 1 wall 4] clean 39/134 = self 5 2^a+1 14 3*2^a+1 4 11/15 1 2p 15 | below-line 24 | first fray 3->764 5->762 7->760 11->756 13->754 17->750
+wall 3*2^k-1 O=1535     primes=242    ->prime 0   ->comp 242    ->1 0 ->0 0 ->odd 1     ->even 241    [2mod4 116 (half prime 30) 0mod4 117 2^a 3 wall 5] clean 54/241 = self 8 2^a+1 10 3*2^a+1 5 11/15 2 2p 29 | below-line 25 | first fray 3->1532 5->1530 7->1528 11->1524 17->1518 19->1516
+wall 3*2^k-1 O=3071     primes=439    ->prime 0   ->comp 439    ->1 0 ->0 0 ->odd 1     ->even 438    [2mod4 216 (half prime 50) 0mod4 218 2^a 1 wall 3] clean 79/438 = self 4 2^a+1 12 3*2^a+1 9 11/15 8 2p 46 | below-line 33 | first fray 3->3068 5->3066 7->3064 11->3060 13->3058 17->3054
+wall 3*2^k-1 O=6143     primes=801    ->prime 0   ->comp 800    ->1 0 ->0 1 ->odd 1     ->even 799    [2mod4 392 (half prime 73) 0mod4 403 2^a 2 wall 2] clean 98/799 = self 4 2^a+1 13 3*2^a+1 6 11/15 4 2p 71 | below-line 27 | first fray 3->6140 5->6138 7->6136 11->6132 13->6130 17->6126
+wall 3*2^k-1 O=12287    primes=1469   ->prime 0   ->comp 1469   ->1 0 ->0 0 ->odd 1     ->even 1468   [2mod4 723 (half prime 132) 0mod4 738 2^a 1 wall 6] clean 162/1468 = self 7 2^a+1 15 3*2^a+1 8 11/15 3 2p 129 | below-line 33 | first fray 3->12284 5->12282 7->12280 11->12276 13->12274 17->12270
+wall 3*2^k-1 O=24575    primes=2725   ->prime 0   ->comp 2725   ->1 0 ->0 0 ->odd 1     ->even 2724   [2mod4 1355 (half prime 288) 0mod4 1362 2^a 3 wall 4] clean 319/2724 = self 7 2^a+1 14 3*2^a+1 9 11/15 2 2p 287 | below-line 32 | first fray 3->24572 5->24570 7->24568 11->24564 17->24558 19->24556
+wall 3*2^k-1 O=49151    primes=5051   ->prime 0   ->comp 5051   ->1 0 ->0 0 ->odd 1     ->even 5050   [2mod4 2512 (half prime 390) 0mod4 2534 2^a 0 wall 4] clean 427/5050 = self 4 2^a+1 16 3*2^a+1 13 11/15 5 2p 389 | below-line 38 | first fray 3->49148 5->49146 7->49144 11->49140 13->49138 17->49134
+wall 3*2^k-1 O=98303    primes=9439   ->prime 0   ->comp 9439   ->1 0 ->0 0 ->odd 1     ->even 9438   [2mod4 4703 (half prime 654) 0mod4 4726 2^a 4 wall 5] clean 685/9438 = self 9 2^a+1 14 3*2^a+1 8 11/15 3 2p 651 | below-line 34 | first fray 3->98300 5->98298 7->98296 11->98292 13->98290 17->98286
+wall 3*2^k-1 O=196607   primes=17704  ->prime 0   ->comp 17704  ->1 0 ->0 0 ->odd 1     ->even 17703  [2mod4 8829 (half prime 1135) 0mod4 8869 2^a 2 wall 3] clean 1179/17703 = self 5 2^a+1 21 3*2^a+1 12 11/15 7 2p 1134 | below-line 45 | first fray 3->196604 5->196602 7->196600 11->196596 17->196590 19->196588
+wall 3*2^k-1 O=393215   primes=33335  ->prime 0   ->comp 33335  ->1 0 ->0 0 ->odd 1     ->even 33334  [2mod4 16634 (half prime 2615) 0mod4 16692 2^a 1 wall 7] clean 2665/33334 = self 8 2^a+1 31 3*2^a+1 12 11/15 1 2p 2613 | below-line 52 | first fray 3->393212 5->393210 7->393208 11->393204 13->393202 17->393198
+wall 3*2^k-1 O=786431   primes=62946  ->prime 0   ->comp 62945  ->1 0 ->0 1 ->odd 1     ->even 62944  [2mod4 31404 (half prime 3506) 0mod4 31531 2^a 2 wall 7] clean 3567/62944 = self 9 2^a+1 34 3*2^a+1 13 11/15 6 2p 3505 | below-line 62 | first fray 3->786428 5->786426 7->786424 11->786420 17->786414 19->786412
+asserted: decimal 11,101,1001,10001,100001 send NO prime to a prime (odd offset forces 2; 10^k - 1 = 9..9 composite)
+== layer rows, O = 11 ==
+     2 -> 9      odd c  u=15 2m-u=3 u/m=5/3
+     3 -> 8      2^a    win 2|3      u=8       2m-u=8       u/m=1         core 1 [self] self
+     5 -> 6      wall   win 1|2      u=6       2m-u=6       u/m=1         core 3 [self] self
+     7 -> 4      2^a    win 2|3      u=4       2m-u=4       u/m=1         core 1 [self] self
+    11 -> 0
+== layer rows, O = 101 ==
+     2 -> 99     odd c  u=280 2m-u=-82 u/m=280/99
+     3 -> 98     2mod4  win 1|2      u=188     2m-u=8       u/m=94/49     core 49 [3*2^a+1] 3*2^a+1
+     5 -> 96     wall   win 1|2      u=96      2m-u=96      u/m=1         core 3 [self] self
+     7 -> 94     2mod4  win 2|3 in5  u=256     2m-u=-68     u/m=128/47    core 47 [above] 2p
+    11 -> 90     2mod4  win 2|3 in5  u=264     2m-u=-84     u/m=44/15     core 45 [above] fray
+    13 -> 88     0mod4  win 2|3 in5  u=160     2m-u=16      u/m=20/11     core 11 [11/15] 11/15
+    17 -> 84     0mod4  win 2|3 in5  u=192     2m-u=-24     u/m=16/7      core 21 [above] fray
+    19 -> 82     2mod4  win 2|3 in5  u=208     2m-u=-44     u/m=104/41    core 41 [above] 2p
+    23 -> 78     2mod4  win 2|3      u=232     2m-u=-76     u/m=116/39    core 39 [above] fray
+    29 -> 72     0mod4  win 2|3      u=120     2m-u=24      u/m=5/3       core 9 [2^a+1] 2^a+1
+    31 -> 70     2mod4  win 2|3      u=184     2m-u=-44     u/m=92/35     core 35 [above] fray
+    37 -> 64     2^a    win 2|3      u=64      2m-u=64      u/m=1         core 1 [self] self
+    41 -> 60     0mod4  win 1|2 in7  u=112     2m-u=8       u/m=28/15     core 15 [11/15] 11/15
+    43 -> 58     2mod4  win 1|2 in7  u=136     2m-u=-20     u/m=68/29     core 29 [above] 2p
+    47 -> 54     2mod4  win 1|2      u=128     2m-u=-20     u/m=64/27     core 27 [above] fray
+    53 -> 48     wall   win 1|2      u=48      2m-u=48      u/m=1         core 3 [self] self
+    59 -> 42     2mod4  win 2|3 in5  u=96      2m-u=-12     u/m=16/7      core 21 [above] fray
+    61 -> 40     0mod4  win 2|3 in5  u=56      2m-u=24      u/m=7/5       core 5 [2^a+1] 2^a+1
+    67 -> 34     2mod4  win 2|3      u=62      2m-u=6       u/m=31/17     core 17 [2^a+1] 2^a+1
+    71 -> 30     2mod4  win 1|2 in7  u=56      2m-u=4       u/m=28/15     core 15 [11/15] 11/15
+    73 -> 28     0mod4  win 1|2 in7  u=40      2m-u=16      u/m=10/7      core 7 [3*2^a+1] 3*2^a+1
+    79 -> 22     2mod4  win 2|3 in5  u=40      2m-u=4       u/m=20/11     core 11 [11/15] 11/15
+    83 -> 18     2mod4  win 2|3      u=30      2m-u=6       u/m=5/3       core 9 [2^a+1] 2^a+1
+    89 -> 12     wall   win 1|2      u=12      2m-u=12      u/m=1         core 3 [self] self
+    97 -> 4      2^a    win 2|3      u=4       2m-u=4       u/m=1         core 1 [self] self
+   101 -> 0
+== layer rows, O = 33 ==
+     2 -> 31     odd P  u=72 2m-u=-10 u/m=72/31
+     3 -> 30     2mod4  win 1|2 in7  u=56      2m-u=4       u/m=28/15     core 15 [11/15] 11/15
+     5 -> 28     0mod4  win 1|2 in7  u=40      2m-u=16      u/m=10/7      core 7 [3*2^a+1] 3*2^a+1
+     7 -> 26     2mod4  win 1|2      u=44      2m-u=8       u/m=22/13     core 13 [3*2^a+1] 3*2^a+1
+    11 -> 22     2mod4  win 2|3 in5  u=40      2m-u=4       u/m=20/11     core 11 [11/15] 11/15
+    13 -> 20     0mod4  win 2|3 in5  u=28      2m-u=12      u/m=7/5       core 5 [2^a+1] 2^a+1
+    17 -> 16     2^a    win 2|3      u=16      2m-u=16      u/m=1         core 1 [self] self
+    19 -> 14     2mod4  win 1|2 in7  u=20      2m-u=8       u/m=10/7      core 7 [3*2^a+1] 3*2^a+1
+    23 -> 10     2mod4  win 2|3 in5  u=14      2m-u=6       u/m=7/5       core 5 [2^a+1] 2^a+1
+    29 -> 4      2^a    win 2|3      u=4       2m-u=4       u/m=1         core 1 [self] self
+    31 -> 2      2^a    win 2|3      u=2       2m-u=2       u/m=1         core 1 [self] self
+== layer rows, O = 65 ==
+     2 -> 63     odd c  u=176 2m-u=-50 u/m=176/63
+     3 -> 62     2mod4  win 1|2 in7  u=144     2m-u=-20     u/m=72/31     core 31 [above] 2p
+     5 -> 60     0mod4  win 1|2 in7  u=112     2m-u=8       u/m=28/15     core 15 [11/15] 11/15
+     7 -> 58     2mod4  win 1|2 in7  u=136     2m-u=-20     u/m=68/29     core 29 [above] 2p
+    11 -> 54     2mod4  win 1|2      u=128     2m-u=-20     u/m=64/27     core 27 [above] fray
+    13 -> 52     0mod4  win 1|2      u=88      2m-u=16      u/m=22/13     core 13 [3*2^a+1] 3*2^a+1
+    17 -> 48     wall   win 1|2      u=48      2m-u=48      u/m=1         core 3 [self] self
+    19 -> 46     2mod4  win 2|3 in5  u=104     2m-u=-12     u/m=52/23     core 23 [above] 2p
+    23 -> 42     2mod4  win 2|3 in5  u=96      2m-u=-12     u/m=16/7      core 21 [above] fray
+    29 -> 36     0mod4  win 2|3      u=60      2m-u=12      u/m=5/3       core 9 [2^a+1] 2^a+1
+    31 -> 34     2mod4  win 2|3      u=62      2m-u=6       u/m=31/17     core 17 [2^a+1] 2^a+1
+    37 -> 28     0mod4  win 1|2 in7  u=40      2m-u=16      u/m=10/7      core 7 [3*2^a+1] 3*2^a+1
+    41 -> 24     wall   win 1|2      u=24      2m-u=24      u/m=1         core 3 [self] self
+    43 -> 22     2mod4  win 2|3 in5  u=40      2m-u=4       u/m=20/11     core 11 [11/15] 11/15
+    47 -> 18     2mod4  win 2|3      u=30      2m-u=6       u/m=5/3       core 9 [2^a+1] 2^a+1
+    53 -> 12     wall   win 1|2      u=12      2m-u=12      u/m=1         core 3 [self] self
+    59 -> 6      wall   win 1|2      u=6       2m-u=6       u/m=1         core 3 [self] self
+    61 -> 4      2^a    win 2|3      u=4       2m-u=4       u/m=1         core 1 [self] self
+== layer rows, O = 129 ==
+     2 -> 127    odd P  u=416 2m-u=-162 u/m=416/127
+     3 -> 126    2mod4  win 1|2 in7  u=352     2m-u=-100    u/m=176/63    core 63 [above] fray
+     5 -> 124    0mod4  win 1|2 in7  u=288     2m-u=-40     u/m=72/31     core 31 [above] fray
+     7 -> 122    2mod4  win 1|2 in7  u=368     2m-u=-124    u/m=184/61    core 61 [above] 2p
+    11 -> 118    2mod4  win 1|2 in7  u=384     2m-u=-148    u/m=192/59    core 59 [above] 2p
+    13 -> 116    0mod4  win 1|2 in7  u=272     2m-u=-40     u/m=68/29     core 29 [above] fray
+    17 -> 112    0mod4  win 1|2 in7  u=160     2m-u=64      u/m=10/7      core 7 [3*2^a+1] 3*2^a+1
+    19 -> 110    2mod4  win 1|2      u=336     2m-u=-116    u/m=168/55    core 55 [above] fray
+    23 -> 106    2mod4  win 1|2      u=304     2m-u=-92     u/m=152/53    core 53 [above] 2p
+    29 -> 100    0mod4  win 1|2      u=184     2m-u=16      u/m=46/25     core 25 [3*2^a+1] 3*2^a+1
+    31 -> 98     2mod4  win 1|2      u=188     2m-u=8       u/m=94/49     core 49 [3*2^a+1] 3*2^a+1
+    37 -> 92     0mod4  win 2|3 in5  u=208     2m-u=-24     u/m=52/23     core 23 [above] fray
+    41 -> 88     0mod4  win 2|3 in5  u=160     2m-u=16      u/m=20/11     core 11 [11/15] 11/15
+    43 -> 86     2mod4  win 2|3 in5  u=272     2m-u=-100    u/m=136/43    core 43 [above] 2p
+    47 -> 82     2mod4  win 2|3 in5  u=208     2m-u=-44     u/m=104/41    core 41 [above] 2p
+    53 -> 76     0mod4  win 2|3      u=176     2m-u=-24     u/m=44/19     core 19 [above] fray
+    59 -> 70     2mod4  win 2|3      u=184     2m-u=-44     u/m=92/35     core 35 [above] fray
+    61 -> 68     0mod4  win 2|3      u=124     2m-u=12      u/m=31/17     core 17 [2^a+1] 2^a+1
+    67 -> 62     2mod4  win 1|2 in7  u=144     2m-u=-20     u/m=72/31     core 31 [above] 2p
+    71 -> 58     2mod4  win 1|2 in7  u=136     2m-u=-20     u/m=68/29     core 29 [above] 2p
+    73 -> 56     0mod4  win 1|2 in7  u=80      2m-u=32      u/m=10/7      core 7 [3*2^a+1] 3*2^a+1
+    79 -> 50     2mod4  win 1|2      u=92      2m-u=8       u/m=46/25     core 25 [3*2^a+1] 3*2^a+1
+    83 -> 46     2mod4  win 2|3 in5  u=104     2m-u=-12     u/m=52/23     core 23 [above] 2p
+    89 -> 40     0mod4  win 2|3 in5  u=56      2m-u=24      u/m=7/5       core 5 [2^a+1] 2^a+1
+    97 -> 32     2^a    win 2|3      u=32      2m-u=32      u/m=1         core 1 [self] self
+   101 -> 28     0mod4  win 1|2 in7  u=40      2m-u=16      u/m=10/7      core 7 [3*2^a+1] 3*2^a+1
+   103 -> 26     2mod4  win 1|2      u=44      2m-u=8       u/m=22/13     core 13 [3*2^a+1] 3*2^a+1
+   107 -> 22     2mod4  win 2|3 in5  u=40      2m-u=4       u/m=20/11     core 11 [11/15] 11/15
+   109 -> 20     0mod4  win 2|3 in5  u=28      2m-u=12      u/m=7/5       core 5 [2^a+1] 2^a+1
+   113 -> 16     2^a    win 2|3      u=16      2m-u=16      u/m=1         core 1 [self] self
+   127 -> 2      2^a    win 2|3      u=2       2m-u=2       u/m=1         core 1 [self] self
+== layer rows, O = 49 ==
+     2 -> 47     odd P  u=128 2m-u=-34 u/m=128/47
+     3 -> 46     2mod4  win 2|3 in5  u=104     2m-u=-12     u/m=52/23     core 23 [above] 2p
+     5 -> 44     0mod4  win 2|3 in5  u=80      2m-u=8       u/m=20/11     core 11 [11/15] 11/15
+     7 -> 42     2mod4  win 2|3 in5  u=96      2m-u=-12     u/m=16/7      core 21 [above] fray
+    11 -> 38     2mod4  win 2|3      u=88      2m-u=-12     u/m=44/19     core 19 [above] 2p
+    13 -> 36     0mod4  win 2|3      u=60      2m-u=12      u/m=5/3       core 9 [2^a+1] 2^a+1
+    17 -> 32     2^a    win 2|3      u=32      2m-u=32      u/m=1         core 1 [self] self
+    19 -> 30     2mod4  win 1|2 in7  u=56      2m-u=4       u/m=28/15     core 15 [11/15] 11/15
+    23 -> 26     2mod4  win 1|2      u=44      2m-u=8       u/m=22/13     core 13 [3*2^a+1] 3*2^a+1
+    29 -> 20     0mod4  win 2|3 in5  u=28      2m-u=12      u/m=7/5       core 5 [2^a+1] 2^a+1
+    31 -> 18     2mod4  win 2|3      u=30      2m-u=6       u/m=5/3       core 9 [2^a+1] 2^a+1
+    37 -> 12     wall   win 1|2      u=12      2m-u=12      u/m=1         core 3 [self] self
+    41 -> 8      2^a    win 2|3      u=8       2m-u=8       u/m=1         core 1 [self] self
+    43 -> 6      wall   win 1|2      u=6       2m-u=6       u/m=1         core 3 [self] self
+    47 -> 2      2^a    win 2|3      u=2       2m-u=2       u/m=1         core 1 [self] self
+== layer rows, O = 97 ==
+     2 -> 95     odd c  u=304 2m-u=-114 u/m=16/5
+     3 -> 94     2mod4  win 2|3 in5  u=256     2m-u=-68     u/m=128/47    core 47 [above] 2p
+     5 -> 92     0mod4  win 2|3 in5  u=208     2m-u=-24     u/m=52/23     core 23 [above] fray
+     7 -> 90     2mod4  win 2|3 in5  u=264     2m-u=-84     u/m=44/15     core 45 [above] fray
+    11 -> 86     2mod4  win 2|3 in5  u=272     2m-u=-100    u/m=136/43    core 43 [above] 2p
+    13 -> 84     0mod4  win 2|3 in5  u=192     2m-u=-24     u/m=16/7      core 21 [above] fray
+    17 -> 80     0mod4  win 2|3 in5  u=112     2m-u=48      u/m=7/5       core 5 [2^a+1] 2^a+1
+    19 -> 78     2mod4  win 2|3      u=232     2m-u=-76     u/m=116/39    core 39 [above] fray
+    23 -> 74     2mod4  win 2|3      u=208     2m-u=-60     u/m=104/37    core 37 [above] 2p
+    29 -> 68     0mod4  win 2|3      u=124     2m-u=12      u/m=31/17     core 17 [2^a+1] 2^a+1
+    31 -> 66     2mod4  win 2|3      u=126     2m-u=6       u/m=21/11     core 33 [2^a+1] 2^a+1
+    37 -> 60     0mod4  win 1|2 in7  u=112     2m-u=8       u/m=28/15     core 15 [11/15] 11/15
+    41 -> 56     0mod4  win 1|2 in7  u=80      2m-u=32      u/m=10/7      core 7 [3*2^a+1] 3*2^a+1
+    43 -> 54     2mod4  win 1|2      u=128     2m-u=-20     u/m=64/27     core 27 [above] fray
+    47 -> 50     2mod4  win 1|2      u=92      2m-u=8       u/m=46/25     core 25 [3*2^a+1] 3*2^a+1
+    53 -> 44     0mod4  win 2|3 in5  u=80      2m-u=8       u/m=20/11     core 11 [11/15] 11/15
+    59 -> 38     2mod4  win 2|3      u=88      2m-u=-12     u/m=44/19     core 19 [above] 2p
+    61 -> 36     0mod4  win 2|3      u=60      2m-u=12      u/m=5/3       core 9 [2^a+1] 2^a+1
+    67 -> 30     2mod4  win 1|2 in7  u=56      2m-u=4       u/m=28/15     core 15 [11/15] 11/15
+    71 -> 26     2mod4  win 1|2      u=44      2m-u=8       u/m=22/13     core 13 [3*2^a+1] 3*2^a+1
+    73 -> 24     wall   win 1|2      u=24      2m-u=24      u/m=1         core 3 [self] self
+    79 -> 18     2mod4  win 2|3      u=30      2m-u=6       u/m=5/3       core 9 [2^a+1] 2^a+1
+    83 -> 14     2mod4  win 1|2 in7  u=20      2m-u=8       u/m=10/7      core 7 [3*2^a+1] 3*2^a+1
+    89 -> 8      2^a    win 2|3      u=8       2m-u=8       u/m=1         core 1 [self] self
+    97 -> 0
+== 2. tiling up to 1,000,000: (a) per-block mirror n <-> (2j+1)O - n; (b) one line continued past 0m, |n_m| = n - O ==
+      blk 11 O=11       primes=78497  ->prime 0   ->comp 78497  ->1 0 ->0 0 ->odd 1     ->even 78496  [2mod4 39141 (half prime 7223) 0mod4 39342 2^a 7 wall 6] clean 7312/78496 = self 13 2^a+1 35 3*2^a+1 43 11/15 5 2p 7216 | below-line 96 | first fray 67->76 73->70 97->90 101->108 107->102 127->126
+    shift 11 O=11       primes=78493  ->prime 1   ->comp 78492  ->1 0 ->0 0 ->odd 0     ->even 78493  [2mod4 39172 (half prime 4798) 0mod4 39310 2^a 6 wall 5] clean 4873/78493 = self 11 2^a+1 35 3*2^a+1 21 11/15 12 2p 4794 | below-line 79 | first fray 53->42 89->78 101->90 103->92 113->102 127->116
+     blk 101 O=101      primes=78497  ->prime 0   ->comp 78497  ->1 0 ->0 0 ->odd 1     ->even 78496  [2mod4 39383 (half prime 6660) 0mod4 39100 2^a 6 wall 7] clean 6750/78496 = self 13 2^a+1 37 3*2^a+1 34 11/15 9 2p 6657 | below-line 93 | first fray 11->90 17->84 23->78 31->70 47->54 59->42
+   shift 101 O=101      primes=78472  ->prime 1   ->comp 78471  ->1 0 ->0 0 ->odd 0     ->even 78472  [2mod4 39307 (half prime 4432) 0mod4 39149 2^a 7 wall 9] clean 4513/78472 = self 16 2^a+1 35 3*2^a+1 26 11/15 7 2p 4429 | below-line 84 | first fray 179->78 191->90 193->92 211->110 227->126 239->138
+    blk 1001 O=1001     primes=78498  ->prime 0   ->comp 78498  ->1 0 ->0 0 ->odd 1     ->even 78497  [2mod4 39316 (half prime 9207) 0mod4 39164 2^a 8 wall 9] clean 9277/78497 = self 17 2^a+1 30 3*2^a+1 16 11/15 10 2p 9204 | below-line 73 | first fray 5->996 7->994 11->990 13->988 17->984 23->978
+  shift 1001 O=1001     primes=78330  ->prime 0   ->comp 78330  ->1 0 ->0 0 ->odd 0     ->even 78330  [2mod4 39235 (half prime 6316) 0mod4 39081 2^a 5 wall 9] clean 6396/78330 = self 14 2^a+1 43 3*2^a+1 19 11/15 6 2p 6314 | below-line 82 | first fray 1091->90 1093->92 1103->102 1109->108 1117->116 1151->150
+   blk 10001 O=10001    primes=78498  ->prime 0   ->comp 78498  ->1 0 ->0 0 ->odd 1     ->even 78497  [2mod4 39033 (half prime 6600) 0mod4 39462 2^a 2 wall 0] clean 6670/78497 = self 2 2^a+1 29 3*2^a+1 33 11/15 7 2p 6599 | below-line 71 | first fray 5->9996 7->9994 11->9990 13->9988 17->9984 19->9982
+ shift 10001 O=10001    primes=77269  ->prime 0   ->comp 77269  ->1 0 ->0 0 ->odd 0     ->even 77269  [2mod4 38702 (half prime 4330) 0mod4 38561 2^a 4 wall 2] clean 4392/77269 = self 6 2^a+1 36 3*2^a+1 16 11/15 5 2p 4329 | below-line 63 | first fray 10079->78 10091->90 10093->92 10103->102 10111->110 10139->138
+      blk 10 O=10       primes=78498  ->prime 10807 ->comp 67691  ->1 0 ->0 0 ->odd 78497 ->even 1      [2mod4 0 (half prime 0) 0mod4 0 2^a 1 wall 0] clean 1/1 = self 1 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 1 | first fray 
+    shift 10 O=10       primes=78494  ->prime 10934 ->comp 67559  ->1 1 ->0 0 ->odd 78494 ->even 0      [2mod4 0 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/0 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 
+     blk 100 O=100      primes=78498  ->prime 15284 ->comp 63214  ->1 0 ->0 0 ->odd 78497 ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 1 11/15 0 2p 0 | below-line 1 | first fray 
+   shift 100 O=100      primes=78473  ->prime 10906 ->comp 67566  ->1 1 ->0 0 ->odd 78473 ->even 0      [2mod4 0 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/0 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 
+    blk 1000 O=1000     primes=78498  ->prime 15498 ->comp 63000  ->1 0 ->0 0 ->odd 78497 ->even 1      [2mod4 1 (half prime 1) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 1 | below-line 0 | first fray 
+  shift 1000 O=1000     primes=78330  ->prime 10985 ->comp 67345  ->1 0 ->0 0 ->odd 78330 ->even 0      [2mod4 0 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/0 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 
+   blk 10000 O=10000    primes=78498  ->prime 15460 ->comp 63038  ->1 0 ->0 0 ->odd 78497 ->even 1      [2mod4 1 (half prime 1) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 1 | below-line 0 | first fray 
+ shift 10000 O=10000    primes=77269  ->prime 10701 ->comp 66568  ->1 0 ->0 0 ->odd 77269 ->even 0      [2mod4 0 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/0 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 
+       blk 9 O=9        primes=78498  ->prime 2   ->comp 78496  ->1 0 ->0 0 ->odd 1     ->even 78497  [2mod4 39265 (half prime 10205) 0mod4 39222 2^a 9 wall 1] clean 10285/78497 = self 10 2^a+1 28 3*2^a+1 46 11/15 7 2p 10194 | below-line 91 | first fray 97->92 109->116 139->140 149->148 163->170 179->172
+     shift 9 O=9        primes=78494  ->prime 1   ->comp 78493  ->1 0 ->0 0 ->odd 0     ->even 78494  [2mod4 39319 (half prime 8743) 0mod4 39166 2^a 9 wall 0] clean 8837/78494 = self 9 2^a+1 28 3*2^a+1 54 11/15 8 2p 8738 | below-line 99 | first fray 79->70 101->92 149->140 157->148 163->154 173->164
+      blk 99 O=99       primes=78498  ->prime 2   ->comp 78496  ->1 0 ->0 0 ->odd 1     ->even 78497  [2mod4 39268 (half prime 10903) 0mod4 39220 2^a 8 wall 1] clean 10999/78497 = self 9 2^a+1 35 3*2^a+1 56 11/15 1 2p 10898 | below-line 101 | first fray 7->92 23->76 29->70 107->190 109->188 113->184
+    shift 99 O=99       primes=78473  ->prime 1   ->comp 78472  ->1 0 ->0 0 ->odd 0     ->even 78473  [2mod4 39163 (half prime 9598) 0mod4 39300 2^a 10 wall 0] clean 9679/78473 = self 10 2^a+1 31 3*2^a+1 46 11/15 0 2p 9592 | below-line 87 | first fray 191->92 223->124 239->140 251->152 263->164 269->170
+     blk 999 O=999      primes=78498  ->prime 2   ->comp 78496  ->1 0 ->0 0 ->odd 1     ->even 78497  [2mod4 39078 (half prime 9962) 0mod4 39411 2^a 8 wall 0] clean 10047/78497 = self 8 2^a+1 25 3*2^a+1 49 11/15 7 2p 9958 | below-line 89 | first fray 3->996 5->994 7->992 11->988 13->986 19->980
+   shift 999 O=999      primes=78330  ->prime 0   ->comp 78330  ->1 0 ->0 0 ->odd 0     ->even 78330  [2mod4 39095 (half prime 8899) 0mod4 39229 2^a 6 wall 0] clean 8978/78330 = self 6 2^a+1 30 3*2^a+1 45 11/15 4 2p 8893 | below-line 85 | first fray 1069->70 1091->92 1109->110 1123->124 1151->152 1153->154
+    blk 9999 O=9999     primes=78498  ->prime 0   ->comp 78498  ->1 0 ->0 0 ->odd 1     ->even 78497  [2mod4 39474 (half prime 10999) 0mod4 39014 2^a 9 wall 0] clean 11079/78497 = self 9 2^a+1 28 3*2^a+1 47 11/15 0 2p 10995 | below-line 84 | first fray 3->9996 5->9994 7->9992 11->9988 17->9982 19->9980
+  shift 9999 O=9999     primes=77269  ->prime 0   ->comp 77269  ->1 0 ->0 0 ->odd 0     ->even 77269  [2mod4 38566 (half prime 9524) 0mod4 38700 2^a 3 wall 0] clean 9592/77269 = self 3 2^a+1 30 3*2^a+1 39 11/15 0 2p 9520 | below-line 72 | first fray 10069->70 10091->92 10139->140 10151->152 10163->164 10169->170
+      blk 17 O=17       primes=78497  ->prime 0   ->comp 78497  ->1 0 ->0 0 ->odd 1     ->even 78496  [2mod4 39247 (half prime 7168) 0mod4 39235 2^a 8 wall 6] clean 7248/78496 = self 14 2^a+1 30 3*2^a+1 35 11/15 8 2p 7161 | below-line 87 | first fray 43->42 83->70 97->90 107->114 113->108 131->124
+    shift 17 O=17       primes=78491  ->prime 1   ->comp 78490  ->1 0 ->0 0 ->odd 0     ->even 78491  [2mod4 39317 (half prime 4687) 0mod4 39161 2^a 2 wall 11] clean 4774/78491 = self 13 2^a+1 37 3*2^a+1 30 11/15 11 2p 4683 | below-line 91 | first fray 59->42 71->54 101->84 107->90 109->92 127->110
+     blk 257 O=257      primes=78497  ->prime 0   ->comp 78497  ->1 0 ->0 0 ->odd 1     ->even 78496  [2mod4 39277 (half prime 6637) 0mod4 39213 2^a 2 wall 4] clean 6716/78496 = self 6 2^a+1 29 3*2^a+1 35 11/15 13 2p 6633 | below-line 83 | first fray 5->252 7->250 11->246 13->244 19->238 23->234
+   shift 257 O=257      primes=78443  ->prime 0   ->comp 78443  ->1 0 ->0 0 ->odd 0     ->even 78443  [2mod4 39292 (half prime 4388) 0mod4 39140 2^a 1 wall 10] clean 4463/78443 = self 11 2^a+1 27 3*2^a+1 35 11/15 6 2p 4384 | below-line 79 | first fray 311->54 347->90 349->92 359->102 367->110 373->116
+   blk 65537 O=65537    primes=78497  ->prime 0   ->comp 78497  ->1 0 ->0 0 ->odd 1     ->even 78496  [2mod4 39188 (half prime 6395) 0mod4 39302 2^a 4 wall 2] clean 6454/78496 = self 6 2^a+1 26 3*2^a+1 22 11/15 5 2p 6395 | below-line 59 | first fray 3->65534 5->65532 7->65530 11->65526 13->65524 17->65520
+ shift 65537 O=65537    primes=71955  ->prime 1   ->comp 71954  ->1 0 ->0 0 ->odd 0     ->even 71955  [2mod4 36036 (half prime 4062) 0mod4 35911 2^a 1 wall 7] clean 4123/71955 = self 8 2^a+1 27 3*2^a+1 21 11/15 9 2p 4058 | below-line 65 | first fray 65579->42 65629->92 65647->110 65651->114 65677->140 65687->150
+      blk 16 O=16       primes=78498  ->prime 11394 ->comp 67104  ->1 0 ->0 0 ->odd 78497 ->even 1      [2mod4 1 (half prime 1) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 1 11/15 0 2p 0 | below-line 1 | first fray 
+    shift 16 O=16       primes=78492  ->prime 8210 ->comp 70281  ->1 1 ->0 0 ->odd 78492 ->even 0      [2mod4 0 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/0 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 
+     blk 256 O=256      primes=78498  ->prime 12408 ->comp 66090  ->1 0 ->0 0 ->odd 78497 ->even 1      [2mod4 1 (half prime 1) 0mod4 0 2^a 0 wall 0] clean 1/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 1 | below-line 0 | first fray 
+   shift 256 O=256      primes=78444  ->prime 8271 ->comp 70172  ->1 1 ->0 0 ->odd 78444 ->even 0      [2mod4 0 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/0 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 
+   blk 65536 O=65536    primes=78498  ->prime 11939 ->comp 66559  ->1 0 ->0 0 ->odd 78497 ->even 1      [2mod4 1 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/1 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 2->65534
+ shift 65536 O=65536    primes=71956  ->prime 7574 ->comp 64381  ->1 1 ->0 0 ->odd 71956 ->even 0      [2mod4 0 (half prime 0) 0mod4 0 2^a 0 wall 0] clean 0/0 = self 0 2^a+1 0 3*2^a+1 0 11/15 0 2p 0 | below-line 0 | first fray 
+      blk 15 O=15       primes=78498  ->prime 2   ->comp 78496  ->1 0 ->0 0 ->odd 1     ->even 78497  [2mod4 39248 (half prime 12750) 0mod4 39236 2^a 12 wall 1] clean 12834/78497 = self 13 2^a+1 21 3*2^a+1 51 11/15 6 2p 12743 | below-line 91 | first fray 89->76 103->92 109->116 131->124 137->148 151->164
+    shift 15 O=15       primes=78492  ->prime 1   ->comp 78491  ->1 0 ->0 0 ->odd 0     ->even 78492  [2mod4 39172 (half prime 11576) 0mod4 39308 2^a 12 wall 0] clean 11649/78492 = self 12 2^a+1 9 3*2^a+1 46 11/15 12 2p 11570 | below-line 79 | first fray 107->92 131->116 139->124 163->148 167->152 179->164
+     blk 255 O=255      primes=78498  ->prime 0   ->comp 78498  ->1 0 ->0 0 ->odd 1     ->even 78497  [2mod4 39226 (half prime 13016) 0mod4 39262 2^a 9 wall 0] clean 13085/78497 = self 9 2^a+1 6 3*2^a+1 52 11/15 10 2p 13008 | below-line 77 | first fray 3->252 5->250 7->248 11->244 13->242 17->238
+   shift 255 O=255      primes=78444  ->prime 1   ->comp 78443  ->1 0 ->0 0 ->odd 0     ->even 78444  [2mod4 39150 (half prime 12270) 0mod4 39286 2^a 8 wall 0] clean 12349/78444 = self 8 2^a+1 8 3*2^a+1 63 11/15 6 2p 12264 | below-line 85 | first fray 331->76 347->92 379->124 409->154 419->164 439->184
+   blk 65535 O=65535    primes=78498  ->prime 0   ->comp 78498  ->1 0 ->0 0 ->odd 1     ->even 78497  [2mod4 39306 (half prime 13017) 0mod4 39187 2^a 4 wall 0] clean 13062/78497 = self 4 2^a+1 1 3*2^a+1 38 11/15 4 2p 13015 | below-line 47 | first fray 3->65532 5->65530 7->65528 11->65524 13->65522 17->65518
+ shift 65535 O=65535    primes=71956  ->prime 1   ->comp 71955  ->1 0 ->0 0 ->odd 0     ->even 71956  [2mod4 35917 (half prime 11406) 0mod4 36030 2^a 9 wall 0] clean 11465/71956 = self 9 2^a+1 0 3*2^a+1 46 11/15 8 2p 11402 | below-line 63 | first fray 65651->116 65687->152 65699->164 65707->172 65717->182 65719->184
+      blk 13 O=13       primes=78497  ->prime 2   ->comp 78495  ->1 0 ->0 0 ->odd 1     ->even 78496  [2mod4 39244 (half prime 6840) 0mod4 39242 2^a 7 wall 3] clean 6917/78496 = self 10 2^a+1 39 3*2^a+1 25 11/15 9 2p 6834 | below-line 83 | first fray 67->76 73->70 79->90 103->92 107->114 113->108
+    shift 13 O=13       primes=78492  ->prime 0   ->comp 78492  ->1 0 ->0 0 ->odd 0     ->even 78492  [2mod4 39318 (half prime 4756) 0mod4 39163 2^a 3 wall 8] clean 4836/78492 = self 11 2^a+1 46 3*2^a+1 18 11/15 8 2p 4753 | below-line 83 | first fray 67->54 83->70 89->76 97->84 103->90 127->114
+     blk 193 O=193      primes=78497  ->prime 2   ->comp 78495  ->1 0 ->0 0 ->odd 1     ->even 78496  [2mod4 39223 (half prime 6595) 0mod4 39269 2^a 2 wall 2] clean 6674/78496 = self 4 2^a+1 32 3*2^a+1 34 11/15 12 2p 6592 | below-line 82 | first fray 3->190 5->188 7->186 11->182 13->180 19->174
+   shift 193 O=193      primes=78454  ->prime 0   ->comp 78454  ->1 0 ->0 0 ->odd 0     ->even 78454  [2mod4 39298 (half prime 4350) 0mod4 39145 2^a 7 wall 4] clean 4422/78454 = self 11 2^a+1 32 3*2^a+1 21 11/15 11 2p 4347 | below-line 75 | first fray 263->70 269->76 271->78 277->84 283->90 307->114
+   blk 12289 O=12289    primes=78497  ->prime 0   ->comp 78497  ->1 0 ->0 0 ->odd 1     ->even 78496  [2mod4 39355 (half prime 6481) 0mod4 39131 2^a 4 wall 6] clean 6543/78496 = self 10 2^a+1 25 3*2^a+1 23 11/15 6 2p 6479 | below-line 64 | first fray 5->12284 7->12282 11->12278 13->12276 17->12272 19->12270
+ shift 12289 O=12289    primes=77028  ->prime 0   ->comp 77028  ->1 0 ->0 0 ->odd 0     ->even 77028  [2mod4 38578 (half prime 4341) 0mod4 38445 2^a 1 wall 4] clean 4406/77028 = self 5 2^a+1 31 3*2^a+1 23 11/15 7 2p 4340 | below-line 66 | first fray 12343->54 12373->84 12379->90 12391->102 12413->124 12437->148
+== clean evens per block, O = 11, per-block mirror, blocks j < 20 ==
+block [0,11] 2->9:odd  3->8:self  5->6:self  7->4:self
+block [11,22] 13->20:2^a+1  17->16:self  19->14:3*2^a+1
+block [22,33] 23->32:self  29->26:3*2^a+1  31->24:self
+block [33,44] 37->40:2^a+1  41->36:2^a+1  43->34:2^a+1
+block [44,55] 47->52:3*2^a+1  53->46:2p
+block [55,66] 59->62:2p  61->60:11/15
+block [66,77] 67->76:fray  71->72:2^a+1  73->70:fray
+block [77,88] 79->86:2p  83->82:2p
+block [88,99] 89->98:3*2^a+1  97->90:fray
+block [99,110] 101->108:fray  103->106:2p  107->102:fray  109->100:3*2^a+1
+block [110,121] 113->118:2p
+block [121,132] 127->126:fray  131->122:2p
+block [132,143] 137->138:fray  139->136:2^a+1
+block [143,154] 149->148:fray  151->146:2p
+block [154,165] 157->162:fray  163->156:fray
+block [165,176] 167->174:fray  173->168:fray
+block [176,187] 179->184:fray  181->182:fray
+block [187,198] 191->194:3*2^a+1  193->192:self  197->188:fray
+block [198,209] 199->208:3*2^a+1
+block [209,220] 211->218:2p
+== 4. 11-line (place k at 11k) and 22-line ==
+L=11: 1(x)1 = 11; split (first L*m, L!|m, m composite) = 44; first double factoring (484, [(22, 22), (44, 11)]) = L x split
+L=22: 1(x)1 = 22; split (first L*m, L!|m, m composite) = 88; first double factoring (1936, [(44, 44), (88, 22)]) = L x split
+u on 11*2^j: [(11, 20, '20/11'), (22, 40, '20/11'), (44, 80, '20/11'), (88, 160, '20/11'), (176, 320, '20/11'), (352, 640, '20/11')]
+u/n on 11-line places 11k, k=1..30: 1:20/11 2:20/11 3:21/11 4:20/11 5:168/55 6:21/11 7:292/77 8:20/11 9:280/99 10:168/55 11:408/121 12:21/11 13:608/143 14:292/77 15:48/11 16:20/11 17:928/187 18:280/99 19:680/209 20:168/55 21:1136/231 22:408/121 23:1120/253 24:21/11 25:272/55 26:608/143 27:1544/297 28:292/77 29:1600/319 30:48/11
+11-line places below the line (u < 2n), 11k < 10^6: [11, 22, 33, 44, 66, 88, 132, 176, 264, 352, 385, 528, 704, 770, 1056, 1408, 1540, 2112, 2816, 3080, 4224, 5632, 6160, 8448, 11264, 12320, 16896, 22528, 24640, 32769, 33792, 45056, 49280, 65538, 67584, 90112, 98560, 131076, 135168, 180224]
+22-line places below the line, 22k < 10^6: [22, 44, 66, 88, 132, 176, 264, 352, 528, 704, 770, 1056, 1408, 1540, 2112, 2816, 3080, 4224, 5632, 6160, 8448, 11264, 12320, 16896, 22528, 24640, 33792, 45056, 49280, 65538, 67584, 90112, 98560, 131076, 135168, 180224, 197120, 262152, 270336, 360448]
+ladders:  11 = 5,6,5 | 5|6 : 2|3  /  22 = 11,0,11 | 11|12 : 5|6 : 2|3  /  5 = 2,3,2 | 2|3
+== 5a. offsets O where n <-> O - n swaps primes and composites exactly on [2, O-2] (0<->O, 1<->O-1 aside) ==
+O in 5..100000: [11]  (0 <-> 11: nothing <-> prime; 1 <-> 10: unit <-> composite; 2,3,5,7 <-> 9,8,6,4)
+equal count of primes and composites on [2, x] only at x = [9, 11, 13] -> candidate O = x + 2 = 11, 13, 15; 13 and 15 fail at 2 <-> 11, 2 <-> 13
+binary analogue: O = 2^k+1 has prime -> prime exactly when 2^k - 1 is prime (pair 2 <-> 2^k - 1); [5, 9, 33, 129, 8193, 131073, 524289]
+first even that is not clean (not below the line, not 2p): 42
+== 5b. per-block tiling, first fray for odd O 3..99 (O, first fray prime, its mirror, odd primes clean before it), longest first ==
+[(9, 97, 92, 23), (15, 89, 76, 22), (69, 83, 124, 21), (33, 73, 92, 19), (35, 73, 102, 19), (63, 73, 116, 19), (3, 71, 70, 17), (7, 71, 76, 17), (21, 71, 76, 18), (25, 71, 54, 18), (31, 71, 84, 17), (11, 67, 76, 16)]
+O = 11: [(11, 67, 76, 16)]
+== 5. pair sum u(n) + u(O-n) over the block, by offset (min, max, distinct count) ==
+O=9     u(O)=15    sum u min 9 max 15 distinct 4 | pair deficit min 3 max 9 ; n with sum == u(O): 2
+O=10    u(O)=14    sum u min 10 max 16 distinct 4 | pair deficit min 4 max 10 ; n with sum == u(O): 3
+O=11    u(O)=20    sum u min 11 max 20 distinct 6 | pair deficit min 2 max 11 ; n with sum == u(O): 2
+O=15    u(O)=28    sum u min 15 max 28 distinct 5 | pair deficit min 2 max 15 ; n with sum == u(O): 2
+O=16    u(O)=16    sum u min 16 max 29 distinct 6 | pair deficit min 3 max 16 ; n with sum == u(O): 5
+O=17    u(O)=31    sum u min 17 max 31 distinct 7 | pair deficit min 3 max 17 ; n with sum == u(O): 2
+O=99    u(O)=280   sum u min 99 max 376 distinct 38 | pair deficit min -178 max 99 ; n with sum == u(O): 4
+O=100   u(O)=184   sum u min 100 max 383 distinct 43 | pair deficit min -183 max 100 ; n with sum == u(O): 3
+O=101   u(O)=320   sum u min 103 max 382 distinct 40 | pair deficit min -180 max 99 ; n with sum == u(O): 2
+O=31    u(O)=72    sum u min 34 max 72 distinct 14 | pair deficit min -10 max 28 ; n with sum == u(O): 2
+O=32    u(O)=32    sum u min 32 max 73 distinct 13 | pair deficit min -9 max 32 ; n with sum == u(O): 5
+O=33    u(O)=63    sum u min 33 max 74 distinct 14 | pair deficit min -8 max 33 ; n with sum == u(O): 2
+O=63    u(O)=176   sum u min 76 max 196 distinct 24 | pair deficit min -70 max 50 ; n with sum == u(O): 4
+O=64    u(O)=64    sum u min 64 max 199 distinct 28 | pair deficit min -71 max 64 ; n with sum == u(O): 5
+O=65    u(O)=127   sum u min 65 max 198 distinct 24 | pair deficit min -68 max 65 ; n with sum == u(O): 2
+O=12    u(O)=12    sum u min 12 max 21 distinct 5 | pair deficit min 3 max 12 ; n with sum == u(O): 5
+O=13    u(O)=22    sum u min 13 max 22 distinct 6 | pair deficit min 4 max 13 ; n with sum == u(O): 4
+O=24    u(O)=24    sum u min 24 max 53 distinct 9 | pair deficit min -5 max 24 ; n with sum == u(O): 5
+O=25    u(O)=46    sum u min 25 max 54 distinct 12 | pair deficit min -4 max 25 ; n with sum == u(O): 2
+O=999   u(O)=7872  sum u min 1640 max 9356 distinct 342 | pair deficit min -7358 max 358 ; n with sum == u(O): 2
+O=1000  u(O)=3712  sum u min 1312 max 9366 distinct 369 | pair deficit min -7366 max 688 ; n with sum == u(O): 7
+O=1001  u(O)=6848  sum u min 1608 max 9364 distinct 351 | pair deficit min -7362 max 394 ; n with sum == u(O): 2

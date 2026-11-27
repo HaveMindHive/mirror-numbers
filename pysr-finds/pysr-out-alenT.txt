@@ -1,0 +1,12 @@
+/opt/miniconda3/lib/python3.13/site-packages/pysr/sr.py:127: UserWarning: You are using the `^` operator, but have not set up `constraints` for it. This may lead to overly complex expressions. One typical constraint is to use `constraints={..., '^': (-1, 1)}`, which will allow arbitrary-complexity base (-1) but only powers such as a constant or variable (1). For more tips, please see https://pysr.ai/tuning
+  warnings.warn(
+   complexity          loss                                                               equation
+0           1  31620.557000                                                              140.20122
+1           2  24089.965000                                                                 exp(k)
+2           3     66.798900                                                          3.4419358 ^ k
+3           4     66.798820                                                     exp(k * 1.2360289)
+4           5      2.386096                                           3.1010234 ^ (k + 0.45379665)
+5           7      0.062562                            ((3.0328946 ^ k) / 0.53233635) + -3.0633192
+6           9      0.001104                      (((2.9982462 ^ k) + -1.0243287) / 0.49848792) - k
+7          11      0.000295        ((((2.9995499 ^ k) + -0.7323679) / 0.4996351) - k) + -0.5281622
+8          13      0.000207  (k + ((((2.9995499 ^ k) - k) + -0.7323679) / 0.4996351)) + -0.5281622

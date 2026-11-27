@@ -1,0 +1,117 @@
+RELATIVITY / 4D v1.0 11-26-2026
+
+== 1. NOTATION ^ v ==
+asserted: ^v(n) = n; every v level is a palindrome (n<400); m_O(^n) = ^m_(O/2)(n); lm(^n) = v lm(n);
+          lake on the build word (interior bits flipped) = n -> 3*2^(L-1) - n, fold seat = the wall 3*2^(L-2), u = n there.
+  8 = 4,0,4 ; v8 = 2,0,2,,0,0,0,,2,0,2 ; ^ of that = 8.  lm(8)=121/8, lm(^8)=121/16 = v lm(8).  lake_in(11=1011b) = 1101b = 13 = 24-11.
+
+== 2. PARITY WORDS (letters E = factor 2, O = odd prime; a = #E = halvings, b = #O = odd factors with repeats) ==
+asserted (a,b<6): mirror (reverse) maps faces to faces; palindromic face exists unless a,b both odd;
+  oddeven/evenodd (a,b)=(1,1)=2p: no self-mirror face, only the pair EO|OE.  oddeveneven (2,1)=4p: EOE, centre O.
+  evenoddodd (1,2)=2pq,2p^2: OEO, centre E.  lake (E<->O) maps (a,b)->(b,a): 4p <-> 2pq lake partners; prime O <-> 2.
+  to   100000: all [32957, 33708, 16436, 16898]  composites [32957, 24117, 16435, 16898]  (order ['hinge (a,b even)', 'centre O (a even,b odd)', 'centre E (a odd,b even)', 'no self-mirror (a,b odd)'])
+  to  1000000: all [332253, 334413, 165852, 167481]  composites [332253, 255916, 165851, 167481]  (order ['hinge (a,b even)', 'centre O (a even,b odd)', 'centre E (a odd,b even)', 'no self-mirror (a,b odd)'])
+  to 10000000: all [3330037, 3336628, 1663793, 1669541]  composites [3330037, 2672050, 1663792, 1669541]  (order ['hinge (a,b even)', 'centre O (a even,b odd)', 'centre E (a odd,b even)', 'no self-mirror (a,b odd)'])
+  centre-O beats hinge on all n (Polya-type lean: the same fact reached by a different route, Liouville/Polya);
+  among composites the hinge class leads (primes all sit in centre O).
+  named word classes, exact counts to 1e7, prime on the left (n-1) vs on the right (n+1):
+    oddeven/evenodd 2p     count   348512  prime left   30738  prime right   30656  both      1
+    oddeveneven 4p         count   183071  prime left   16157  prime right   16196  both      1
+    evenoddodd 2pq,2p^2    count   796202  prime left   86181  prime right   86206  both   3377
+    evenevenodd.. 8p       count    96468  prime left    8459  prime right    8562  both      0
+    2pqr..                 count   728501  prime left   99506  prime right   99686  both   8321
+    odd pq                 count  1555811  prime left       0  prime right       0  both      0
+    odd pqr                count  1465085  prime left       0  prime right       0  both      0
+  classes of a prime's two neighbours (p >= 5), by family p mod 4 (deep side = 4 | neighbour):
+    to  1000000 p=1 mod 4 (39175): left [13068, 13047, 6497, 6563]  right [0, 0, 19611, 19564]
+    to  1000000 p=3 mod 4 (39321): left [0, 0, 19783, 19538]  right [13046, 13196, 6586, 6493]
+    to  1000000: E2 neighbour's odd core has even Omega in 39394 of 78496 (0.50186); all 2*odd seats 0.49831
+    to 10000000 p=1 mod 4 (332180): left [110700, 110813, 55215, 55452]  right [0, 0, 166547, 165633]
+    to 10000000 p=3 mod 4 (332397): left [0, 0, 166544, 165853]  right [110657, 110904, 55524, 55312]
+    to 10000000: E2 neighbour's odd core has even Omega in 333091 of 664577 (0.50121); all 2*odd seats 0.49937
+  asserted to 1e7: circle primes (1 mod 4) have the 2*odd neighbour on the right, 3 mod 4 on the left (known side law).
+  spine word (centre digits going down = binary), odd n of bit length L: prime -> prime under each frame
+    L  primes  mirror(reverse)  lake_in(wall mirror)  lake of mirror   random odd share
+   12     255       94 (0.3686)       92 (0.3608)       97 (0.3804)   0.2490
+   14     872      308 (0.3532)      218 (0.2500)      274 (0.3142)   0.2129
+   16    3030      908 (0.2997)      750 (0.2475)      815 (0.2690)   0.1849
+   18   10749     2814 (0.2618)     2342 (0.2179)     2557 (0.2379)   0.1640
+   20   38635     9210 (0.2384)     7440 (0.1926)     8467 (0.2192)   0.1474
+   22  140336        -              24820 (0.1769)        -           0.1338
+   23  268216        -              45420 (0.1693)        -           0.1279
+  both frames keep the 3 mirror (the wall offset 3*2^(L-1) is a multiple of 3; read backwards, 2 = -1 on the 3 mirror),
+  so a prime's image is off 3 and prime -> prime runs above the random odd share (x1.3 to x1.6 at L = 20).
+
+== 3. FRAMES: which readings stay the same (invariant), change by a fixed law (contract), or have no law ==
+  share of n (to 1000000) whose image value is the one most often paired with its own value; 1.0000 = exact law; '=' = invariant
+  reading                     ^ (2n)  v (n//2, n eve         ^3 (3n)      m 11-block    lake_in wall  mirror reverse
+  odd core                         =               =          1.0000          0.5000          1.0000          1.0000
+  halvings a                  1.0000          1.0000               =          0.7500               =               =
+  odd factors b                    =               =          1.0000          0.3453          0.3497          0.3589
+  word class                  1.0000          1.0000          1.0000          0.3354          0.5014          0.5011
+  prime                       1.0000          0.9169          1.0000          0.9215          0.8433          0.8432
+  n mod 6                     1.0000          0.5000          1.0000          0.3636          1.0000          0.7670
+  u mod 4                     1.0000          0.9999          1.0000          0.9999          0.9999          1.0000
+  u/n                              =               =          0.9997          0.4999          0.9999          0.9999
+  imbalance u-n               1.0000          1.0000          0.9838          0.9838          0.9879          0.9879
+  ones (popcount)                  =               =          0.2023          0.2514          0.4757               =
+  level L                     1.0000          1.0000          0.6505          0.9999               =               =
+  read-out: invariant under ^ and v: odd core, b, u/n, ones (proven: u(2k) = 2u(k)); fixed law under ^: imbalance (x2),
+  a (+1), L (+1), word class (a flips). Caution: readings that take nearly one value per n (odd core, u/n, imbalance)
+  score near 1 in any frame and say nothing there; u mod 4 is 0 for most n. Few-valued readings with a real law:
+  n mod 6 under the lake (n -> -n mod 6, wall offset = 0 mod 6), ones under reverse (=), L under lake/reverse (=).
+  No law: prime under m (0.92), lake (0.84), reverse (0.84); word class under m, lake, reverse (0.34-0.50).
+  So the 'interval' of a number across the scale frames is (odd core, u/n): a prime p and its even primes 2p, 4p ...
+  are one scale-orbit; E1 = p seen from one level up. Left-outs are the orbits of odd composites plus the ^^ of anything.
+  octave L=16: mean u/n primes 25.42504  odd composites 25.49958  (no split)
+  octave L=20: mean u/n primes 62.20956  odd composites 62.22309  (no split)
+  rule-breakers (families of rule-breakers_v1.0, 102 to 1e6): distinct u/n values 39; u/n = 1 (self-count) 39; u/n = 20/11 4, 28/15 1: breakers ride a few fixed invariants (their scale-orbits).
+
+== 4. BELOW vs ABOVE a power mirror: the lake side carries the level L, the telescope side does not ==
+  asserted, r = 1..4096, L = 14..22:  u(2^L - r) = 2^(L-1) * (sig(r)*L - tau(r))
+    sig(2j) = sig(j), sig(2j+1) = sig(j+1) + sig(j)/2 ; tau(2j) = tau(j) + sig(j), tau(2j+1) = sig(2j+1) + tau(j+1) + tau(j)/2
+    sig(0)=0, sig(1)=1, tau(0)=-2, tau(1)=1/2.  The build rule u(2k+1) = 2u(k) + u(k+1) comes back MIRRORED:
+    2 sig(2j+1) = 2 sig(j+1) + sig(j)  (the weight 2 moves from the near wing to the far wing).
+  first slopes sig(r), r = 1..33: 1, 1, 3/2, 1, 2, 3/2, 7/4, 1, 5/2, 2, 5/2, 3/2, 5/2, 7/4, 15/8, 1, 3, 5/2, 13/4, 2, 7/2, 5/2, 11/4, 3/2, 13/4, 5/2, 3, 7/4, 11/4, 15/8, 31/16, 1, 7/2
+  first tau(r): 1/2, 3/2, 13/4, 5/2, 6, 19/4, 47/8, 7/2, 39/4, 8, 41/4, 25/4, 43/4, 61/8, 133/16, 9/2, 29/2
+  above: u(2^L + r) = s_r 2^L - t_r (no L term) for r <= 512, L = 19..21: True
+  below a wall 3*2^a: u(3*2^a - r)/(3*2^(a-1)) steps per level: r=1: 1 locked; r=2: 1 locked; r=3: 3/2 locked; r=5: 2 locked; r=7: 7/4 locked; r=11: 5/2 locked
+  sig(r) of prime seats 2^L - r vs composite seats (L = 22, odd r < 4096):
+    mean sig prime seats 11.71274 (262) vs composite 11.63109 (1786) (r < 4096)
+
+== 5. 4D MAP: (L = level / scale, t = n/2^(L-1) in [1,2) invariant under ^, d = mirror seat 2n - 11(2j+1) in the
+   11-block, w = word classes of the two neighbours (n-1 | n+1)) ==
+  primes by seat d (to 1e7): -9:66386 -7:66540 -5:66479 -3:66452 -1:66375 +1:66448 +3:66489 +5:66507 +7:66425 +9:66473
+  d is odd for every n; d and -d are the two faces of one fold; prime counts by |d| (seat +11 = multiples of 11):
+   |1|: 66448 vs 66375 |3|: 66489 vs 66452 |5|: 66507 vs 66479 |7|: 66425 vs 66540 |9|: 66473 vs 66386
+  prime seats in even blocks: d<0 199240, d>0 132914;  odd blocks: d<0 132992, d>0 199428
+  (odd n in an even block sit at d = -9,-5,-1,+3,+7 (+11): 3 seats left, 2 right; odd block mirrored. Per seat the
+   counts are level: the 3:2 is the seat count of the fold, not a prime lean.)
+  primes by neighbour word pair (left class, right class) to 1e7:
+    (0,2)   55478   mirror pair (2,0)   55370
+    (0,3)   55221   mirror pair (3,0)   55287
+    (1,2)   55608   mirror pair (2,1)   55600
+    (1,3)   55205   mirror pair (3,1)   55303
+    (2,0)   55370   mirror pair (0,2)   55478
+    (2,1)   55600   mirror pair (1,2)   55608
+    (2,2)   55383   mirror pair (2,2)   55383
+    (2,3)   55406   mirror pair (3,2)   55601
+    (3,0)   55287   mirror pair (0,3)   55221
+    (3,1)   55303   mirror pair (1,3)   55205
+    (3,2)   55601   mirror pair (2,3)   55406
+    (3,3)   55112   mirror pair (3,3)   55112
+  L=23 (to 1e7) prime share by tenth of the octave t: 0.1307 0.1301 0.1292 0.1280 0.1283 0.1273 0.1274 0.1263 0.1260 0.1256
+  plot: relativity-4d_v1.0_11-26-2026.png
+
+== 6. PySR: S(r) = sig(r) * 2^(bitlen(r)-1) (integer) from r, L=bitlen, u(r), u(r+1), pc=ones ==
+   complexity        loss                                                                              equation
+0           1  16144279.0                                                                                   ur1
+1           3  11976009.0                                                                         r * 6.7735577
+2           5   9210085.0                                                                (ur1 / pc) * 6.7735577
+3           7   7261263.0                                                   ((2834.0994 / 534.50806) / pc) * ur
+4           9   5700228.0                                                     (pc - r) * ((pc - L) + -2.922188)
+5          11   4947750.5                                            (ur1 / pc) - (r * ((pc + -1.9671644) - L))
+6          13   2647442.5               ur / ((-4.087439 / ((2.229402 - (-165.03094 / pc)) / pc)) / -0.7684144)
+7          17   2643392.0  ((ur / ((-4.087439 / ((2.229402 - (-165.03094 / pc)) / pc)) / -0.7684144)) - pc) + L
+
+all asserts passed; 15 s

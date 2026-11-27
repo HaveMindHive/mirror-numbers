@@ -1,0 +1,76 @@
+== 1. Gap profile from the left-outs (even primes 2p|2q, p = 5 .. 1e6, n = 78496 ) ==
+places k inside the gap: p+1 .. q-1. Left-out 2k: depth 1 = missing seat (k odd), depth 2+ = 4k left-out (k even)
+  gap  2 (even gap  4): deepest 4k left-out sits at the centre in 8168 of 8168 (1.0000)
+  gap  4 (even gap  8): deepest 4k left-out sits at the centre in 0 of 8143 (0.0000)
+  gap  6 (even gap 12): deepest 4k left-out sits at the centre in 6829 of 13549 (0.5040)
+  gap  8 (even gap 16): deepest 4k left-out sits at the centre in 0 of 5569 (0.0000)
+  gap 10 (even gap 20): deepest 4k left-out sits at the centre in 1757 of 7079 (0.2482)
+  gap 12 (even gap 24): deepest 4k left-out sits at the centre in 0 of 8005 (0.0000)
+  gap 14 (even gap 28): deepest 4k left-out sits at the centre in 1067 of 4233 (0.2521)
+  gap 18 (even gap 36): deepest 4k left-out sits at the centre in 621 of 4909 (0.1265)
+  gap 30 (even gap 60): deepest 4k left-out sits at the centre in 219 of 1914 (0.1144)
+  gap 6: mean faces of left-out at place p+j, j=1..5: 18.67 8.51 14.61 8.61 18.29
+  gap 12: mean faces of left-out at place p+j, j=1..11: 23.52 6.27 14.83 8.11 15.71 5.18 15.84 8.04 14.78 6.31 24.01
+  gap 18: mean faces of left-out at place p+j, j=1..17: 25.10 8.30 11.14 6.95 18.06 5.02 20.01 6.10 14.82 5.92 19.92 4.98 17.94 7.02 10.89 8.32 24.78
+  mean faces of any left-out, places 1e5..1e6: 13.240; of left-outs at p+1 / q-1 (same band): 23.258 / 23.182
+  4k left-outs at depth 2 inside gaps: 250000, mean faces 12.663
+  4k left-outs at depth 3 inside gaps: 124999, mean faces 18.955
+  4k left-outs at depth 4 inside gaps: 62500, mean faces 24.552
+  4k left-outs at depth 5 inside gaps: 31250, mean faces 29.462
+  4k left-outs at depth 6 inside gaps: 15625, mean faces 33.667
+
+== 2. Naming 2q from 2p (fair: only places <= p are read) ==
+band [5,1000) n=166: random centre 0.3696
+   in-band best gap per class (reads p only): facing p mod 6 0.4458; depth+facing p mod 12 0.4458; p mod 24 0.4518; p mod 60 (2,3,5 seats) 0.5904; faces of 2(p-1) + p mod 12 0.5422
+   left-out window LW(L) (reads L places behind p, 0 past p): L=7 0.7831; L=31 1.0000; L=100 1.0000; L=300 1.0000
+   LW over SB, net gaps gained by the large faces of window places: L=7 +17 (lost 0); L=31 +0 (lost 0); L=100 +0 (lost 0); L=300 +0 (lost 0)
+   small blocks only SB(L) (strands of d <= L+1): L=7 0.6807; L=31 1.0000; L=100 1.0000; L=300 1.0000
+band [1000,10000) n=1061: random centre 0.3086 | R4(31) 0.7832
+   in-band best gap per class (reads p only): facing p mod 6 0.3129; depth+facing p mod 12 0.3129; p mod 24 0.3129; p mod 60 (2,3,5 seats) 0.4232; faces of 2(p-1) + p mod 12 0.3525
+   left-out window LW(L) (reads L places behind p, 0 past p): L=7 0.5712; L=31 0.8172; L=100 1.0000; L=300 1.0000
+   LW over SB, net gaps gained by the large faces of window places: L=7 +66 (lost 0); L=31 +36 (lost 0); L=100 +0 (lost 0); L=300 +0 (lost 0)
+   small blocks only SB(L) (strands of d <= L+1): L=7 0.5090; L=31 0.7832; L=100 1.0000; L=300 1.0000
+band [10000,100000) n=8363: random centre 0.2668 | R4(31) 0.6031
+   in-band best gap per class (reads p only): facing p mod 6 0.2430; depth+facing p mod 12 0.2430; p mod 24 0.2430; p mod 60 (2,3,5 seats) 0.3224; faces of 2(p-1) + p mod 12 0.2488
+   left-out window LW(L) (reads L places behind p, 0 past p): L=7 0.4370; L=31 0.6208; L=100 0.8218; L=300 0.9998
+   LW over SB, net gaps gained by the large faces of window places: L=7 +418 (lost 0); L=31 +148 (lost 0); L=100 +179 (lost 0); L=300 +7 (lost 0)
+   small blocks only SB(L) (strands of d <= L+1): L=7 0.3871; L=31 0.6031; L=100 0.8004; L=300 0.9989
+band [100000,1000000) n=68906: random centre 0.2376 | R4(31) 0.4971
+   in-band best gap per class (reads p only): facing p mod 6 0.2013; depth+facing p mod 12 0.2013; p mod 24 0.2013; p mod 60 (2,3,5 seats) 0.2684; faces of 2(p-1) + p mod 12 0.2081
+   left-out window LW(L) (reads L places behind p, 0 past p): L=7 0.3630; L=31 0.5116; L=100 0.6481; L=300 0.8154
+   LW over SB, net gaps gained by the large faces of window places: L=7 +2768 (lost 0); L=31 +998 (lost 0); L=100 +809 (lost 0); L=300 +354 (lost 0)
+   small blocks only SB(L) (strands of d <= L+1): L=7 0.3228; L=31 0.4971; L=100 0.6364; L=300 0.8103
+
+== 3. Seeing prime seats: flag both neighbours of a 4k left-out by its blocks ==
+rule S(B): a 4k left-out 2k whose place k carries every block in B flags places k-1, k+1 as prime seats
+  S(2 (any 4k)) band [1000,10000): flagged 4500, prime 1061: precision 0.2358, recall 1.0000
+  S(2 (any 4k)) band [10000,100000): flagged 45000, prime 8363: precision 0.1858, recall 1.0000
+  S(2 (any 4k)) band [100000,1000000): flagged 450000, prime 68906: precision 0.1531, recall 1.0000
+  S(2,3) band [1000,10000): flagged 3000, prime 1061: precision 0.3537, recall 1.0000
+  S(2,3) band [10000,100000): flagged 30000, prime 8363: precision 0.2788, recall 1.0000
+  S(2,3) band [100000,1000000): flagged 300000, prime 68906: precision 0.2297, recall 1.0000
+  S(2,3,5) band [1000,10000): flagged 600, prime 267: precision 0.4450, recall 0.2516
+  S(2,3,5) band [10000,100000): flagged 6000, prime 2082: precision 0.3470, recall 0.2490
+  S(2,3,5) band [100000,1000000): flagged 60000, prime 17225: precision 0.2871, recall 0.2500
+  S(2,3,5,7) band [1000,10000): flagged 86, prime 43: precision 0.5000, recall 0.0405
+  S(2,3,5,7) band [10000,100000): flagged 858, prime 341: precision 0.3974, recall 0.0408
+  S(2,3,5,7) band [100000,1000000): flagged 8570, prime 2875: precision 0.3355, recall 0.0417
+  by the flank's face count (seat k+1 beside 4k left-out 2k, band [1e5,1e6)):
+    faces 2-5: 55765 flanks, seat prime 0.1003
+    faces 6-9: 92633 flanks, seat prime 0.1227
+    faces 10-13: 54096 flanks, seat prime 0.1326
+    faces 14-21: 95005 flanks, seat prime 0.1518
+    faces 22-39: 105921 flanks, seat prime 0.1833
+    faces 40-999: 46580 flanks, seat prime 0.2348
+
+== 4. Tower: line a holds place k at 2^a k. 8 = place 2 of line 2, as 4 = place 2 of line 1 ==
+(core prime share rises with depth only because the core is smaller: k / 2^a)
+every left-out 2k with k even is a place of line 2+; its core is its place on its deepest line
+  4k left-outs in gaps, band [1e5,1e6), deepest line 2: 225000, core prime (a tower prime) 0.1618
+  4k left-outs in gaps, band [1e5,1e6), deepest line 3: 112500, core prime (a tower prime) 0.1714
+  4k left-outs in gaps, band [1e5,1e6), deepest line 4: 56250, core prime (a tower prime) 0.1821
+  4k left-outs in gaps, band [1e5,1e6), deepest line 5: 28125, core prime (a tower prime) 0.1942
+  4k left-outs in gaps, band [1e5,1e6), deepest line 6: 14062, core prime (a tower prime) 0.2079
+  4k left-outs in gaps, band [1e5,1e6), deepest line 7: 7032, core prime (a tower prime) 0.2240
+  4k left-outs in gaps, band [1e5,1e6), deepest line 8: 3515, core prime (a tower prime) 0.2418
+  4k left-outs in gaps, band [1e5,1e6), deepest line 9: 1758, core prime (a tower prime) 0.2628

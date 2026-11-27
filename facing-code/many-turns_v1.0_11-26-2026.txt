@@ -1,0 +1,18 @@
+A. turns at every odd 3..B (to 2^20)
+ B=9: self-count = c*2^a, c odd <= 9; line untouched; first non-self odd 11, u = 16 (ratio 16/11); pair points 5: 23..39 step 4 (= 4j+3, j = 5..9); near-turn 0, sporadic 0; strands: one per core c <= 9, deficit constant = largest c*2^b+1 <= 10, 5 per dyadic block from 2^5; u/n at 2^20-1 = 9.3750
+ B=15: self-count = c*2^a, c odd <= 15; line untouched; first non-self odd 17, u = 25 (ratio 25/17); pair points 8: 35..63 step 4 (= 4j+3, j = 8..15); near-turn 0, sporadic 0; strands: one per core c <= 15, deficit constant = largest c*2^b+1 <= 16, 8 per dyadic block from 2^5; u/n at 2^20-1 = 8.9375
+ B=31: self-count = c*2^a, c odd <= 31; line untouched; first non-self odd 33, u = 49 (ratio 49/33); pair points 16: 67..127 step 4 (= 4j+3, j = 16..31); near-turn 0, sporadic 0; strands: one per core c <= 31, deficit constant = largest c*2^b+1 <= 32, 16 per dyadic block from 2^6; u/n at 2^20-1 = 8.4688
+ B=63: self-count = c*2^a, c odd <= 63; line untouched; first non-self odd 65, u = 97 (ratio 97/65); pair points 32: 131..255 step 4 (= 4j+3, j = 32..63); near-turn 0, sporadic 0; strands: one per core c <= 63, deficit constant = largest c*2^b+1 <= 64, 32 per dyadic block from 2^7; u/n at 2^20-1 = 7.9844
+ B=127: self-count = c*2^a, c odd <= 127; line untouched; first non-self odd 129, u = 193 (ratio 193/129); pair points 64: 259..511 step 4 (= 4j+3, j = 64..127); near-turn 0, sporadic 0; strands: one per core c <= 127, deficit constant = largest c*2^b+1 <= 128, 64 per dyadic block from 2^8; u/n at 2^20-1 = 7.4922
+B. odd composite n = q copies of n/q (q smallest block); odd primes halve (to 2^20)
+ self-count = 2^a only; line untouched; u(n)/n = u(P)/P exactly, P = largest odd prime block (n <= 2^20).
+ below the line: n = 2^a * m, m odd with blocks only from {3,5,7,17}: 743 odd numbers 3..2^20.
+ primes below the line: 3, 5, 17 (strand 2^a+1) and 7 (pair, the pure-halving root pair); every other prime to 2^20 above.
+ prime u/p per dyadic block (min-max): 2:1.600-1.714 3:2.154-2.182 4:1.647-2.783 5:2.378-3.404 6:2.186-3.439 7:2.425-4.120 8:2.365-5.256 9:2.156-5.341 10:2.411-6.138 11:2.386-6.966 12:2.423-8.596 13:2.645-8.988 14:2.679-9.595 15:2.523-11.282 16:2.812-11.238 17:2.679-12.949 18:2.504-15.821 19:2.678-15.874
+C. turns at the odd primes (contrast; to 2^20)
+ self-count = 2^a and p*2^a; line untouched; below-line odd non-turns: {'strand': 33090, 'pair': 5169, 'near': 1550}; sporadic 0.
+ first pairs [51, 55, 91, 115, 175, 187, 235, 247, 295, 319]; first near-turns [85, 121, 133, 145, 201, 217, 253, 301, 325, 361]
+ per dyadic block m=4..19  strand [3, 7, 13, 23, 38, 73, 124, 209, 339, 581, 982, 1634, 2750, 4682, 8001, 13629]
+                          pair   [0, 2, 2, 4, 7, 9, 17, 26, 56, 76, 136, 232, 409, 718, 1260, 2215]
+                          near   [0, 0, 2, 5, 5, 7, 8, 22, 28, 27, 51, 89, 136, 207, 350, 613]
+Across builds (A for every B, C, {}, {3}, {5}, {7}, {3,5,7}, {9}, {15}): line u = 2n untouched, no sporadic point; proven for every turn set in ManyTurns.lean (line_never, no_sporadic, below_classify).

@@ -1,0 +1,133 @@
+1. FIVE. His picture of 25: 12,13,12 |12. Wing 12 = 2x2x3 (three terms), centre 13 = 6|7 (ladder pair), 25 = 18 + 7 = three walls of 6 and the first seat of the fourth block (25 = 6*4 + 1).
+   5-strand composites off 2 and 3, read as (wing, centre, wing) | wing factors | 6-block seat (a, r) | wall count 6a and remainder:
+       25 = 12,13,12  wing 12 = 2x2x3 (3 terms)  seat (4, 1)  = 18 + 7  wing mod 5 = 2  centre mod 5 = 3
+       35 = 17,18,17  wing 17 = 17 (1 terms)  seat (5, 5)  = 24 + 11  wing mod 5 = 2  centre mod 5 = 3
+       55 = 27,28,27  wing 27 = 3x3x3 (3 terms)  seat (9, 1)  = 48 + 7  wing mod 5 = 2  centre mod 5 = 3
+       65 = 32,33,32  wing 32 = 2x2x2x2x2 (5 terms)  seat (10, 5)  = 54 + 11  wing mod 5 = 2  centre mod 5 = 3
+       85 = 42,43,42  wing 42 = 2x3x7 (3 terms)  seat (14, 1)  = 78 + 7  wing mod 5 = 2  centre mod 5 = 3
+       95 = 47,48,47  wing 47 = 47 (1 terms)  seat (15, 5)  = 84 + 11  wing mod 5 = 2  centre mod 5 = 3
+      115 = 57,58,57  wing 57 = 3x19 (2 terms)  seat (19, 1)  = 108 + 7  wing mod 5 = 2  centre mod 5 = 3
+      125 = 62,63,62  wing 62 = 2x31 (2 terms)  seat (20, 5)  = 114 + 11  wing mod 5 = 2  centre mod 5 = 3
+      145 = 72,73,72  wing 72 = 2x2x2x3x3 (5 terms)  seat (24, 1)  = 138 + 7  wing mod 5 = 2  centre mod 5 = 3
+      155 = 77,78,77  wing 77 = 7x11 (2 terms)  seat (25, 5)  = 144 + 11  wing mod 5 = 2  centre mod 5 = 3
+      175 = 87,88,87  wing 87 = 3x29 (2 terms)  seat (29, 1)  = 168 + 7  wing mod 5 = 2  centre mod 5 = 3
+      185 = 92,93,92  wing 92 = 2x2x23 (3 terms)  seat (30, 5)  = 174 + 11  wing mod 5 = 2  centre mod 5 = 3
+      205 = 102,103,102  wing 102 = 2x3x17 (3 terms)  seat (34, 1)  = 198 + 7  wing mod 5 = 2  centre mod 5 = 3
+      215 = 107,108,107  wing 107 = 107 (1 terms)  seat (35, 5)  = 204 + 11  wing mod 5 = 2  centre mod 5 = 3
+      235 = 117,118,117  wing 117 = 3x3x13 (3 terms)  seat (39, 1)  = 228 + 7  wing mod 5 = 2  centre mod 5 = 3
+      245 = 122,123,122  wing 122 = 2x61 (2 terms)  seat (40, 5)  = 234 + 11  wing mod 5 = 2  centre mod 5 = 3
+   Reading: a 5-strand number off 2,3 is 30b + 5 (last seat of block 5b) or 30b + 25 (first seat of block 5b + 4): inside the 2,3 structure the 5 shows as the pair of seats (block 0, last) and (block 4, first) of each 30-run, the mirror pair 5 <-> 25 under n -> 30 - n. Its wing is 2 mod 5 and its centre 3 mod 5 in every case (wing = (5m-1)/2 = -1 * 3 = 2 mod 5): that is a divisor reading of y, not used below for naming.
+
+   PENTAGONAL WINGS (exact): wing of y is 12 x P with P generalized pentagonal  <=>  y = (6k -+ 1)^2.
+       5^2 =    25: wing    12 = 12 x    1  (k = 1)
+       7^2 =    49: wing    24 = 12 x    2  (k = 1)
+      11^2 =   121: wing    60 = 12 x    5  (k = 2)
+      13^2 =   169: wing    84 = 12 x    7  (k = 2)
+      17^2 =   289: wing   144 = 12 x   12  (k = 3)
+      19^2 =   361: wing   180 = 12 x   15  (k = 3)
+      23^2 =   529: wing   264 = 12 x   22  (k = 4)
+      25^2 =   625: wing   312 = 12 x   26  (k = 4)
+      29^2 =   841: wing   420 = 12 x   35  (k = 5)
+      31^2 =   961: wing   480 = 12 x   40  (k = 5)
+      35^2 =  1225: wing   612 = 12 x   51  (k = 6)
+      37^2 =  1369: wing   684 = 12 x   57  (k = 6)
+      41^2 =  1681: wing   840 = 12 x   70  (k = 7)
+      43^2 =  1849: wing   924 = 12 x   77  (k = 7)
+      47^2 =  2209: wing  1104 = 12 x   92  (k = 8)
+      49^2 =  2401: wing  1200 = 12 x  100  (k = 8)
+   checked to 1e6: 333 odd y with wing 12 x pentagonal, all of them squares (6k-+1)^2; (6k-1)^2 = 12k(3k-1) + 1, (6k+1)^2 = 12k(3k+1) + 1. Same fact by a different route: Euler's pentagonal numbers. Lean: pent_square_minus, pent_square_plus.
+   So '12 x pentagonal' is a fair reading that names a square seat without factoring it: 25 (P=1), 49 (P=2), 121 (P=5), 169 (P=7), 289 (P=12), 361 (P=15). It names squares only, not 35, 55, 77, 91.
+
+   THE 5 IN THE HOP FRAME (read from p only). y = p + 2h is a 5-seat  <=>  h = 2p mod 5. Likewise 7: h = 3p mod 7; 11: h = 5p mod 11; 13: h = 6p mod 13 (the class is ((r+1)/2 - 1) * ... exact: h = -(p * inverse of 2) mod r). Lean: five_class, seven_class, eleven_class.
+   Allowed h classes: 2,3 leave 4 of 6 (per family p mod 12); + 5 leaves 16 of 30; + 7 leaves 96 of 210; + 11 leaves 960 of 2310. Checked per residue p mod 60 / 420:
+     p mod 60 off (2, 3, 5): allowed h mod 30 count = [16] in every class
+     p mod 420 off (2, 3, 5, 7): allowed h mod 105 count = [48] in every class
+
+   WHERE r SITS ABOVE THE HAND-OFF (2,3): the first off-2,3 seat past p is an r-seat exactly from the seat just before each of the two r-seats r and 5r of the 6r-run (5: p = 1 -> 5 and 23 -> 25 mod 30; 7: 5 -> 7, 31 -> 35 mod 42):
+     r = 5: hand-off's first seat is an r-seat for p mod 30 in [1, 23]  (2 of 8 off classes)
+     r = 7: hand-off's first seat is an r-seat for p mod 42 in [5, 31]  (2 of 12 off classes)
+     r = 11: hand-off's first seat is an r-seat for p mod 66 in [7, 53]  (2 of 20 off classes)
+     r = 13: hand-off's first seat is an r-seat for p mod 78 in [11, 61]  (2 of 24 off classes)
+
+   MISSES OF THE CHEAP MAP (first open seat past p is composite), and what each added rule fixes:
+     rules (2, 3): misses to 1e3/1e4/1e5/1e6 = 92/821/7152/62185 of 78496 hops  first misses [25, 35, 49, 55, 65, 77, 85, 91]
+     rules (2, 3, 5): misses to 1e3/1e4/1e5/1e6 = 69/681/6348/56758 of 78495 hops  first misses [49, 77, 91, 119, 133, 143, 161, 169]
+     rules (2, 3, 5, 7): misses to 1e3/1e4/1e5/1e6 = 53/574/5700/52364 of 78494 hops  first misses [121, 143, 169, 187, 209, 221, 247, 253]
+     rules (2, 3, 5, 7, 11): misses to 1e3/1e4/1e5/1e6 = 39/499/5248/49456 of 78493 hops  first misses [169, 221, 247, 289, 299, 323, 361, 377]
+     rules (2, 3, 5, 7, 11, 13): misses to 1e3/1e4/1e5/1e6 = 24/436/4847/46808 of 78492 hops  first misses [289, 323, 361, 391, 437, 493, 527, 551]
+     to 1000: of the 2,3 misses, the first seat was a 5-seat in 39/92 (0.424); of the 2,3,5 misses, a 7-seat in 29/69 (0.420)
+     to 10000: of the 2,3 misses, the first seat was a 5-seat in 307/821 (0.374); of the 2,3,5 misses, a 7-seat in 206/681 (0.302)
+     to 100000: of the 2,3 misses, the first seat was a 5-seat in 2387/7152 (0.334); of the 2,3,5 misses, a 7-seat in 1585/6348 (0.250)
+     to 1000000: of the 2,3 misses, the first seat was a 5-seat in 19647/62185 (0.316); of the 2,3,5 misses, a 7-seat in 13048/56758 (0.230)
+   Reading: the 5 rule fixes the 5-seat misses exactly (every miss whose first seat was 5x something) and no other; the misses it leaves are 7-, 11-, 13-seats and seats of larger strands. The share fixed falls with size (the first open seat is a 5-seat in about 1 of 4 of the 2,3 misses at 1e3, fewer higher) because larger strands take over: this is the strand ladder (B passed places), seen rule by rule.
+
+2. HIERARCHY. Rule groups (his names in quotes):
+   '12 rules' (seat rules, mod 12 = 2,2,3): hand-off (one of m,h even; one on 3), family p mod 12 -> allowed h mod 6, wall/seat hop h = 3w + 2s, facing x side.
+   '5 rules': h != 2p mod 5 (5-strand), pentagonal wing (squares).  '7 rules': h != 3p mod 7.
+   '11 rules' (frame rules): offset-11 mirror n -> 11(2j+1) - n, per-11-block mirror 11a + r -> 11a + 11 - r, the 11/15 sporadic pair (u(n) = 2(n-1) only at 2, 11, 15).  Lake: 2pq/(p+q); hand-off twice = (p/2, q/2). Halving/thirding/turn: a,b,a : s pictures of n; u(n).
+
+   2a. COMBINE (reinforce): off-2,3 seats strictly between p and q, by how many of the strands 5, 7, 11, 13 close them (to 1e6):
+     seats 254837: closed by 0 of {5,7,11,13} (a larger strand): 113316 (0.445); by exactly 1: 115080 (0.452); by 2 (combine): 24244 (0.095); by 3: 2130
+     pairs that combine on one seat: {(5, 7): 7992, (5, 11): 4796, (5, 13): 3996, (7, 11): 3197, (7, 13): 2664, (11, 13): 1599, (5, 7, 11): 799, (5, 7, 13): 666, (5, 11, 13): 399, (7, 11, 13): 266, (5, 7, 11, 13): 67}  (35 = 5x7 is the first: p = 31 -> 35, both rules fire; neither overturns the other, a seat closed twice is closed once).
+
+   2b. The two flips of the 12 rules (facing: s != 0; side: w odd) combine or cancel per hop (to 1e6):
+     both kept 0.1499  facing only 0.2750  side only 0.2682  both flip 0.3069
+     facing kept and side kept together = gap multiple of 12 (h = 0 mod 6): the hop lands in the same seat mod 12. Per-block mirror 6a+r <-> 6a+6-r sends s -> -s and keeps w: it cancels the facing flip's direction and leaves the side flip alone (Lean block_mirror_hop, earlier run).
+
+   2c. 11 RULES vs 12 RULES. Offset-11 mirror n -> O - n (O = 11(2j+1)) keeps the gap, so keeps h, w, s: it cannot overturn any 12 rule (it sits BELOW them as a frame). O is odd, O mod 6 in {1, 3, 5}; the image seat is O - q mod 6. Counts of image start seat mod 6, by O mod 6 (to 1e6):
+     O=1 mod 6 -> image start mod 6 = 0: 11760  O=1 mod 6 -> image start mod 6 = 2: 15664  O=3 mod 6 -> image start mod 6 = 2: 15692  O=3 mod 6 -> image start mod 6 = 4: 11829  O=5 mod 6 -> image start mod 6 = 0: 11771  O=5 mod 6 -> image start mod 6 = 4: 11780
+     An odd O always lands the image on an even seat (odd - odd): the offset-11 mirror leaves the 2,3 seat structure behind (O = 3 mod 6 puts the image on 2-seats off 3, O = 1 or 5 mod 6 puts one end on a 6-wall). Hierarchy: 12 rules name seats; 11 rules move the frame; a frame move that keeps h keeps every h-rule's verdict and names nothing new.
+     per-11-block mirror of p (first 20000 primes from 5): image off 2,3 and prime 0, off 2,3 not prime 0, on a 2- or 3-seat 20000: the image 11a + 11 - r = p + 11 - 2r is even for every odd p (proven: block_mirror_even); the 11-block mirror is a frame, not a seat rule.
+     The 11 STRAND (h != 5p mod 11) is a seat rule like 5 and 7; it joins the 12 rules in the stack above (misses table).
+
+   2d. PRECEDENCE TABLE (to 1e6). For each hop, the first seat the hand-off (2,3) names; who sits above it:
+     larger strand above     24103  0.3071
+     5 above                 19647  0.2503
+     q (hand-off right)      16311  0.2078
+     7 above                  9809  0.1250
+     11 above                 4914  0.0626
+     13 above                 3712  0.0473
+     by p mod 30 (5 above the hand-off lives in two classes, 1 and 23; the other six classes read alike):
+       p =  1 mod 30: hand-off right 0.000  5 above 1.000  7 above 0.000  11 above 0.000  (n=9807)
+       p =  5 mod 30: hand-off right 1.000  5 above 0.000  7 above 0.000  11 above 0.000  (n=1)
+       p =  7 mod 30: hand-off right 0.281  5 above 0.000  7 above 0.167  11 above 0.083  (n=9812)
+       p = 11 mod 30: hand-off right 0.279  5 above 0.000  7 above 0.166  11 above 0.086  (n=9810)
+       p = 13 mod 30: hand-off right 0.273  5 above 0.000  7 above 0.168  11 above 0.083  (n=9824)
+       p = 17 mod 30: hand-off right 0.279  5 above 0.000  7 above 0.169  11 above 0.082  (n=9809)
+       p = 19 mod 30: hand-off right 0.276  5 above 0.000  7 above 0.165  11 above 0.084  (n=9788)
+       p = 23 mod 30: hand-off right 0.000  5 above 1.000  7 above 0.000  11 above 0.000  (n=9840)
+       p = 29 mod 30: hand-off right 0.275  5 above 0.000  7 above 0.165  11 above 0.083  (n=9805)
+     Exact: '5 above the hand-off' happens from p = 1 or 23 mod 30 and from no other class (all hops to 1e6; Lean five_above_handoff, five_not_above). In those two classes the hand-off is never right (its seat is 5 or 25 mod 30), so there the 5 rule sits above the 12 rule in every hop; in the other 6 classes the 5 rule cannot touch the hand-off's first seat (it closes later seats only). Shares: 5 above = 2/8 = 1/4 of hops (0.2503); 7 above = (3/4)(1/6) = 0.125 (0.1250); 11 above = (3/4)(5/6)(1/10) = 0.0625 (0.0626); 13 above = (3/4)(5/6)(9/10)(1/12) = 0.0469 (0.0473): each rule r takes the share 1/(r-1) of what the smaller rules left. Same fact by a different route: primes spread evenly over the off classes mod 6r. The precedence is read from p's seat in the 6r-run, nothing above p.
+     Second level, 2,3,5 first seat: other 0.4731  q 0.2769  7 above 0.1662  11 above 0.0837
+     '7 above the 2,3,5 seat' occurs from p mod 42 in [1, 5, 29, 31] (and nowhere else to 1e6): the two 7-classes 5, 31 plus the classes 1, 29 whose next seat is a 5-seat followed by a 7-seat (the full condition lives mod 210 = 2x3x5x7).
+
+   2e. RANGE CLOSING by the rule stack, nearest-first (90% / 99% seats, mean rank, share named first), per band:
+     stack                              |              [1e3,1e4) |              [1e4,1e5) |              [1e5,1e6)
+     (2, 3)                             |      6/ 10  2.83 0.313 |      7/ 13  3.59 0.243 |      9/ 17  4.35 0.201
+     (2, 3, 5)                          |      4/  8  2.26 0.423 |      6/ 10  2.87 0.322 |      7/ 13  3.48 0.268
+     (2, 3, 5, 7)                       |      4/  6  1.94 0.509 |      5/  9  2.46 0.387 |      6/ 11  2.99 0.323
+     (2, 3, 5, 7, 11)                   |      3/  6  1.76 0.566 |      4/  8  2.24 0.432 |      5/ 10  2.71 0.358
+     (2, 3, 5, 7, 11, 13)               |      3/  5  1.63 0.612 |      4/  7  2.06 0.473 |      5/  9  2.51 0.391
+     (2, 3, 5, 7, 11, 13, 17)           |      3/  5  1.53 0.644 |      4/  7  1.94 0.505 |      5/  9  2.36 0.418
+     (2, 3, 5, 7, 11, 13, 17, 19, 23)   |      2/  4  1.39 0.722 |      3/  6  1.76 0.562 |      4/  8  2.14 0.463
+     (earlier run, same bands: hand-off only 9/17 top band; 1 packed place = strands to 17: 5/9; 7 places = to 73: 3/5)
+
+     Orderings on top of the 2,3,5,7 stack (does putting one rule 'above' another beat nearest-first?):
+     nearest first                      |      4/  6  1.94 0.509 |      5/  9  2.46 0.387 |      6/ 11  2.99 0.323
+     side-flip (h odd) first, then nearest |     47/ 49 19.16 0.414 |     48/ 50 20.62 0.333 |     48/ 51 21.30 0.284
+     side-keep (h even) first, then nearest |     48/ 49 29.03 0.290 |     48/ 50 28.05 0.267 |     48/ 51 27.88 0.234
+     facing-flip (3 not| h) first       |     47/ 49 19.40 0.426 |     48/ 50 20.13 0.343 |     48/ 51 21.12 0.291
+     walls even first (w even)          |     48/ 49 29.03 0.290 |     48/ 50 28.05 0.267 |     48/ 51 27.88 0.234
+     Reading: the 12-rule flips as an ordering (flip first or keep first) do not beat nearest-first; the stack closes the range by adding seat rules (5, 7, 11, ...), each exactly the strand of that passed place. Hierarchy for naming: seat rules (2,3 < 5 < 7 < 11 ...) in size order, nearest first among the open seats; frame rules (11-mirror, lake, per-block mirror) change the picture and never the verdict.
+
+3. 23 = 11,12,11 AND 3 = 1,2,1. Odd n = k,k+1,k has an even centre k+1 exactly when n = 3 mod 4 (Lean even_centre_iff). Scaled copy: the wing k is itself odd and k = k',k'+1,k' with even centre exactly when n = 7 mod 8; j levels of even centres exactly when n = -1 mod 2^(j+1) (binary: n ends in j+1 ones). 23 = 10111 -> 11 = 1011 -> 5 = 101 -> 2; 3 = 11 -> 1.
+   checked n < 5000: levels of even centre = (trailing ones of n) - 1.
+   TEST (the picture's recursion on primes): a prime p whose wing (p-1)/2 is prime is a 'scaled copy' (k,k+1,k with k prime). The wing of p = 1 mod 4 is even, so only the even-centre family (3 mod 4) can carry a prime wing (p = 5 the one odd-centre case: wing 2). Counts to 1e6:
+     p = 3 mod 4: 4323 of 39321 have a prime wing (0.1099);  p = 1 mod 4: 1 of 39175 (0.000026, only p = 5)
+     depth of the copy chain (p -> wing -> wing ...; all prime, even centres): {0: 74173, 1: 3883, 2: 397, 3: 38, 4: 4, 5: 1}
+     the chain through 3's picture: 3 = 1,2,1 is the wing-side copy of 7 = 3,4,3; 23's chain 2, 5, 11, 23, 47 (then 95 = 5 x 19 breaks): [2, 5, 11, 23, 47]. Same fact by a different route: safe primes / Cunningham chains.
+   THE OPPOSITE (odd centre, n = 1 mod 4, centre (n+1)/2 prime): 13 = 6,7,6 is prime, 25 = 12,13,12 is not. Counts to 1e6:
+     odd-centre n with prime centre: prime 4299, composite 37238 (share prime 0.1035); first composites [9, 21, 25, 33, 45, 57, 81, 85, 93, 105, 117, 121]
+     The even-centre copy is a one-way ladder (n -> wing, exact); the odd-centre 'opposite' pairs a prime centre with 25, 45, 85 ... as often as with primes, so the centre's primality does not read the seat. Where 23 ~ 1,2,1 holds: the SHAPE (even centre, odd wings) is exact and recursive by trailing ones; the PRIMALITY of the copy is the 2p+1 chain, which breaks at 95 for this family.
+
+[9.9s] done

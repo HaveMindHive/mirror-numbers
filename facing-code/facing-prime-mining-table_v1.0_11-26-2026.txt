@@ -1,0 +1,108 @@
+checks ok: u(n)>=n, n|u(n) only at 2^m and 3*2^m (n<131072); wall/power forms to k<120; line map c<200, a<30
+
+== Mirror across the power 2^m: n = 2^m+1 (lit centre) carries u = 2^(m+1)-1 ==
+m=  1 n=2^1+1 P  units=2^2-1 P
+m=  2 n=2^2+1 P  units=2^3-1 P
+m=  4 n=2^4+1 P  units=2^5-1 P
+m=  6 n=2^6+1 c  units=2^7-1 P
+m=  8 n=2^8+1 P  units=2^9-1 c
+m= 12 n=2^12+1 c  units=2^13-1 P
+m= 16 n=2^16+1 P  units=2^17-1 P
+m= 18 n=2^18+1 c  units=2^19-1 P
+m= 30 n=2^30+1 c  units=2^31-1 P
+m= 60 n=2^60+1 c  units=2^61-1 P
+m= 88 n=2^88+1 c  units=2^89-1 P
+m=106 n=2^106+1 c  units=2^107-1 P
+m=126 n=2^126+1 c  units=2^127-1 P
+
+== Mirror across the wall W=3*2^k: u(W+1) = 2(W-1); u(W-1) = 2^(k-1)(3k+4) ==
+k=  1 W-1 P  W+1 P  units(W+1)=2*(W-1)
+k=  2 W-1 P  W+1 P  units(W+1)=2*(W-1)
+k=  3 W-1 P  W+1 c  units(W+1)=2*(W-1)
+k=  4 W-1 P  W+1 c  units(W+1)=2*(W-1)
+k=  5 W-1 c  W+1 P  units(W+1)=2*(W-1)
+k=  6 W-1 P  W+1 P  units(W+1)=2*(W-1)
+k=  7 W-1 P  W+1 c  units(W+1)=2*(W-1)
+k=  8 W-1 c  W+1 P  units(W+1)=2*(W-1)
+k= 11 W-1 P  W+1 c  units(W+1)=2*(W-1)
+k= 12 W-1 c  W+1 P  units(W+1)=2*(W-1)
+k= 18 W-1 P  W+1 P  units(W+1)=2*(W-1)
+k= 30 W-1 c  W+1 P  units(W+1)=2*(W-1)
+k= 34 W-1 P  W+1 c  units(W+1)=2*(W-1)
+k= 36 W-1 c  W+1 P  units(W+1)=2*(W-1)
+k= 38 W-1 P  W+1 c  units(W+1)=2*(W-1)
+k= 41 W-1 c  W+1 P  units(W+1)=2*(W-1)
+k= 43 W-1 P  W+1 c  units(W+1)=2*(W-1)
+k= 55 W-1 P  W+1 c  units(W+1)=2*(W-1)
+k= 64 W-1 P  W+1 c  units(W+1)=2*(W-1)
+k= 66 W-1 c  W+1 P  units(W+1)=2*(W-1)
+k= 76 W-1 P  W+1 c  units(W+1)=2*(W-1)
+k= 94 W-1 P  W+1 c  units(W+1)=2*(W-1)
+k=103 W-1 P  W+1 c  units(W+1)=2*(W-1)
+k=143 W-1 P  W+1 c  units(W+1)=2*(W-1)
+k=189 W-1 c  W+1 P  units(W+1)=2*(W-1)
+
+== Lines c*2^a+1 -> units line u(c)*2^(a+1) - delta(c); self-mirror when units odd part = c*2^b - 1 ==
+c=1: u=2^(a+1)-1 (from 2^a+1, a>=1)
+c= 3: u(c)=3 delta(c)=2  limit ratio 2u(c)/c = 2
+c= 5: u(c)=7 delta(c)=8  limit ratio 2u(c)/c = 14/5
+c= 7: u(c)=10 delta(c)=12  limit ratio 2u(c)/c = 20/7
+c= 9: u(c)=15 delta(c)=16  limit ratio 2u(c)/c = 10/3
+c=11: u(c)=20 delta(c)=28  limit ratio 2u(c)/c = 40/11
+c=13: u(c)=22 delta(c)=24  limit ratio 2u(c)/c = 44/13
+c=15: u(c)=28 delta(c)=40  limit ratio 2u(c)/c = 56/15
+c=17: u(c)=31 delta(c)=32  limit ratio 2u(c)/c = 62/17
+c=19: u(c)=44 delta(c)=60  limit ratio 2u(c)/c = 88/19
+c=21: u(c)=48 delta(c)=56  limit ratio 2u(c)/c = 32/7
+c=23: u(c)=52 delta(c)=80  limit ratio 2u(c)/c = 104/23
+c=25: u(c)=46 delta(c)=48  limit ratio 2u(c)/c = 92/25
+c=27: u(c)=64 delta(c)=88  limit ratio 2u(c)/c = 128/27
+c=29: u(c)=68 delta(c)=80  limit ratio 2u(c)/c = 136/29
+c=31: u(c)=72 delta(c)=112  limit ratio 2u(c)/c = 144/31
+c=33: u(c)=63 delta(c)=64  limit ratio 2u(c)/c = 42/11
+c=35: u(c)=92 delta(c)=124  limit ratio 2u(c)/c = 184/35
+c=37: u(c)=104 delta(c)=120  limit ratio 2u(c)/c = 208/37
+c=39: u(c)=116 delta(c)=176  limit ratio 2u(c)/c = 232/39
+
+== Ratio u/n inside each band [3*2^k+1, 3*2^(k+1)]: primes vs other odds (exact means) ==
+k= 1 band 7..12 primes     2 mean 1.623377  other odds     1 mean 1.666667  (float shown for reading only)
+k= 2 band 13..24 primes     4 mean 2.023124  other odds     2 mean 2.076190  (float shown for reading only)
+k= 3 band 25..48 primes     6 mean 2.650167  other odds     6 mean 2.442621  (float shown for reading only)
+k= 4 band 49..96 primes     9 mean 3.226529  other odds    15 mean 3.152080  (float shown for reading only)
+k= 5 band 97..192 primes    19 mean 3.957581  other odds    29 mean 3.983294  (float shown for reading only)
+k= 6 band 193..384 primes    33 mean 4.899179  other odds    63 mean 4.999815  (float shown for reading only)
+k= 7 band 385..768 primes    59 mean 6.269856  other odds   133 mean 6.177377  (float shown for reading only)
+k= 8 band 769..1536 primes   107 mean 7.711368  other odds   277 mean 7.774333  (float shown for reading only)
+k= 9 band 1537..3072 primes   197 mean 9.739309  other odds   571 mean 9.680655  (float shown for reading only)
+k=10 band 3073..6144 primes   362 mean 12.191656  other odds  1174 mean 12.097183  (float shown for reading only)
+k=11 band 6145..12288 primes   668 mean 15.089823  other odds  2404 mean 15.165698  (float shown for reading only)
+k=12 band 12289..24576 primes  1256 mean 18.680397  other odds  4888 mean 19.002219  (float shown for reading only)
+k=13 band 24577..49152 primes  2326 mean 23.609113  other odds  9962 mean 23.684825  (float shown for reading only)
+k=14 band 49153..98304 primes  4388 mean 29.530545  other odds 20188 mean 29.600598  (float shown for reading only)
+
+== Centre landing of odd n: depth a = v2(n-1), block L = oddpart(n-1)+1 ==
+primes depth: [(1, 4807), (2, 2399), (3, 1196), (4, 589), (5, 299), (6, 154), (7, 75), (8, 32), (9, 16), (10, 14), (11, 4), (12, 3)]
+other odds depth: [(1, 20192), (2, 10101), (3, 5054), (4, 2536), (5, 1263), (6, 627), (7, 316), (8, 163), (9, 82), (10, 35), (11, 20), (12, 9)]
+
+== Ratio-2 line: odd n with u(n) < 2n (n < 2^20); u(n) = 2n never ==
+off the two strands: [(1, 1), (11, 2), (15, 2)]
+strands: 2n-u = 3 on 2^a+1, 4 on 3*2^a+1: [(3, 'P', 3), (5, 'P', 3), (7, 'P', 4), (9, 'c', 3), (13, 'P', 4), (17, 'P', 3), (25, 'c', 4), (33, 'c', 3), (49, 'c', 4), (65, 'c', 3), (97, 'P', 4), (129, 'c', 3), (193, 'P', 4), (257, 'P', 3), (385, 'c', 4), (513, 'c', 3), (769, 'P', 4), (1025, 'c', 3), (1537, 'c', 4), (2049, 'c', 3), (3073, 'c', 4), (4097, 'c', 3), (6145, 'c', 4), (8193, 'c', 3)]
+
+== Above an anchor A (2^a or 3*2^a): u(A+j) = s_j*A - t_j, same s_j, t_j(wall) = 2 t_j(power); a = 40 ==
+j= 1 slope 2  t_power 1  t_wall 2  holds from a=1
+j= 3 slope 3  t_power 4  t_wall 8  holds from a=3
+j= 5 slope 7/2  t_power 8  t_wall 16  holds from a=4
+j= 7 slope 4  t_power 12  t_wall 24  holds from a=4
+j= 9 slope 15/4  t_power 16  t_wall 32  holds from a=5
+j=11 slope 5  t_power 24  t_wall 48  holds from a=5
+j=13 slope 5  t_power 28  t_wall 56  holds from a=5
+j=15 slope 5  t_power 32  t_wall 64  holds from a=5
+j=17 slope 31/8  t_power 32  t_wall 64  holds from a=6
+j=19 slope 11/2  t_power 48  t_wall 96  holds from a=6
+j=21 slope 6  t_power 56  t_wall 112  holds from a=6
+j=23 slope 13/2  t_power 64  t_wall 128  holds from a=6
+j=25 slope 11/2  t_power 60  t_wall 120  holds from a=6
+j=27 slope 7  t_power 80  t_wall 160  holds from a=6
+j=29 slope 13/2  t_power 80  t_wall 160  holds from a=6
+j=31 slope 6  t_power 80  t_wall 160  holds from a=6
+j=33 slope 63/16  t_power 64  t_wall 128  holds from a=7

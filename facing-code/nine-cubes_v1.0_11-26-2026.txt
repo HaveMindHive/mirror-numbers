@@ -1,0 +1,103 @@
+NINE, CUBES, 18 (Fable 5th run, 11-26-2026). Author of the method: Turaq Rayn-McLean.
+
+1. THE SQUARE AND THE CUBE OF |^1 (|^1 = base + 1: 3 in base 2, 11 in base 10, 9 in base 8).
+   (|^1)^2 = 1,2,1 in its own base; (|^1)^3 = 1,3,3,1 in its own base (the row 1 3 3 1). Checked for bases 2..40:
+     base  2: |^1 =  3, square    9 = 1001_2 = 1x2^2 + 2x2 + 1,  cube    27 = 1x2^3 + 3x2^2 + 3x2 + 1  (base-2 digits 11011)
+     base  4: |^1 =  5, square   25 = 121_4 = 1x4^2 + 2x4 + 1,  cube   125 = 1x4^3 + 3x4^2 + 3x4 + 1  (base-4 digits 1331)
+     base  8: |^1 =  9, square   81 = 121_8 = 1x8^2 + 2x8 + 1,  cube   729 = 1x8^3 + 3x8^2 + 3x8 + 1  (base-8 digits 1331)
+     base 10: |^1 = 11, square  121 = 121_10 = 1x10^2 + 2x10 + 1,  cube  1331 = 1x10^3 + 3x10^2 + 3x10 + 1  (base-10 digits 1331)
+     base 16: |^1 = 17, square  289 = 121_16 = 1x16^2 + 2x16 + 1,  cube  4913 = 1x16^3 + 3x16^2 + 3x16 + 1  (base-16 digits 1331)
+   So 9 = 3^2 is 1,2,1 read in base 2 (his 1,2,1 picture of 3: 4 + 2 + 2 + 1), 81 = 9^2 is 1,2,1 in base 8, 121 = 11^2 in base 10.
+   27 = 3^3 is 1,3,3,1 in base 2 (8 + 12 + 6 + 1); the 3s overflow in base 2 and print as 11011 (a palindrome: 3,0,3 with 3 = 11).
+   Cubing lays the row 1 3 3 1: the turn of the turn of the mark is the third row of the triangle; 9 and 27 are the base-2 rows.
+
+2. 9 AND 11 ARE THE TWO MIRRORS OF DECIMAL REVERSAL (his m line from 11 on the nines).
+   two-digit n = 10a + b:  n + rev(n) = 11 x (a + b),   n - rev(n) = 9 x (a - b)   (checked 10..99; Lean rev_sum, rev_diff)
+   base b: the two mirrors are b + 1 (|^1) and b - 1. Base 2: 3 and 1 (the 1 is invisible). Base 10: 11 and 9 = 3^2.
+   9 is a square only because the base is 10 = 3^2 + 1: 9 = 10 - 1 is the digit-sum blind spot (10 = 1 mod 9), 11 = 10 + 1 the mark.
+   nines reversed: rev(9k) = 9 x (11 - k):  9<->90  18<->81  27<->72  36<->63  45<->54  54<->45  63<->36  72<->27  81<->18  90<->9
+   The 11-mirror k <-> 11 - k (2<->9, 3<->8, 4<->7, 5<->6, 1<->10) IS digit reversal on the nines. 09<->90 needs a leading zero;
+   18 <-> 81 is the first honest pair: 2 x 9 reversed is 9 x 9. 27 <-> 72: 3^3 reversed is 2^3 x 3^2. 36 <-> 63, 45 <-> 54.
+   This is what 18 shows: the first two-digit nine, 18 = 1,8 = ^1 + 2^3, reads backwards as the square of 9.
+
+3. PICTURES (c^2 - w^2 = n) OF SQUARES AND CUBES.
+   p^2: two pictures, the halving and (p, 0): the square is a center with no wing (the turn p x p has block = center).
+   p^3: two pictures, the halving and (p(m+1), p m) with p = 2m+1: the cube's own picture is p's halving m, m+1, m SCALED BY p.
+        27 = 3 x (1,2,1) = (3,6,3): 6^2 - 3^2 = 27.  125 = 5 x (2,3,2): 15^2 - 10^2.  343 = 7 x (3,4,3): 28^2 - 21^2.
+        The turn of a turn of p carries p's own halving picture, p times. (Same fact by a different route: p^3 = T_p^2 - T_(p-1)^2.)
+   p^3 halving: wing (p^3-1)/2 = m x (p^2+p+1), center (p^3+1)/2 = (m+1) x (p^2-p+1): p's halving (m, m+1) times the two
+        turn-neighbours p^2 +- p + 1. For 3: 27 = 13,14,13 = (1 x 13, 2 x 7, 1 x 13): the cube of 3 reads 7 and 13 in its neighbours.
+        7 x 13 = 91 = 81 + 9 + 1 = 1,1,1 in base 9 (the 0-100 miss 91 is the 9-repunit of length 3; 1001 = 11 x 91).
+   checked odd primes p < 200 (Lean cube_picture, cube_halving).
+
+4. SQUARES AGAINST THE WALLS (self-count u(n) = n at 2^a and 3 x 2^a).
+   p^2 - 1 = (p-1)(p+1) is a wall exactly for p = 3, 5, 7:  9 = 2^3 + 1,  25 = 3x2^3 + 1,  49 = 3x2^4 + 1 (checked p < 1000;
+   proof: two powers of 2 differ by 2 only at 2, 4; 2^x and 3x2^y differ by 2 only at 4,6 and 6,8). So the squares of 3, 5, 7 sit
+   one past a wall, on the two proven strands (u(9) = 15 = 2^4 - 1, u(25) = 46 = 2(24 - 1), u(49) = 94 = 2(48 - 1)); no larger square does.
+   7 x 7 = 5 x 10 - 1 (his) and 7 x 7 = 3 x 16 + 1: 49 touches the 5-line from above and the 3-wall from below.
+   u(3^k), k = 0..7: [1, 3, 15, 64, 216, 1184, 5360, 19072]   = ['', '3', '3x5', '2^6', '2^3x3^3', '2^5x37', '2^4x5x67', '2^7x149']
+   u(27) = 64 = 4^3 and u(81) = 216 = 6^3: the unit count of the cube and the fourth turn of 3 are cubes (of 4 and 6);
+   u(243) = 1184 = 2^5x37 is not a cube: the run stops at two. A reading, not a law.
+   u(2 x 3^k) = 2 u(3^k): 18 counts 30 = 2 x 15 (the even line is the odd line doubled; 18 sits below 2n = 36 as 9 sits below 18).
+
+5. THE LAKE IMAGE OF 9, 27, 81, 243 (decimal 1/n): period of 1/3^k = 3^(k-2) for k >= 2.
+   1/9 = 0.(1), 1/27 = 0.(037), 1/81 = 0.(012345679), 1/243 period 27, 1/729 period 81: the lake of a turn of turns is a turn of
+   turns two levels down (checked k = 2..7; Lean period_27, period_81). 1/81 prints the digits 0..9 with the 8 = 2^3 missing.
+   Cubing the base: 10^3 - 1 = 999 = 9 x 111 = 27 x 37 (3^3 appears), 10^3 + 1 = 1001 = 7 x 11 x 13. His 3-digit pictures
+   (111,121,111; 444,555,444) live on these two mirrors: a,b,a with 3-digit blocks = 10^6 a + 10^3 b + a = a + b + a mod 999.
+   Repunits: the 3-power carried by (n ones) equals the 3-power carried by n (checked n < 200): 111 carries one 3, nine ones carry 9,
+   27 ones carry 27. The turn of a turn of ones carries the turn of the turn.
+
+6. WHAT 18 SHOWS.
+   split centers of 5|7, 7|11, 11|13, 13|17, 17|19, 19|23, 23|29: [6, 9, 12, 15, 18, 21, 26]: six centers in a row step 3 (6, 9, ..., 21), then 26.
+   9 = center of 7|11 (half gap 2); 18 = 7 + 11 = center of 17|19 (half gap 1): 18 is the sum of the split whose center is 9 and
+   the center of the split 17|19. 27 = 26 + 1 sits one past the first center off the 3-run (23|29).
+   18 = 2 x 9 is the first 2 x odd that is not 2 x prime (first E2-only seat): [18, 30, 42, 50, 54, 66] ...; 9 is the first odd composite.
+   m line: 11 - 2 = 9, 22 - 4 = 18: the even prime 2 and its square 4 land on 9 and 18.
+   SUM OF TWO CUBES a^3 + b^3 = (a + b)(a^2 - ab + b^2): composite unless a = b = 1 (1 x 1 x 1 + 1 x 1 x 1 = 2, the even prime).
+   The strand: [2, 9, 16, 28, 35, 54, 65, 72, 91, 126, 128, 133, 152, 189, 217, 224] ...  (4354 members to 1e6, 2 the only prime, checked). 2 and 9 are its first two members:
+   the even prime and the first odd composite, his pair 2 <-> 9 under 11. 9 = 2^3 + 1 is BOTH |^^^1 (the 2^a + 1 strand) and a cube sum.
+   Members among the early misses: 91 = 4^3 + 3^3 (= 7 x 13), 65 = 4^3 + 1, 133 = 5^3 + 2^3, 341 = 6^3 + 5^3, 1001 = 10^3 + 1, 1729 = 12^3 + 1 = 10^3 + 9^3.
+
+7. NEW STRANDS (fair shape readings of the seat y; the stack is the residue rules). y is CLOSED when
+   (S) y = c^2 (square strand, wing 0: the pentagonal wing 12P reads it);  (P_W) y + w^2 = c^2 for some 1 <= w <= W with c - w >= 2
+   (a second picture with a small wing: y = (c-w)(c+w));  (C) y = a^3 + b^3, a >= b >= 1, not 1,1;  (D) y = a^3 - b^3, a - b >= 2.
+   Each is proven composite by its own algebra (Lean picture_closed, cube_sum_closed). Stack to r closes every composite with a
+   block <= r; pictures to W close every composite with two faces <= 2W apart. Left open: a x b with a > r and b - a > 2W.
+
+7a. MAPPED OUT TO x: first prime p whose first open seat is not the next prime (the first unclosed composite y), per stack x strand set.
+     stack                          |         bare |           +S |       +S+P_1 |       +S+P_3 |      +S+P_10 |      +S+P_30 |  +S+P_10+C+D
+     (2, 3)                         |       23->25 |       31->35 |       53->55 |       61->65 |     139->145 |     331->335 |     139->145
+     (2, 3, 5)                      |       47->49 |       73->77 |       73->77 |     113->119 |     199->203 |     491->497 |     199->203
+     (2, 3, 5, 7)                   |     113->121 |     139->143 |     181->187 |     199->209 |     401->407 |     797->803 |     449->451
+     (2, 3, 5, 7, 11)               |     167->169 |     211->221 |     211->221 |     293->299 |     479->481 |   1021->1027 |     479->481
+     (2, 3, 5, 7, 11, 13)           |     283->289 |     317->323 |     389->391 |     491->493 |     691->697 |   1327->1343 |     691->697
+     (2, 3, 5, 7, 11, 13, 17, 19, 23) |     839->841 |     887->899 |   1069->1073 |   1069->1073 |   1531->1537 |   2803->2813 |   1531->1537
+   Reading: bare stack to r is mapped to nextprime(r)^2 - 1 (121, 169, 289); the square strand pushes it to p1 x p2 (twin products
+   323 = 17 x 19); pictures to W push it to p1 x nextprime(p1 + 2W + 1) when both faces are prime (deviations printed above, if any).
+   0-100 with (2,3) alone misses 25, 49, 77, 91: all four are pictures with wing <= 3 (25 = 5^2, 49 = 7^2, 77 = 9^2 - 2^2, 91 = 10^2 - 3^2).
+
+8. RANGE CLOSING (90% / 99% seats, mean rank, share named first), nearest-first on the open seats, per band:
+     stack + strands                              |              [1e3,1e4) |              [1e4,1e5) |              [1e5,1e6)
+     (2, 3)                                       |     6/ 10  2.83 0.3129 |     7/ 13  3.59 0.2430 |     9/ 17  4.35 0.2013
+     (2, 3) +S                                    |     6/ 10  2.81 0.3157 |     7/ 13  3.58 0.2439 |     9/ 17  4.35 0.2015
+     (2, 3) +S+P_10                               |     5/ 10  2.67 0.3374 |     7/ 13  3.52 0.2491 |     9/ 16  4.33 0.2026
+     (2, 3) +S+P_30+C+D                           |     5/  8  2.32 0.4100 |     7/ 12  3.34 0.2646 |     9/ 16  4.25 0.2067
+     (2, 3, 5, 7, 11, 13)                         |     3/  5  1.63 0.6117 |     4/  7  2.06 0.4726 |     5/  9  2.51 0.3910
+     (2, 3, 5, 7, 11, 13) +S                      |     3/  5  1.61 0.6183 |     4/  7  2.06 0.4740 |     5/  9  2.50 0.3913
+     (2, 3, 5, 7, 11, 13) +S+P_10                 |     3/  5  1.55 0.6428 |     4/  7  2.04 0.4773 |     5/  9  2.50 0.3924
+     (2, 3, 5, 7, 11, 13) +S+P_30+C+D             |     2/  4  1.41 0.7182 |     4/  7  1.99 0.4942 |     5/  9  2.47 0.3966
+     (2, 3, 5, 7, 11, 13, 17, 19, 23)             |     2/  4  1.39 0.7220 |     3/  6  1.76 0.5621 |     4/  8  2.14 0.4632
+     (2, 3, 5, 7, 11, 13, 17, 19, 23) +S          |     2/  4  1.37 0.7333 |     3/  6  1.76 0.5639 |     4/  8  2.14 0.4636
+     (2, 3, 5, 7, 11, 13, 17, 19, 23) +S+P_10     |     2/  4  1.31 0.7700 |     3/  6  1.74 0.5686 |     4/  8  2.13 0.4647
+     (2, 3, 5, 7, 11, 13, 17, 19, 23) +S+P_30+C+D |     2/  3  1.20 0.8407 |     3/  6  1.69 0.5865 |     4/  8  2.11 0.4691
+   Top band, stack to 13: first-named share 0.3910 bare -> 0.3966 with S + P_30 + C + D; mean rank 2.505 -> 2.470.
+   Reading: the shape strands are exact and run without end, but they are thin (squares ~ 1/(2 sqrt y) of seats, pictures to W ~ W/sqrt y,
+   cube sums ~ y^(-1/3)); in the top band they move the 90/99 seats by 0 and the first-named share by a few thousandths. They close the
+   LOW end exactly (the 'mapped out to x' table), not the top band; the stack (residue rules) is what closes the range, as the hazard said.
+
+   Composites left open by stack-to-13 + S + P_30 in [1e5, 1e5 + 2e4] (first eight, with faces):
+     100007 = 97x1031; 100013 = 103x971; 100021 = 29x3449; 100027 = 23x4349; 100031 = 67x1493; 100033 = 167x599; 100039 = 71x1409; 100063 = 47x2129
+   (two faces far apart: the gap between them is what neither the stack nor a small-wing picture reaches.)
+
+[129s]

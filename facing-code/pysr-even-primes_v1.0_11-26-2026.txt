@@ -1,0 +1,60 @@
+MAKE 0. Seat law: E2 numbers are n = 4w+2 (w >= 1), one per wing; n is E1 exactly when wing w is open
+  (no strand lands on it). Checked every wing w <= 1,000,000 (n <= 4,000,002). Strand hits on wing w = tau(2w+1) - 2.
+  E2\E1 = the missing seats, carrying h >= 1 strand hits: 18(h1), 30(h2), 42(h2), 50(h1), 54(h2), 66(h2), 70(h2), 78(h2), 90(h4), 98(h1), 102(h2), 110(h2), 114(h2), 126(h4), 130(h2), 138(h2), 150(h4), 154(h2)
+
+MAKE 1. Depth 2 (n = 4m, m odd >= 3): f0(n) = (h + s)/2, f2(n) = f0(n) + 1, h = strand hits on m's wing,
+  s = 1 if m is a square. Exact for m < 60,001 (asserted); proven by pairing divisors d <-> m/d.
+  Same fact reached by a different route in the divisor-pair count of the standard line.
+  Squarefree core with w odd primes (h + 2 = 2^w): depth k gives f0 = S(w,k), f2 = S(w,1)+...+S(w,k)
+  (asserted w <= 5, k <= 5; same fact reached by a different route: Stirling's set-partition numbers).
+  e.g. core 3*5*7 = 105 (h = 6): f0 at depth 1..5 = [1, 3, 1, 0, 0]  f2 = [1, 4, 5, 5, 5]
+  first n with f0 = j (no 2): {0: 4, 1: 6, 2: 180, 3: 420, 4: 900, 5: 1260, 6: 5400, 7: 3780, 8: 6300}
+  first n with f2 = j (2 counted): {1: 4, 2: 36, 3: 180, 4: 360, 5: 840, 6: 1080, 7: 2160, 8: 1800}
+
+MAKE 2. For E2 n = 2m: f2(2n) = (h + 2 + s)/2, so 2n splits two or more ways exactly when n is E2 but not E1
+  (asserted n < 200,000). 18 -> 36 = 2x18 = 6x6; 30 -> 60 = 2x30 = 6x10; E1 22 -> 44 = 2x22 only.
+  In the unified code n = w,c,w the E2 numbers are the ones with exactly one hinge 0 before an odd centre: 9,0,9 11,0,11 ; E1 vs E2\E1 is not visible there (the core's wing, one level down).
+  Imbalance (u-n)/n in [2^17, 2^18), E1 mean 30.90460 range [1.0000, 65.5002]; E2\E1 mean 30.84722 range [1.0000, 65.5803]: overlapping, no tell.
+
+MAKE 3. Count of E2 <= X = floor((X+2)/4) - 1 (asserted X = 10, 100, 12345, 1e6): a fixed quarter, they never thin.
+  E1 to 4000002: 148932. E1 gaps are multiples of 4 (proven: odd primes differ by an even number), so
+  E1 gaps in E2 steps = half the prime gaps: [1, 1, 2, 1, 2, 1, 2, 3, 1, 3, 2, 1, 2, 3, 3, 1, 3, 2, 1, 3]
+  dyadic block a: [2^a, 2^(a+1)), E2 count, E1 count, E1/E2 share, mean E1 gap in E2 steps
+   a= 4  E2       4  E1      2  share 0.500000  gap 1.0000
+   a= 5  E2       8  E1      5  share 0.625000  gap 1.7500
+   a= 6  E2      16  E1      7  share 0.437500  gap 2.0000
+   a= 7  E2      32  E1     13  share 0.406250  gap 2.5000
+   a= 8  E2      64  E1     23  share 0.359375  gap 2.7273
+   a= 9  E2     128  E1     43  share 0.335938  gap 3.0000
+   a=10  E2     256  E1     75  share 0.292969  gap 3.3784
+   a=11  E2     512  E1    137  share 0.267578  gap 3.7059
+   a=12  E2    1024  E1    255  share 0.249023  gap 4.0157
+   a=13  E2    2048  E1    464  share 0.226562  gap 4.4190
+   a=14  E2    4096  E1    872  share 0.212891  gap 4.6912
+   a=15  E2    8192  E1   1612  share 0.196777  gap 5.0708
+   a=16  E2   16384  E1   3030  share 0.184937  gap 5.4061
+   a=17  E2   32768  E1   5709  share 0.174225  gap 5.7405
+   a=18  E2   65536  E1  10749  share 0.164017  gap 6.0959
+   a=19  E2  131072  E1  20390  share 0.155563  gap 6.4285
+   a=20  E2  262144  E1  38635  share 0.147381  gap 6.7850
+
+BREAK 1. At depth 3 (n = 8m) f0 is no longer a function of (h, s): first clash m = 15 (f0 0)
+  vs m = 27 (f0 1), same h = 2, s = 0: n = 120 vs 216.
+  The count needs the core's full build (the exponents), not its strand-hit total. Depth 2 m = 1 (n = 4): f0 = 0, f2 = 1 (2x2).
+
+BREAK 2. E1 and E2 split at (E2 not E1, n < 400): [18, 30, 42, 50, 54, 66, 70, 78, 90, 98, 102, 110, 114, 126, 130, 138, 150, 154, 162, 170, 174, 182, 186, 190, 198, 210, 222, 230, 234, 238]
+  What changes at each split: the core m = n/2 gains strand hits h = tau(m) - 2 >= 1, and 2n gains (h + s)/2 extra factorings.
+  by kind: 18=2x9(h1,+1), 30=2x15(h2,+1), 42=2x21(h2,+1), 50=2x25(h1,+1), 54=2x27(h2,+1), 66=2x33(h2,+1), 70=2x35(h2,+1), 78=2x39(h2,+1), 90=2x45(h4,+2), 98=2x49(h1,+1), 102=2x51(h2,+1), 110=2x55(h2,+1), 114=2x57(h2,+1), 126=2x63(h4,+2)
+  First split with h = 1 (core p^2): 18; h = 2 (core pq): 30; h = 4: 90 (core 45 = 3^2*5) -> 180 is also the first double with 2 left out.
+
+BREAK 3. Making the even primes factor like odd primes:
+  (i) 2 as the unit, a (.) b = ab/2 (on places a (x) b = ab, the doubling removed): 2 (.) n = n; the (.)-primes are
+      exactly E1 = 2p (asserted n <= 2000) and every even 4..1000 factors in exactly one way. E2 collapses to E1.
+      Cost: 2 (.) 2 = 2, not 4; his 1u x 1u = 2u is gone.
+  (ii) keep a (x) b = 2ab but adjoin the odd 1 as unit: still 36 = 2x18 = 6x6 (unit adds nothing; the unit of (x) on places is 1/2 = n 1, odd).
+  (iii) keep 2ab but allow only E1 and 2 as letters: factoring is unique where it exists, but 60 of the 199 evens 4..400 cannot be written; first: [18, 30, 42, 50, 54, 66, 70, 78, 90, 98, 102, 108]
+  So: unique factoring comes back only when the doubling in 1 (x) 1 = 2 is taken out, and then the E2-only primes vanish.
+
+E3. Offset-11 per-block mirrors of odd primes 3..1e5 (11 left out, it faces 0): {'0mod4': 4790, 'E1': 1085, 'E2notE1': 3715}
+  Proven (asserted): the mirror lands in E2 exactly when p = 1 mod 4 in an even block j, or p = 3 mod 4 in an odd block.
+  First decade 3,5,7 -> 8,6,4: one E1 (6), two 0 mod 4. First mirror landing on E2 but not E1: 73 -> 70.

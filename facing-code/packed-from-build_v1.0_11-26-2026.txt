@@ -1,0 +1,25 @@
+== 1. Readings of passed places k in [100000, 140000) vs distinct blocks w(k) (Pearson; Spearman) ==
+  imbalance u-k                                        w: -0.1888; -0.1233   blocks>31: +0.0138
+  imbalance per unit (u-k)/k                           w: -0.1943; -0.1825   blocks>31: +0.0116
+  halving depth (2-adic)                               w: +0.2869; +0.4596   blocks>31: -0.0478
+  primorial seat: blocks of 30030 shared               w: +0.8060; +0.8376   blocks>31: -0.0648
+  per-11-block mirror shares a block with k            w: +0.3660; +0.4556   blocks>31: -0.0487
+  copies face q (smallest odd centre count, 1 if none) w: -0.1684; -0.0891   blocks>31: -0.0557
+  strand hits on wing (odd k only)                     w: +0.7433; +0.9467   blocks>31: +0.1390
+  (faces tau-2 track w by construction; any reading built from divisors is factoring k)
+  [1s]
+
+== 2. Exact naming share 1e3-1e4 / 1e4-1e5 / 1e5-1e6 (every 3rd gap in the top band) ==
+  last B window                          B=15: 0.6909/0.5365/0.4440 | B=31: 0.8172/0.6208/0.5136 | B=63: 0.9595/0.7275/0.5928 | B=95: 1.0000/0.8087/0.6401
+  packed oracle                          B=15: 1.0000/0.8902/0.7109 | B=31: 1.0000/1.0000/0.8442 | B=63: 1.0000/1.0000/0.9848 | B=95: 1.0000/1.0000/1.0000
+  open seats folded, small end first     B=15: 1.0000/0.8902/0.7109 | B=31: 1.0000/1.0000/0.8442 | B=63: 1.0000/1.0000/0.9848 | B=95: 1.0000/1.0000/1.0000
+  open seats folded, large end first     B=15: 0.1631/0.1222/0.1721 | B=31: 0.1894/0.1223/0.1722 | B=63: 0.2479/0.1224/0.1722 | B=95: 0.3374/0.1229/0.1724
+  ladder pairs m(m+1)                    B=15: 0.8219/0.6281/0.5218 | B=31: 0.9566/0.7445/0.6093 | B=63: 1.0000/0.8816/0.7044 | B=95: 1.0000/0.9547/0.7654
+  primorial-like seat + ladder pairs     B=15: 0.8030/0.6171/0.5132 | B=31: 0.9510/0.7388/0.6050 | B=63: 1.0000/0.8788/0.7017 | B=95: 1.0000/0.9528/0.7636
+  odd ladder pairs m(m+2)                B=15: 0.3129/0.2420/0.1987 | B=31: 0.3582/0.2951/0.2445 | B=63: 0.3582/0.3466/0.2927 | B=95: 0.3582/0.3675/0.3212
+  primorial seats 30030j                 B=15: 0.6503/0.5201/0.4262 | B=31: 0.6635/0.5300/0.4287 | B=63: 0.6635/0.5300/0.4287 | B=95: 0.6635/0.5300/0.4287
+  [20s]
+
+== 3. Open seats left by the ladder-pair rule (B=31, top band every 9th gap) ==
+  unreached seats 4810: 2 blocks, smallest block > 31: 4757; 3 blocks, smallest block > 31: 51; 1 blocks, smallest block > 31: 2
+  fold small-end B=31 at p=999983: first places [510510, 392863, 65231, 146969, 290177, 478661]; largest block laid 373

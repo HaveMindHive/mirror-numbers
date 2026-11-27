@@ -1,0 +1,14 @@
+  walked to 19: 8 named (0s)
+  walked to 361: 72 named (0s)
+  walked to 128,881: 12,064 named (0s)
+  walked to 300,128,881: 16,258,924 named (2s)
+  walked to 600,128,881: 31,331,098 named (4s)
+  walked to 900,128,881: 46,015,469 named (6s)
+  walked to 1,200,128,881: 60,460,821 named (8s)
+  walked to 1,500,000,001: 74,726,528 named (11s)
+WALK: every seat from 2 to 1,500,000,000. Named 74,726,528; answer key (sympy.primepi) 74,726,528; EXACT, no prime missed, no composite let through
+  blocks kept for the far windows: 50,847,581 (largest 1,000,000,993) (11s)
+WINDOW at 1e+12: walls 166,666,666,666 to 166,666,716,665 (100,000 seats), blocks up to 999,983. Named 10,875 primes in order, first 1,000,000,000,039, last 1,000,000,299,943; sympy.isprime disagrees on 0. (11s)
+WINDOW at 1e+15: walls 166,666,666,666,666 to 166,666,666,716,665 (100,000 seats), blocks up to 31,622,743. Named 8,596 primes in order, first 1,000,000,000,000,037, last 1,000,000,000,299,967; sympy.isprime disagrees on 0. (11s)
+WINDOW at 1e+18: walls 166,666,666,666,666,666 to 166,666,666,666,716,665 (100,000 seats), blocks up to 999,999,937. Named 7,208 primes in order, first 1,000,000,000,000,000,003, last 1,000,000,000,000,299,959; sympy.isprime disagrees on 0. (12s)
+done in 12s

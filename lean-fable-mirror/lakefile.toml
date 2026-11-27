@@ -1,0 +1,15 @@
+name = "fable_mirror"
+version = "0.1.0"
+defaultTargets = ["WallMirror"]
+
+[leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.36.0-rc2"
+
+[[lean_lib]]
+name = "WallMirror"

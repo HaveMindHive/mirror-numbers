@@ -1,0 +1,129 @@
+TWO AS THE ZERO (tUrUq, 11-26-2026). Answer key to 10000000 ; primes: 664579
+
+A. THE PICTURE. 0 halves into -1,0,1 (his two zeros: absence, nothingness, absence); 2 = 1,0,1.
+   Same picture: the wings cancel as facings (-1 + 1 = 0) and count as units (|-1| + |1| = 2). 2 is 0 with its wings counted.
+   Primes with hinge centre (w,0,w) to 10000000 : [2] ; every other prime is w,1,w (unit centre): checked.
+   Measured from 2's mirror (mod 2) every odd prime reads 1: the whole odd prime line is one seat, the unit. 2 is its zero.
+   2 = |0,(1): the first gap mirror with the unit behind it; 3 = |2,(1): the first unit-centred mirror. 1 | 3 are 2's two observers.
+
+B. RE-CENTRED FRAMES, first primes. index0 = place in the prime list with 2 as zero (3 -> 1, 5 -> 2, 7 -> 3: his 1, 2, 3 of odd primes).
+   p-2 = p measured from 2; p/2 = seat on the even line (odd p sits BETWEEN places w|w+1; 2p sits AT place p); fam = p mod 6.
+      p index0   p-2  (p-2)/2  even-line seat     w,c,w  fam p-2 on 3-zero p+2 on 3-zero
+      2      0     0      0.0         place 1     1,0,1    2          True         False
+      3      1     1      0.5             1|2     1,1,1    3         False         False
+      5      2     3      1.5             2|3     2,1,2    5          True         False
+      7      3     5      2.5             3|4     3,1,3    1         False          True
+     11      4     9      4.5             5|6     5,1,5    5          True         False
+     13      5    11      5.5             6|7     6,1,6    1         False          True
+     17      6    15      7.5             8|9     8,1,8    5          True         False
+     19      7    17      8.5            9|10     9,1,9    1         False          True
+     23      8    21     10.5           11|12   11,1,11    5          True         False
+     29      9    27     13.5           14|15   14,1,14    5          True         False
+     31     10    29     14.5           15|16   15,1,15    1         False          True
+     37     11    35     17.5           18|19   18,1,18    1         False          True
+     41     12    39     19.5           20|21   20,1,20    5          True         False
+     43     13    41     20.5           21|22   21,1,21    1         False          True
+     47     14    45     22.5           23|24   23,1,23    5          True         False
+     53     15    51     25.5           26|27   26,1,26    5          True         False
+     59     16    57     28.5           29|30   29,1,29    5          True         False
+     61     17    59     29.5           30|31   30,1,30    1         False          True
+     67     18    65     32.5           33|34   33,1,33    1         False          True
+     71     19    69     34.5           35|36   35,1,35    5          True         False
+     73     20    71     35.5           36|37   36,1,36    1         False          True
+     79     21    77     38.5           39|40   39,1,39    1         False          True
+     83     22    81     40.5           41|42   41,1,41    5          True         False
+     89     23    87     43.5           44|45   44,1,44    5          True         False
+     97     24    95     47.5           48|49   48,1,48    1         False          True
+    101     25    99     49.5           50|51   50,1,50    5          True         False
+   Family 6k-1 (332383 primes to 10000000): p-2 is on 3's zero in every case, p+2 never in range.
+   Family 6k+1 (332194 primes to 10000000): p+2 is on 3's zero in every case, p-2 never in range.
+   So the step of 2 (2 as the unit of the gap line) from a prime lands on 3's zero on exactly one side; the family says which. Mirror pair.
+   Twin pairs above 3 to 10000000: 58979; centre p+1 is a stacked zero of 2 and 3 (6k) in every case (Lean twin_straddles_wall).
+     twins to 100000: 1223; 6k with both sides prime share: 1223/16666
+     twins to 1000000: 8168; 6k with both sides prime share: 8168/166666
+     twins to 10000000: 58979; 6k with both sides prime share: 58979/1666666
+
+C. STACKED ZEROS. 2's zero stacks with 3 at 6, with 3,5 at 30, with 3,5,7 at 210, with 3,5,7,11 at 2310.
+   Open seats mod W = numbers coprime to W; they come in mirror pairs r <-> W-r (2 in the stack: same parity, never self-mirror).
+   W=    2 blocks [2]: one seat, 1, and it is its own mirror (2 - 1 = 1): the lone 2-zero has no partner seat; the unit faces itself.
+   W=    6 blocks [2, 3]: seats 2 (= prod (r-1) = 2), mirror pairs 1; seats within half a turn: 1; of these 1 + primes: 1, composite: 0 (all 1 or prime)
+          near seats: [1]
+   W=   30 blocks [2, 3, 5]: seats 8 (= prod (r-1) = 8), mirror pairs 4; seats within half a turn: 4; of these 1 + primes: 4, composite: 0 (all 1 or prime)
+          near seats: [1, 7, 11, 13]
+   W=  210 blocks [2, 3, 5, 7]: seats 48 (= prod (r-1) = 48), mirror pairs 24; seats within half a turn: 24; of these 1 + primes: 24, composite: 0 (all 1 or prime)
+          near seats: [1, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103]
+   W= 2310 blocks [2, 3, 5, 7, 11]: seats 480 (= prod (r-1) = 480), mirror pairs 240; seats within half a turn: 240; of these 1 + primes: 187, composite: 53 first composite 169 = 169 ([13])
+          composite near seats at 2310: [169, 221, 247, 289, 299, 323, 361, 377, 391, 403, 437, 481, 493, 527, 529, 533, 551, 559, 589, 611, 629, 667, 689, 697, 703, 713, 731, 767, 779, 793, 799, 817, 841, 851, 871, 893, 899, 901, 923, 943, 949, 961, 989, 1003, 1007, 1027, 1037, 1073, 1079, 1081, 1121, 1139, 1147]
+   W=30030 blocks [2, 3, 5, 7, 11, 13]: seats 5760 (= prod (r-1) = 5760), mirror pairs 2880; seats within half a turn: 2880; of these 1 + primes: 1750, composite: 1130 first composite 289 = 289 ([17])
+   Law (exact): the half turn W/2 stays below the next block squared for W = 6 (3 < 25), 30 (15 < 49), 210 (105 < 121); at 2310, 1155 > 169. That is the fray.
+
+   Primes per seat (exact counts), mirror imbalance r vs W-r, and the 6k-1 / 6k+1 lead:
+     W=  6 to   100000: min seat 4784, max seat 4805, largest mirror imbalance 21 at (1,5) = 4784 vs 4805; upper-half (W-r side) minus lower-half: +21
+     W=  6 to  1000000: min seat 39231, max seat 39264, largest mirror imbalance 33 at (1,5) = 39231 vs 39264; upper-half (W-r side) minus lower-half: +33
+     W=  6 to 10000000: min seat 332194, max seat 332382, largest mirror imbalance 188 at (1,5) = 332194 vs 332382; upper-half (W-r side) minus lower-half: +188
+          6k-1 vs 6k+1 to 10000000: 332383 vs 332194 (p > 3)
+     W= 30 to   100000: min seat 1189, max seat 1210, largest mirror imbalance 8 at (1,29) = 1189 vs 1197; upper-half (W-r side) minus lower-half: +8
+     W= 30 to  1000000: min seat 9787, max seat 9839, largest mirror imbalance 28 at (7,23) = 9811 vs 9839; upper-half (W-r side) minus lower-half: -12
+     W= 30 to 10000000: min seat 83003, max seat 83151, largest mirror imbalance 91 at (11,19) = 83100 vs 83009; upper-half (W-r side) minus lower-half: +5
+          mod 30 seats to 10000000 : {1: 83003, 7: 83103, 11: 83100, 13: 83076, 17: 83106, 19: 83009, 23: 83151, 29: 83021}
+     W=210 to   100000: min seat 190, max seat 210, largest mirror imbalance 17 at (73,137) = 210 vs 193; upper-half (W-r side) minus lower-half: -32
+     W=210 to  1000000: min seat 1602, max seat 1663, largest mirror imbalance 48 at (97,113) = 1663 vs 1615; upper-half (W-r side) minus lower-half: -198
+     W=210 to 10000000: min seat 13756, max seat 13921, largest mirror imbalance 131 at (97,113) = 13769 vs 13900; upper-half (W-r side) minus lower-half: -191
+   Reading: mirror seats r, W-r hold near-equal counts (imbalance under 0.1% of a seat at 1e7). At W=6 the 6k-1 seat leads in all three bands;
+   at W=30 and 210 the leading side changes between bands (+8/-12/+5; -32/-198/-191): no fixed side. The 6-lean is the one asymmetry that held in range (a mirror still to find).
+
+   AROUND A STACKED ZERO Wk: share of Wk with a prime at Wk-1, Wk+1, both, neither; mean distance to the nearest prime.
+     W=   6: N=1666665, Wk-1 prime 332383 (0.1994), Wk+1 prime 332194 (0.1993), both 58979 (0.0354), neither 1061067 (0.6366), mean nearest dist 6.3612
+     W=  30: N=333332, Wk-1 prime 83022 (0.2491), Wk+1 prime 83002 (0.2490), both 19507 (0.0585), neither 186815 (0.5604), mean nearest dist 6.6479
+     W= 210: N=47618, Wk-1 prime 13825 (0.2903), Wk+1 prime 13785 (0.2895), both 3908 (0.0821), neither 23916 (0.5022), mean nearest dist 7.3622
+     W=2310: N=4328, Wk-1 prime 1387 (0.3205), Wk+1 prime 1358 (0.3138), both 422 (0.0975), neither 2005 (0.4633), mean nearest dist 7.9293
+     control 2m off the 3-zero (same count N=1666666): 2m-1 prime 174191, 2m+1 prime 174321, both 1 = [4]: one side sits on 3's zero, so no pair,
+       except 4 = 2's zero stacked with itself, whose 3-zero neighbour IS the prime 3 (3 | 4 | 5: his '4 is the 2 of primes').
+     So the +-1 pair (twins) lives only around stacked zeros of 2 and 3: a stacked zero opens both wings; a lone 2-zero opens one.
+     Around 30k (N=333332): symmetric prime pairs n-r, n+r completed per r: {1: 19507, 7: 23534, 11: 21709, 13: 21467}; stacked zeros with 0,1,2,3,4 completed pairs: {0: 254081, 1: 72523, 2: 6494, 3: 230, 4: 4}
+
+D. EACH PRIME'S OWN ZERO. p sits on its own zero (p = 0 mod p). 2's zero and p's zero stack first at 2p = the even prime E1.
+     p=  3: own zero at 3, stack with 2 at 6; primes between the two zeros: [5] (1)
+     p=  5: own zero at 5, stack with 2 at 10; primes between the two zeros: [7] (1)
+     p=  7: own zero at 7, stack with 2 at 14; primes between the two zeros: [11, 13] (2)
+     p= 11: own zero at 11, stack with 2 at 22; primes between the two zeros: [13, 17, 19] (3)
+     p= 13: own zero at 13, stack with 2 at 26; primes between the two zeros: [17, 19, 23] (3)
+     p= 17: own zero at 17, stack with 2 at 34; primes between the two zeros: [19, 23, 29, 31] (4)
+     p= 19: own zero at 19, stack with 2 at 38; primes between the two zeros: [23, 29, 31, 37] (4)
+     p= 23: own zero at 23, stack with 2 at 46; primes between the two zeros: [29, 31, 37, 41, 43] (5)
+     p= 29: own zero at 29, stack with 2 at 58; primes between the two zeros: [31, 37, 41, 43, 47, 53] (6)
+     p= 31: own zero at 31, stack with 2 at 62; primes between the two zeros: [37, 41, 43, 47, 53, 59, 61] (7)
+     p= 37: own zero at 37, stack with 2 at 74; primes between the two zeros: [41, 43, 47, 53, 59, 61, 67, 71, 73] (9)
+     Fewest primes between p and 2p for p <= 1e5: 1 (at p = 2); in range the count stays >= 1 (same fact by a different route: Bertrand).
+   E1 = 2p is the odd prime line one zoom up (gaps 2x): on the even line with 2 as its 1, the primes are the places p. 2 reads as 0 (number line) and 1 (even line): his 0/1 two-face.
+   E2 (2 mod 4) = one 2-zero with an odd core: exactly one gap mirror |0 then odd. 4 = 2's zero stacked with itself (his '4 is the 2 of primes').
+
+E. THE GAP LINE. Every gap between odd primes is a multiple of 2: 2 is the unit of the gap line (h = g/2 = the place on the even line).
+   Splits 5..1e6: h even (gap 0 mod 4, 4-side kept) 33352, h odd (gap 2 mod 4, 4-side flips) 45143.
+   h mod 3 to 1e6: {0: 32821, 1: 22837, 2: 22837} (h = 0 mod 3 keeps the 6k+-1 facing; the two flips are near-equal: the hop's own frame is the mirror).
+
+F. FAMILIES FROM THE 6-ZERO. Write p = 6k + f, f in {-1, +1}: k = the wall index. Per family, which k appear (first 40):
+   6k-1: [1, 2, 3, 4, 5, 7, 8, 9, 10, 12, 14, 15, 17, 18, 19, 22, 23, 25, 28, 29, 30, 32, 33, 38, 39, 40, 42, 43, 44, 45, 47, 49, 52, 53, 58, 59, 60, 64, 65, 67]
+   6k+1: [1, 2, 3, 5, 6, 7, 10, 11, 12, 13, 16, 17, 18, 21, 23, 25, 26, 27, 30, 32, 33, 35, 37, 38, 40, 45, 46, 47, 51, 52, 55, 56, 58, 61, 62, 63, 66, 68, 70, 72]
+   k in both families = twin centres: [1, 2, 3, 5, 7, 10, 12, 17, 18, 23, 25, 30, 32, 33, 38, 40, 45, 47, 52, 58, 70, 72, 77, 87, 95, 100, 103, 107, 110, 135] ...; k in neither to 1e3: [20, 24, 31, 34, 36, 41, 48, 50, 54, 57, 69, 71, 79, 86, 88, 89, 92, 97, 104, 106, 111, 116, 119, 130, 132, 134, 136, 139, 141, 145] ...
+   k mod 5 per family (5's zero seen from the 6-zero), to 10000000 :
+     6k-1: {0: 83022, 1: 1, 2: 83101, 3: 83107, 4: 83152}  (k = 1 mod 5 -> p = 6k-1 = 5 mod 5... p on 5's zero: excluded; it is the missing class)
+     6k+1: {0: 83003, 1: 83104, 2: 83077, 3: 83010}  (k = 4 mod 5 excluded)
+   Each block r added to the stack removes one class of k per family and leaves r-1: 5 leaves 4 of 5, 7 leaves 6 of 7. Seats multiply by (r-1): 1, 2, 8, 48, 480.
+
+G. WHERE IT FRAYS. (1) near-zero seats stop being 1-or-prime at the stack 2310 (169 = 13 x 13). (2) the 6k-1 seat leads 6k+1 in every band to 1e7 (a lean, not a law; at 30 and 210 the lead changes side between bands).
+   (3) 'primes between p and 2p' is a count, not a seat. (4) The 2-frame alone (mod 2, mod 4) sees only parity and side: it never separates a prime from an odd composite; separation begins at the first stacked zero (3) and each new block only removes classes.
+
+H. HOW TO THINK WITH 2 AS THE ZERO (rules for the solver).
+   1. 2 is 0 with its wings counted: 0 = -1,0,1 and 2 = 1,0,1 are one picture (Lean two_pictures). Read 2 as the hinge, never as a seat. Do not list 2 among the odd primes; 3, 5, 7 are the 1, 2, 3 of odd primes.
+   2. Measured from 2 (mod 2) every odd prime reads 1 (Lean odd_prime_reads_one). The 2-frame alone (parity, mod 4 side) never tells a prime from an odd composite; it only fixes which seats exist. Expect no prime information from 2 alone; expect all of the SHAPE from it.
+   3. 2 is 0 on the number line and 1 on the even line (place k at 2k). Use both faces: 2p (E1) = the odd line one zoom up (gaps doubled, Lean e1_gap); 4 = 2's zero stacked with itself (his '4 is the 2 of primes'); E2 = one 2-zero over an odd core.
+   4. Every prime p is its own zero (p = 0 mod p). Two zeros stack where their multiples meet: 2 and p at 2p (Lean stack_two_p), 2 and 3 at 6, 2,3,5 at 30, 2,3,5,7 at 210. Work around stacked zeros, not around primes.
+   5. A lone 2-zero opens one wing (one neighbour sits on 3's zero, the other is open); a stacked zero of 2 and 3 opens both wings. Twin primes are the +-1 pair around a 6-zero (Lean twin_straddles_wall; 58979 pairs to 1e7, exception-free in range). The ONLY even off the 3-zero with both sides prime is 4.
+   6. Seats around a stacked zero W come in mirror pairs r <-> W - r of the same parity, none its own mirror (Lean mirror_keeps_parity); the lone 2-zero is the one stack whose seat (1) faces itself. Seat count multiplies by (r - 1) per block: 1, 2, 8, 48, 480. Taking 2 OUT of the stack (odd offset, his 11-line) makes the mirror cross parity (Lean odd_offset_crosses_parity): odd primes land on evens.
+   7. Within half a turn of a stacked zero the open seats are 1 and primes, exactly for W = 6, 30, 210 (Lean near_zero_seats_210), because W/2 < (next block)^2. It frays at 2310 where 169 = 13 x 13 is an open seat (Lean fray_at_2310): 53 of 240 near seats composite; at 30030, 1130 of 2880. Rule: the clean half turn ends at the next block squared.
+   8. The gap line is the even line: g = 2h, so 2 is the UNIT of gaps. Read hops in h (place on the even line): h even keeps the mod-4 side, h odd flips it (33352 vs 45143 to 1e6); h = 0 mod 3 keeps the 6k+-1 facing, the two flips balance exactly (22837 / 22837).
+   9. Per family from the 6-zero (p = 6k - 1 or 6k + 1): the step of 2 lands on 3's zero on exactly one side (p-2 for 6k-1, p+2 for 6k+1; exception-free to 1e7). Each new block r removes one class of the wall index k per family (k = 1 mod 5 for 6k-1, k = 4 mod 5 for 6k+1) and leaves r - 1. Speak per family and per stack; never 'all primes'.
+   10. Asymmetries to carry forward, not explain away: 6k-1 leads 6k+1 in every band to 1e7 (332383 vs 332194); at 30 and 210 the leading side changes between bands. Treat the 6-lean as a missing mirror (the hop's own frame, or the lake), and test the opposite reading of every seat count.
+   11. Where 2-as-zero stops: counts (primes between p and 2p; seat counts) are measures, not seats. The qQq (seats closed by a block larger than the laid stack) is expected to remain at every stack size.
+   Runtime 102.3s. No PySR run: no continuous relation appeared; every finding here is a count or an exact residue law.

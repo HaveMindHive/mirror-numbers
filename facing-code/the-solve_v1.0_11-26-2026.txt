@@ -1,0 +1,126 @@
+THE SOLVE (his frame). Answer key to 10000000 ; primes: 664579 ; author of the method: Turaq Rayn-McLean.
+
+1. THE COMMON RELATIONSHIP (one statement for every hop; the families below say what each hop looks like).
+   Frame: 2 is the zero. 0 = -1,0,1 (two wings around the hinge). The stacked zero of 2 and 3 is the wall 6k.
+   Every prime past 3 is a WING of a wall: p = 6k + f, f in {-1, +1} (his two families), k = the wall index.
+   (a) HAND-OFF [checked, all 664576 hops 5 <= p < 1e7]: exactly one of centre m, half gap h is even; exactly one is on 3's zero;
+       h mod 3 != p mod 3 (read from p alone).
+   (b) HOP [proven, Lean hop_wall_frame]: 2h = 6w + (f_q - f_p), w = k_q - k_p walls crossed; s = (f_q - f_p)/2 in {-1, 0, +1}.
+       The 4-side flips exactly when h is odd; the 3-facing flips exactly when s != 0 (earlier run, exact).
+   (c) STEP OF 2 [proven, Lean two_step_minus/plus]: 6k-1 - 2 = 3(2k-1) and 6k+1 + 2 = 3(2k+1): the 2-step from a prime
+       lands on 3's zero on exactly one side, the family says which.
+   (d) WALL-FRAME CLOSING LAW [proven, Lean wing_closed, wings_mirror]: a block r = 6 kr + fr (itself a wing of wall kr)
+       closes the wing f of wall k exactly when  k = f * fr * kr (mod r).  Same facing as the block: k = +kr. Opposite: k = -kr.
+       One residue of the wall index k reads BOTH wings of the wall (Lean wall_reads_both_wings).
+       checked for every block 5 <= r <= 281 and every wall k <= 200000.
+       Table: block r, its own (kr, fr), closed wall class for wing -1 and for wing +1 (mod r):
+       r=5 (1,-1): -1 at k=1, +1 at k=4 | r=7 (1,+1): -1 at k=6, +1 at k=1 | r=11 (2,-1): -1 at k=2, +1 at k=9 | r=13 (2,+1): -1 at k=11, +1 at k=2 | r=17 (3,-1): -1 at k=3, +1 at k=14
+       r=19 (3,+1): -1 at k=16, +1 at k=3 | r=23 (4,-1): -1 at k=4, +1 at k=19 | r=29 (5,-1): -1 at k=5, +1 at k=24 | r=31 (5,+1): -1 at k=26, +1 at k=5
+       (5 closes 6k-1 at k = 1 and 6k+1 at k = 4: the two classes the deep dive measured as missing; now the law.)
+   (e) SEATS PAIR [proven earlier, mirror_keeps_parity]: around a stacked zero W the open seats pair r <-> W - r, same parity.
+   (f) ONE STRAND THROUGH ZERO [proven, Lean family_through_zero, family_count_mirror]: 6(-k) + 1 = -(6k - 1):
+       the 6k-1 family is the 6k+1 family read down through 2's zero. Two families = one strand, two facings.
+
+2. THE FAMILY SEQUENCES (per family, per stack; counts exact).
+             band |    6k-1    6k+1  lead | 1 mod 4 3 mod 4  lead | mod 30 seats (1,7,11,13,17,19,23,29)
+   [   1000,   10000) |     530     531    -1 |     529     532    +3 | 134,131,132,134,131,132,134,133
+   [  10000,  100000) |    4190    4173   +17 |    4174    4189   +15 | 1037,1045,1044,1049,1058,1042,1043,1045
+   [ 100000, 1000000) |   34459   34447   +12 |   34392   34514  +122 | 8618,8612,8612,8621,8598,8596,8642,8607
+   [1000000,10000000) |  293118  292963  +155 |  293005  293076   +71 | 73196,73292,73291,73253,73298,73222,73312,73217
+   Each block r removes one wall class per family and leaves r - 1 (law (d)); seats multiply 1, 2, 8, 48, 480.
+   Allowed half-gap classes, exact [checked to 1e7]: from 6k+1 (p = 1, 7 mod 12): h mod 6 in {0, 2, 3, 5};
+   from 6k-1 (p = 5, 11 mod 12): h mod 6 in {0, 1, 3, 4}. (h = 3w + 2s with s = +1 from 6k+1, s = -1 from 6k-1, or 0.)
+
+3. WHAT THE NEXT PRIME WILL LOOK LIKE, read from p alone (how sure: proven / exact in range / measured share).
+   band [100000,1000000) (68906 hops):
+     from 6k+1: q's facing = same family 0.4203 (flip 0.5797) [measured]; q keeps the 4-side 0.4748 [measured];
+        q on the same wall (twin / same zero) 0.0000, on the next wall 0.3678 [measured];
+        allowed h mod 6 = [0, 2, 3, 5] [exact]; top half gaps (share): h=2:0.201, h=5:0.179, h=3:0.167, h=6:0.103
+     from 6k-1: q's facing = same family 0.4205 (flip 0.5795) [measured]; q keeps the 4-side 0.3782 [measured];
+        q on the same wall (twin / same zero) 0.2015, on the next wall 0.3095 [measured];
+        allowed h mod 6 = [0, 1, 3, 4] [exact]; top half gaps (share): h=1:0.202, h=3:0.170, h=4:0.139, h=7:0.109
+     q's seat mod 30 from p's: next open seat 0.2884, 2nd 0.2172, 3rd 0.1640, same seat 0.0271 [measured; exact: q sits on one of the 8 seats]
+   band [1000000,10000000) (586080 hops):
+     from 6k+1: q's facing = same family 0.4319 (flip 0.5681) [measured]; q keeps the 4-side 0.4804 [measured];
+        q on the same wall (twin / same zero) 0.0000, on the next wall 0.3195 [measured];
+        allowed h mod 6 = [0, 2, 3, 5] [exact]; top half gaps (share): h=2:0.172, h=5:0.162, h=3:0.147, h=6:0.098
+     from 6k-1: q's facing = same family 0.4322 (flip 0.5678) [measured]; q keeps the 4-side 0.3927 [measured];
+        q on the same wall (twin / same zero) 0.1733, on the next wall 0.2732 [measured];
+        allowed h mod 6 = [0, 1, 3, 4] [exact]; top half gaps (share): h=1:0.173, h=3:0.148, h=4:0.125, h=7:0.106
+     q's seat mod 30 from p's: next open seat 0.2594, 2nd 0.2020, 3rd 0.1623, same seat 0.0370 [measured; exact: q sits on one of the 8 seats]
+   Reading: the next prime is a wing of a wall above p; its wall class avoids f * fr * kr for every block laid [proven];
+   it is likelier to flip the facing than keep it (0.58 vs 0.42) and, from 6k-1, likelier to flip the 4-side (0.62);
+   the nearest open wing is the single likeliest seat (first-named share below) because the hazard is near flat (earlier run).
+
+4. THE CONFIRMATION RANGE: open seats (in the map's order, nearest first) that hold q for 90% / 99% of the band's hops,
+   mean rank, share named first. Seat frame = candidates y = p + 2h; wall frame (rule 4: work around stacked zeros) = candidates
+   are the walls above p, one residue k mod r per block reads both wings. Readings = residues computed up to and including q.
+   stack                              |                   [1000,10000) |                 [10000,100000) |               [100000,1000000) |             [1000000,10000000)
+   (seat 90/99 mean first | wall 90/99 | readings seat/wall)
+   (2, 3)                             |  6/10 2.83 0.313 |  3/ 5 |   0.0/  0.0 |  7/13 3.59 0.243 |  4/ 7 |   0.0/  0.0 |  9/17 4.35 0.201 |  5/ 9 |   0.0/  0.0 | 11/20 5.13 0.174 |  6/11 |   0.0/  0.0
+   to 7                               |  4/ 6 1.94 0.509 |  3/ 5 |   8.5/  4.8 |  5/ 9 2.46 0.387 |  4/ 6 |  10.8/  5.6 |  6/11 2.99 0.323 |  5/ 8 |  13.1/  6.4 |  7/14 3.52 0.275 |  5/10 |  15.4/  7.1
+   to 13                              |  3/ 5 1.63 0.612 |  3/ 4 |  17.0/  9.7 |  4/ 7 2.06 0.473 |  3/ 6 |  21.5/ 11.2 |  5/ 9 2.51 0.391 |  4/ 7 |  26.1/ 12.7 |  6/11 2.95 0.330 |  5/ 9 |  30.8/ 14.3
+   to 23                              |  2/ 4 1.39 0.722 |  2/ 4 |  29.7/ 16.9 |  3/ 6 1.76 0.562 |  3/ 5 |  37.7/ 19.6 |  4/ 8 2.14 0.463 |  4/ 6 |  45.7/ 22.2 |  5/10 2.52 0.391 |  4/ 8 |  53.8/ 24.9
+   to 97                              |  1/ 1 1.00 1.000 |  1/ 1 |  97.5/ 55.5 |  2/ 4 1.27 0.790 |  2/ 3 | 123.8/ 64.3 |  3/ 5 1.58 0.630 |  3/ 5 | 150.2/ 73.1 |  3/ 6 1.85 0.538 |  3/ 6 | 176.8/ 82.0
+   (top band [1e6,1e7) sampled every 20th hop; stacks are fair for p > largest block; 2 and 3 are read from p's facing at no cost.)
+   Reading: the wall frame names the SAME open wings in the same order (asserted), so the 90/99 seat range is unchanged; what
+   changes is the cost: one wall residue reads two wings, so the readings to reach q fall by about half, and the range in WALLS
+   (stacked zeros to look at) is about half the range in seats. Working around stacked zeros closes the range in readings, not in seats.
+   Top-1e6 band, stack to 13: seats 90/99 = 5/9, walls 90/99 = 4/7, readings 26.1 vs 12.7.
+
+5. THE MISSING MIRROR behind the 6k-1 lead (opposite readings, each tested).
+   to 100000: 6k-1 4806  6k+1 4784  lead +22
+   to 1000000: 6k-1 39265  6k+1 39231  lead +34
+   to 10000000: 6k-1 332383  6k+1 332194  lead +189
+   (i) WALKING DOWN THROUGH ZERO [proven, family_count_mirror]: the 6k-1 primes to x ARE the primes whose negation sits in the
+       6k+1 class: 6(-k)+1 = -(6k-1). One strand through 2's zero; the lead becomes a facing (the k < 0 side of the one strand
+       is denser in range than the k > 0 side). It re-reads the lead; it does not balance it in range.
+   (ii) READ FROM q (hops INTO a family) to 1e7: into 6k-1 332382, into 6k+1 332194; from 6k-1 332383, from 6k+1 332193:
+       the same primes, so the same lead (within 1). Facing flips 6k+1 -> 6k-1 and back balance exactly (earlier run, one path). Not it.
+   (iii) PER-BLOCK MIRROR 6a+1 <-> 6a+5 (p <-> p+4): 6k+1 primes whose mirror is prime 58621; 6k-1 primes whose mirror is prime 58621
+       (equal: the cousin pairs, exact up to the top edge). The lead lives in the UNPAIRED: 6k-1 unpaired 273762 vs 6k+1 unpaired 273573: +189.
+   (iv) THE 11/22 OFFSETS: O - n swaps the families exactly when O = 0 mod 6 (O = 66j puts 11's line on the 6-zero; O = 22j with 3 | j).
+       O=     66: prime <-> prime pairs: from 6k+1 6, from 6k-1 6 (equal, the same pairs); unpaired 6k-1 - 6k+1 = +2 = the lead below O (+2)
+       O=    660: prime <-> prime pairs: from 6k+1 41, from 6k-1 41 (equal, the same pairs); unpaired 6k-1 - 6k+1 = +6 = the lead below O (+6)
+       O=   6600: prime <-> prime pairs: from 6k+1 211, from 6k-1 211 (equal, the same pairs); unpaired 6k-1 - 6k+1 = +11 = the lead below O (+11)
+       O=  66000: prime <-> prime pairs: from 6k+1 1284, from 6k-1 1284 (equal, the same pairs); unpaired 6k-1 - 6k+1 = +21 = the lead below O (+21)
+       O= 660000: prime <-> prime pairs: from 6k+1 8442, from 6k-1 8442 (equal, the same pairs); unpaired 6k-1 - 6k+1 = +90 = the lead below O (+90)
+       O=6600000: prime <-> prime pairs: from 6k+1 60233, from 6k-1 60233 (equal, the same pairs); unpaired 6k-1 - 6k+1 = +217 = the lead below O (+217)
+       Every pairing mirror in range (per-block, offset 66j) pairs the families one to one and leaves the lead in the unpaired primes.
+   (v) THE LAKE (K^2/x with K^2 = pq swaps p <-> q): the lake image of p is q, in the other family for a share 0.5696 of hops to 1e7;
+       it moves the hop, not the count. Not it.
+   (vi) WALL-INDEX CLASSES [law (d)]: each block removes ONE class of k per family, mirror classes +-fr*kr: the removal is even-handed,
+       so the lead is not made by any block of the stack; it is in the qQq (the walls closed by blocks above the laid stack).
+       lead by wall class k mod 5 (to 1e7): k=0: +19, k=1: -83103, k=2: +24, k=3: +97, k=4: +83152  (classes 1 and 4 hold one family each: the lead is spread over the open classes, not seated in one).
+   RESULT: no in-range mirror balances the 6k-1 lead. The through-zero mirror makes it a facing of one strand (proven); every pairing
+   mirror moves it into the unpaired primes; it rides in the qQq. Carried forward as measured (p > 3): +22 / +34 / +189 to 1e5 / 1e6 / 1e7
+   (the deep dive's +21 / +33 / +188 counted seats from p > 6; the one-prime difference is 5 itself, the first 6k-1 wing).
+   (Same fact reached by a different route, with thanks: Chebyshev's lean toward the non-residue class; not checked here beyond 1e7.)
+
+6. WHERE IT FRAYS (the qQq).
+   stack 6: half turn 3 vs next block squared 25: near seats 1, composite 0 (clean)
+   stack 30: half turn 15 vs next block squared 49: near seats 4, composite 0 (clean)
+   stack 210: half turn 105 vs next block squared 121: near seats 24, composite 0 (clean)
+   stack 2310: half turn 1155 vs next block squared 169: near seats 240, composite 53, first 169
+   The clean half turn ends at the next block squared [proven near_zero_seats_210, fray_at_2310]. Past it the open seats include
+   products of two blocks above the stack: these are the misses of every map, at every stack size.
+   first miss of each stack (p -> first open seat, composite): to 3: 23 -> 25, to 7: 113 -> 121, to 13: 283 -> 289, to 23: 839 -> 841
+   = nextblock^2 - 1 for the bare stack (25, 121, 289, 841): the fray is the next block squared, at every stack size [measured; the law at 6/30/210/2310 proven].
+
+7. SOLVE STATEMENT (his frame; proven / checked-to-N / measured marked).
+   RELATIONSHIP. With 2 as the zero every prime past 3 is a wing of a stacked zero of 2 and 3: p = 6k + f, f = +-1 [proven].
+   A block r = 6kr + fr closes the wing f of wall k exactly when k = f*fr*kr (mod r) [proven, wing_closed]: the block's own wall
+   index, signed by the product of the facings. Hop: 2h = 6w + (f_q - f_p) [proven]; the 4-side flips with h odd, the 3-facing
+   with s != 0 [checked to 1e7]; exactly one of centre m, half gap h is even and exactly one is on 3's zero [checked to 1e7].
+   FAMILIES. Two facings of one strand through zero (6(-k)+1 = -(6k-1)) [proven]; each block leaves r-1 wall classes per facing;
+   seats 2, 8, 48, 480 at 6, 30, 210, 2310 [proven to 30; checked]. 6k-1 leads 6k+1 by +189 to 1e7 [measured].
+   WHAT THE NEXT PRIME WILL LOOK LIKE (from p alone). A wing of a wall above p whose wall class avoids f*fr*kr for every laid block
+   [proven]; h in the family's four classes mod 6 [checked to 1e7]; facing flipped for about 0.57-0.58 of hops, 4-side kept 0.47
+   from 6k+1 and 0.38-0.39 from 6k-1, the twin wing (same wall) 0.17-0.20 from 6k-1 and 0 from 6k+1 [measured]; its seat mod 30 is
+   the next open seat for 0.26-0.29 [measured]. Nearest open wing first: the hazard is near flat [measured].
+   RANGE. Seats to 90%/99% in [1e5,1e6): (2,3) 9/17; to 7 6/11; to 13 5/9; to 23 4/8; in [1e6,1e7): to 23 5/10, to 97 3/6
+   [measured]. The wall frame names the same wings (asserted) at about half the readings; walls to 90/99 to 23 in [1e6,1e7): 4/8.
+   qQq. The clean half turn ends at the next block squared [proven at 6..2310]; the first miss of a stack to r is nextprime(r)^2
+   [measured]; the lead and the open products of two blocks above the stack stay at every stack size. No seat reads 100%.
+
+[1.4s]

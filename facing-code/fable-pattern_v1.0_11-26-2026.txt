@@ -1,0 +1,66 @@
+HAND-OFF LAW (exact on all 78496 splits 5 <= p < 1e6): exactly one of centre m, half gap h is even; exactly one is on the 3-mirror; gcd(m, h) = 1 (no mirror r through both); h mod 3 != p mod 3 (read from p alone).
+
+FAMILIES (p mod 12 = facing on the 3-mirror x side on the 4-mirror). Allowed half-gap classes h mod 6 and the observed sequence of the top gaps per band (share of the family's splits).
+  band [1000,10000) family p=12k+1  n=   264  h mod 6 in (0, 2, 3, 5)  top gaps 4:0.307, 6:0.227, 10:0.193, 12:0.076, 16:0.076, 18:0.045  (gap mult of 12, keeps facing and side: 0.095)
+  band [1000,10000) family p=12k+5  n=   265  h mod 6 in (0, 1, 3, 4)  top gaps 2:0.325, 6:0.245, 8:0.166, 14:0.091, 12:0.091, 18:0.030  (gap mult of 12, keeps facing and side: 0.106)
+  band [1000,10000) family p=12k+7  n=   267  h mod 6 in (0, 2, 3, 5)  top gaps 4:0.303, 6:0.243, 10:0.195, 12:0.094, 16:0.049, 18:0.045  (gap mult of 12, keeps facing and side: 0.105)
+  band [1000,10000) family p=12k+11 n=   265  h mod 6 in (0, 1, 3, 4)  top gaps 2:0.317, 6:0.245, 8:0.158, 12:0.106, 14:0.087, 20:0.030  (gap mult of 12, keeps facing and side: 0.121)
+  band [10000,100000) family p=12k+1  n=  2074  h mod 6 in (0, 2, 3, 5)  top gaps 4:0.236, 6:0.203, 10:0.195, 12:0.106, 16:0.074, 18:0.048  (gap mult of 12, keeps facing and side: 0.138)
+  band [10000,100000) family p=12k+5  n=  2100  h mod 6 in (0, 1, 3, 4)  top gaps 2:0.238, 6:0.194, 8:0.161, 14:0.110, 12:0.110, 18:0.060  (gap mult of 12, keeps facing and side: 0.138)
+  band [10000,100000) family p=12k+7  n=  2099  h mod 6 in (0, 2, 3, 5)  top gaps 4:0.249, 6:0.192, 10:0.187, 12:0.101, 16:0.072, 18:0.060  (gap mult of 12, keeps facing and side: 0.129)
+  band [10000,100000) family p=12k+11 n=  2090  h mod 6 in (0, 1, 3, 4)  top gaps 2:0.249, 6:0.197, 8:0.160, 12:0.095, 14:0.095, 20:0.061  (gap mult of 12, keeps facing and side: 0.125)
+  band [100000,1000000) family p=12k+1  n= 17190  h mod 6 in (0, 2, 3, 5)  top gaps 4:0.199, 10:0.182, 6:0.169, 12:0.104, 16:0.073, 18:0.064  (gap mult of 12, keeps facing and side: 0.153)
+  band [100000,1000000) family p=12k+5  n= 17202  h mod 6 in (0, 1, 3, 4)  top gaps 2:0.200, 6:0.171, 8:0.140, 14:0.111, 12:0.103, 20:0.062  (gap mult of 12, keeps facing and side: 0.154)
+  band [100000,1000000) family p=12k+7  n= 17257  h mod 6 in (0, 2, 3, 5)  top gaps 4:0.204, 10:0.176, 6:0.164, 12:0.101, 16:0.075, 18:0.065  (gap mult of 12, keeps facing and side: 0.152)
+  band [100000,1000000) family p=12k+11 n= 17257  h mod 6 in (0, 1, 3, 4)  top gaps 2:0.203, 6:0.169, 8:0.138, 14:0.107, 12:0.101, 18:0.065  (gap mult of 12, keeps facing and side: 0.153)
+
+Block thresholds R used (largest block laid): [3, 11, 13, 17, 23, 31, 41, 43, 67, 73, 79, 113, 157, 163, 199, 331, 349, 397, 523, 557, 601, 739]
+[0.1s] tables ready
+
+RANGE CLOSING. Range = number of candidate seats, in the map's order, that hold q for 90% / 99% of the band's splits (also mean rank and share named first). B = passed places read (0 = p's own facing only).
+map (stacked)                                B    R |   [1e3,1e4) 90/99 mean first |   [1e4,1e5) 90/99 mean first |   [1e5,1e6) 90/99 mean first
+bare walk, every integer (gap itself)        -    - |   18/  30   8.48       |   22/  40  10.76       |   28/  50  13.06      
+mirror at the walker (seats walked = h)      -    - |    9/  15   4.24       |   11/  20   5.38       |   14/  25   6.53      
+hand-off (2,3 from p), walk up               0    3 |          6/  10   2.83 0.313 |          7/  13   3.59 0.243 |          9/  17   4.35 0.201
++ gap weights M(g) exp(-g/L)                 0    3 |          6/  10   3.03 0.240 |          8/  14   3.80 0.196 |          9/  17   4.61 0.168
++ family rule learned below the band         0    3 |          6/  10   2.87 0.295 |          7/  14   3.60 0.243 |          9/  17   4.36 0.201
++ NEW centre-rich (laid hits at centre)      0    3 |          6/  10   2.93 0.278 |          7/  14   3.74 0.220 |          9/  17   4.48 0.184
++ NEW centre-rich + broken side (q-1)        0    3 |          6/  10   2.93 0.278 |          8/  14   3.78 0.220 |          9/  17   4.60 0.184
+strands of 1 packed passed places, walk      1   17 |          3/   6   1.76 0.566 |          4/   7   2.06 0.473 |          5/   9   2.36 0.418
+  same + gap weights                         1   17 |          3/   6   1.91 0.471 |          4/   7   2.22 0.404 |          5/   9   2.52 0.351
+  same + NEW centre-rich + broken side       1   17 |          4/   6   1.95 0.461 |          4/   8   2.31 0.389 |          5/   9   2.64 0.341
+strands of 3 packed passed places, walk      3   41 |          2/   4   1.39 0.722 |          3/   5   1.65 0.603 |          4/   7   1.89 0.525
+  same + gap weights                         3   41 |          2/   5   1.54 0.600 |          3/   6   1.80 0.519 |          4/   7   2.05 0.445
+  same + NEW centre-rich + broken side       3   41 |          3/   5   1.58 0.592 |          3/   6   1.89 0.492 |          4/   7   2.17 0.421
+strands of 7 packed passed places, walk      7   73 |          2/   3   1.16 0.863 |          2/   4   1.39 0.720 |          3/   5   1.65 0.602
+  same + gap weights                         7   73 |          2/   3   1.33 0.715 |          3/   5   1.55 0.615 |          3/   6   1.81 0.513
+  same + NEW centre-rich + broken side       7   73 |          2/   3   1.36 0.696 |          3/   5   1.63 0.582 |          4/   6   1.92 0.482
+strands of 15 packed passed places, walk    15  157 |          1/   2   1.02 0.984 |          2/   3   1.19 0.844 |          2/   4   1.43 0.699
+  same + gap weights                        15  157 |          2/   2   1.18 0.824 |          2/   3   1.34 0.725 |          3/   5   1.58 0.598
+  same + NEW centre-rich + broken side      15  157 |          2/   3   1.22 0.803 |          2/   4   1.42 0.682 |          3/   5   1.69 0.559
+strands of 31 packed passed places, walk    31  331 |          1/   1   1.00 1.000 |          1/   2   1.05 0.957 |          2/   3   1.21 0.829
+  same + gap weights                        31  331 |          2/   2   1.16 0.840 |          2/   3   1.19 0.821 |          2/   4   1.36 0.711
+  same + NEW centre-rich + broken side      31  331 |          2/   3   1.20 0.814 |          2/   3   1.28 0.767 |          2/   4   1.47 0.658
+strands of 63 packed passed places, walk    63  523 |          1/   1   1.00 1.000 |          1/   1   1.00 1.000 |          1/   2   1.09 0.924
+  same + gap weights                        63  523 |          2/   2   1.16 0.840 |          2/   2   1.14 0.858 |          2/   3   1.23 0.794
+  same + NEW centre-rich + broken side      63  523 |          2/   3   1.20 0.821 |          2/   3   1.23 0.799 |          2/   3   1.34 0.732
+strands of 95 packed passed places, walk    95  739 |          1/   1   1.00 1.000 |          1/   1   1.00 1.000 |          1/   2   1.02 0.979
+  same + gap weights                        95  739 |          2/   2   1.16 0.840 |          2/   2   1.14 0.858 |          2/   2   1.17 0.841
+  same + NEW centre-rich + broken side      95  739 |          2/   3   1.19 0.824 |          2/   3   1.23 0.801 |          2/   3   1.27 0.773
+[12.9s] range table done
+
+NEW IDEA CHECK: does the centre of a split carry more laid blocks than a seat picked at random in the same gap?
+  band [1000,10000) blocks <= 43: mean hits at the centre 2.0426 vs other seats in the gap 1.8859  (n=891)
+  band [10000,100000) blocks <= 67: mean hits at the centre 2.1197 vs other seats in the gap 1.9410  (n=7344)
+  band [100000,1000000) blocks <= 73: mean hits at the centre 2.1421 vs other seats in the gap 1.9477  (n=61961)
+
+ASYMMETRY (the 4-side): the hand-off allows h even (side kept, q = p mod 4) and h odd (side swapped) alike; measured share of splits that keep the side, per family and band (0.5 would be even-handed).
+  band [1000,10000) side kept  12k+1: 0.4811  12k+5: 0.2943  12k+7: 0.4719  12k+11: 0.3132  all: 0.3902
+  band [10000,100000) side kept  12k+1: 0.4807  12k+5: 0.3524  12k+7: 0.4802  12k+11: 0.3560  all: 0.4172
+  band [100000,1000000) side kept  12k+1: 0.4731  12k+5: 0.3778  12k+7: 0.4764  12k+11: 0.3785  all: 0.4265
+  band [1000,10000) facing kept (gap mult of 6): 0.3940  (two of the four allowed h classes keep it)
+  band [10000,100000) facing kept (gap mult of 6): 0.4044  (two of the four allowed h classes keep it)
+  band [100000,1000000) facing kept (gap mult of 6): 0.4204  (two of the four allowed h classes keep it)
+
+WHERE IT FRAYS: in [1e5,1e6) with 31 places read, the seats ranked before q are survivors made only of blocks above R.
+  surviving seats before q (1 in 25 splits sampled), by number of blocks: {1: 8, 2: 533}  (R=331)

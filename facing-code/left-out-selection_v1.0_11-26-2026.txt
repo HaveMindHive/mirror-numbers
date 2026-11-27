@@ -1,0 +1,58 @@
+== Left-out selection: exact naming share by band (1e3-1e4 all / 1e4-1e5 all / 1e5-1e6 every 3rd gap) ==
+reference LW(L), full bands (left-out-method): L=31 0.8172/0.6208/0.5116; L=100 1.0/0.8218/0.6481; L=300 1.0/0.9998/0.8154; R4(31) 0.7832/0.6031/0.4971
+  last B (= LW, = p-d small d)     B=7: 0.5712/0.4370/0.3633 | B=15: 0.6909/0.5365/0.4440 | B=31: 0.8172/0.6208/0.5136 | B=63: 0.9595/0.7275/0.5928
+  deepest B (pool 2000)            B=7: 0.5542/0.4876/0.4088 | B=15: 0.7172/0.6193/0.5138 | B=31: 0.9048/0.7459/0.6049 | B=63: 0.9991/0.8799/0.7036
+  most-faced B (pool 2000)         B=7: 0.5203/0.5358/0.4846 | B=15: 0.5891/0.6030/0.5507 | B=31: 0.6541/0.6788/0.6191 | B=63: 0.7785/0.7832/0.7004
+  flank 2(p-1) + its blocks        B=7: 0.5627/0.4141/0.3484 | B=15: 0.6814/0.5201/0.4318 | B=31: 0.7889/0.6039/0.5005 | B=63: 0.9057/0.6960/0.5734
+  mirror p-11j                     B=7: 0.6173/0.4769/0.3955 | B=15: 0.7172/0.5555/0.4597 | B=31: 0.8228/0.6560/0.5388 | B=63: 0.8916/0.7742/0.6280
+  per-11-block mirror              B=7: 0.5749/0.4440/0.3709 | B=15: 0.6758/0.5378/0.4449 | B=31: 0.8068/0.6523/0.5289 | B=63: 0.8831/0.7594/0.6128
+  stride 2                         B=7: 0.2187/0.1733/0.1426 | B=15: 0.2828/0.2174/0.1777 | B=31: 0.3336/0.2659/0.2167 | B=63: 0.3629/0.3153/0.2607
+  stride 3                         B=7: 0.3591/0.2772/0.2267 | B=15: 0.4496/0.3514/0.2868 | B=31: 0.5108/0.4235/0.3414 | B=63: 0.5664/0.4920/0.4004
+  stride 6                         B=7: 0.1112/0.0826/0.0695 | B=15: 0.1489/0.1173/0.0982 | B=31: 0.1828/0.1482/0.1250 | B=63: 0.2130/0.1790/0.1570
+  nearest on each block's strand   B=7: 0.7465/0.5780/0.4773 | B=15: 0.9680/0.7301/0.5941 | B=31: 1.0000/0.9217/0.7116 | B=63: 1.0000/1.0000/0.8680
+  packed square-free cores         B=7: 0.9293/0.7237/0.6206 | B=15: 1.0000/0.8902/0.7109 | B=31: 1.0000/1.0000/0.8442 | B=63: 1.0000/1.0000/0.9848
+  [30s]
+
+== Greedy: fixed offsets d (read place p-d), added one at a time; train = even-index gaps in 1e5-1e6 (sample), test = odd-index ==
+  greedy offsets in order: [241, 113, 89, 302, 53, 304, 201, 41, 107, 257, 203, 308, 290, 207, 123, 400, 360, 82, 396, 281, 137, 173, 330, 287, 391, 231, 133, 101, 354, 187, 103, 97, 382, 261, 209, 189, 153, 145, 77, 111, 352, 205, 227, 374, 125, 95, 99, 239, 105, 245, 279, 121, 235, 191, 307, 177, 167, 299, 369, 131, 393, 237, 135]
+  greedy B=7: 0.7182/0.5514/0.4610  (top band = test half, every 2nd)
+  greedy B=15: 0.8238/0.6455/0.5320  (top band = test half, every 2nd)
+  greedy B=31: 0.9312/0.7491/0.6078  (top band = test half, every 2nd)
+  greedy B=63: 0.9887/0.8813/0.7013  (top band = test half, every 2nd)
+  [35s]
+
+== What the best places are ==
+  greedy first 15 offsets sorted: [41, 53, 89, 107, 113, 123, 201, 203, 207, 241, 257, 290, 302, 304, 308]
+    offsets that are multiples of 11: [308]; d <= 31: 0
+  greedy first 31 offsets sorted: [41, 53, 82, 89, 101, 103, 107, 113, 123, 133, 137, 173, 187, 201, 203, 207, 231, 241, 257, 281, 287, 290, 302, 304, 308, 330, 354, 360, 391, 396, 400]
+    offsets that are multiples of 11: [187, 231, 308, 330, 396]; d <= 31: 0
+  packed cores B=15 (top band): [30030, 215441, 47027, 107113, 241133, 409457, 7387, 9797] ... blocks laid up to 173; depth of each <= 2
+  nearest-on-strand B=15 at p=500009: offsets behind p [1, 2, 4, 6, 3, 5, 12, 20, 10, 28, 14, 23] ...; largest block laid 166669
+  packed cores B=31 (top band): [30030, 215441, 47027, 107113, 241133, 409457, 7387, 9797] ... blocks laid up to 359; depth of each <= 2
+  nearest-on-strand B=31 at p=500009: offsets behind p [1, 2, 4, 6, 3, 5, 12, 20, 10, 28, 14, 23] ...; largest block laid 166669
+  distinct blocks laid with 31 places, last B (= LW, = p-d small d): mean 49.3
+  distinct blocks laid with 31 places, most-faced B (pool 2000): mean 27.4
+  distinct blocks laid with 31 places, deepest B (pool 2000): mean 40.1
+  distinct blocks laid with 31 places, nearest on each block's strand: mean 60.9
+  distinct blocks laid with 31 places, packed square-free cores: mean 71.5
+
+== Where reads fray: the open seat that LW(31) wrongly names (top band, every 3rd) ==
+  misses 11171: ('two blocks', 'both > 31'): 10580; smallest block over sqrt(p)/2: 2397; ('3 blocks', 'both > 31'): 582; ('1 blocks', 'both > 31'): 9
+  check: reading the nearest passed left-out on every block r with r*r <= 2p names q exactly (asserted on a sample; the same fact reached by a different route)
+  [35s]
+
+== Larger budgets for the two block-led rules (where exact arrives) ==
+  packed square-free cores         B=95: 1.0000/1.0000/1.0000
+  packed square-free cores         B=127: 1.0000/1.0000/1.0000
+  packed square-free cores         B=191: 1.0000/1.0000/1.0000
+  nearest on each block's strand   B=95: 1.0000/1.0000/0.9596
+  nearest on each block's strand   B=127: 1.0000/1.0000/0.9970
+  nearest on each block's strand   B=191: 1.0000/1.0000/1.0000
+  last B (= LW, = p-d small d)     B=95: 1.0000/0.8087/0.6401
+  last B (= LW, = p-d small d)     B=127: 1.0000/0.8683/0.6764
+  last B (= LW, = p-d small d)     B=191: 1.0000/0.9525/0.7396
+  packed square-free cores B=63, FULL top band (all 68,906 gaps): 1.0000/1.0000/0.9847
+  packed square-free cores B=95, FULL top band (all 68,906 gaps): 1.0000/1.0000/1.0000
+  packed B=95 at p=100003 (lim 1e5, thinnest case): blocks up to 739 laid (sqrt(2p) = 447)
+  packed B=191 at p=999983: 191 places, every block up to 1787 laid (sqrt(2p) = 1414)
+  [70s]

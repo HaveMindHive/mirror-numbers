@@ -1,0 +1,205 @@
+RULE-BREAKERS v1.0 11-26-2026  (n <= 1,000,000; tier A rules scored, tier B listed apart)
+
+== CATALOGUE (rule, provenance, exceptions to 1e6: count and first ones) ==
+[A] units word root [L]: u(2k)=2u(k), u(2k+1)=2u(k)+u(k+1) from 1,2; 3 is set by the word 111
+      2 exceptions: [1, 3]
+[A] self-count [L]: u(n) > n except at the self-count points
+      39 exceptions: [1, 2, 3, 4, 6, 8, 12, 16, 24, 32, 48, 64, 96, 128, 192, 256, 384, 512, 768, 1024, 1536, 2048, 3072, 4096] ...
+[A] ratio-two line [L]: odd n has u(n) >= 2n except the strands 2^a+1, 3*2^a+1 and 1, 11, 15
+      40 exceptions: [1, 3, 5, 7, 9, 11, 13, 15, 17, 25, 33, 49, 65, 97, 129, 193, 257, 385, 513, 769, 1025, 1537, 2049, 3073] ...
+[A] ratio-two sporadic [L]: below the line only on a strand, except 1, 11, 15
+      3 exceptions: [1, 11, 15]
+[A] counts n-1 twice [C 1e6]: u(n) = 2(n-1) is not met except at 2, 11, 15
+      3 exceptions: [2, 11, 15]
+[A] mod-4 law (odd) [L]: odd n: 4 | u(n) except 1, 2^a+1 (u odd), 3*2^a+1 (u = 2 mod 4)
+      38 exceptions: [1, 3, 5, 7, 9, 13, 17, 25, 33, 49, 65, 97, 129, 193, 257, 385, 513, 769, 1025, 1537, 2049, 3073, 4097, 6145] ...
+[A] mod-4 law (even) [L]: even n: u(n) = 2 mod 4 only at 2 and 2^a+2 (the even halves of the lit strand doubled)
+      19 exceptions: [2, 6, 10, 18, 34, 66, 130, 258, 514, 1026, 2050, 4098, 8194, 16386, 32770, 65538, 131074, 262146, 524290]
+[A] step law (k=1) [L]: d(2k)=d(k), d(2k+1)=4u(k) except k = 1 (n = 2, 3)
+      2 exceptions: [2, 3]
+[A] class by 8 [C 1e6]: u(8k+r) by the four class formulas
+      7 exceptions: [3, 5, 7, 9, 11, 13, 15]
+[A] pure halving fixed [L]: v(n) > n except at 2^a (walls drop out when 3 = 1,2,1)
+      20 exceptions: [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288]
+[A] pure halving sporadic [L]: odd n below 2n in v only on 2^a+1, except 1, 7
+      2 exceptions: [1, 7]
+[A] shared wings [L n>=2]: halving wing n//2 differs from the thirding wing
+      4 exceptions: [1, 2, 3, 5]
+[A] same picture both mirrors [C 2e4]: R and T pictures differ
+      2 exceptions: [1, 2]
+[A] prime face [C 1e6]: prime has one face k,k+1,k:2 with a filled centre
+      2 exceptions: [2, 3]
+[A] spine folds [C 2e5]: odd n folds v2(n-1)+1 times; 2^a+1 ends on |3| one fold sooner
+      16 exceptions: [5, 9, 17, 33, 65, 129, 257, 513, 1025, 2049, 4097, 8193, 16385, 32769, 65537, 131073]
+[A] gap hand-off [C 1e6]: one of m,h even; one a multiple of 3; facing kept iff 6 | gap
+      3 exceptions: [2, 3, 5]
+[A] missing-wing strands [C 1e6]: open wing w <-> 2w+1 prime seat
+      1 exceptions: [1]
+[A] imaginary side [C 1e6]: prime is two squares <-> its wing is even
+      1 exceptions: [2]
+[A] even-prime seat law [C 1e6]: 2p is the E2 seat 4w+2 of an open wing
+      2 exceptions: [2, 4]
+[A] deep/shallow axis [C 1e6]: 2p sits between a shallow (4*odd) and a deep left-out; deep side left iff p = 1 mod 4
+      2 exceptions: [3, 6]
+[A] offset swap [C O<=2e4]: n <-> O-n swaps primes and composites on [2,O-2] for no offset except 11
+      1 exceptions: [11]
+[A] prime/composite balance [C 1e6]: primes and composites on [2,x] unequal except x = 9, 11, 13
+      3 exceptions: [9, 11, 13]
+[A] decimal mirrors below line [C 1e6]: two-digit-plus palindromes sit above u = 2n except these
+      10 exceptions: [11, 22, 33, 44, 66, 88, 272, 2112, 4224, 8448]
+[A] 3,5,7 run [C 1e6]: p, p+2, p+4 are not all prime except 3
+      3 exceptions: [3, 5, 7]
+[A] gap-4 balance [C 1e6]: odd m: D = 0 iff m = 5 mod 8, except these
+      3 exceptions: [5, 9, 13]
+[A] E2 split points (first) [C]: E2 = 2p, first split 18; first double factoring 36
+      2 exceptions: [18, 36]
+[B] mirror walk break (prime squares) [C 1e6]: walk with mirrors below q names primes up to q^2
+      168 exceptions: [4, 9, 25, 49, 121, 169, 289, 361, 529, 841, 961, 1369, 1681, 1849, 2209, 2809, 3481, 3721, 4489, 5041, 5329, 6241, 6889, 7921] ...
+[B] broken side absent (twin lower) [C 1e6]: p+2 is a missing seat (the left side is broken) except twin lower primes
+      8169 exceptions: [3, 5, 11, 17, 29, 41, 59, 71, 101, 107, 137, 149, 179, 191, 197, 227, 239, 269, 281, 311, 347, 419, 431, 461] ...
+No exceptions found (not scored): unified code w,c,w (bottom holds n units, n<200, earlier script); picture rule b+(s-1)a
+  (n<5000; the even hinge b=a is its built-in special case); imbalance u=n+imb [L]; R/T forms read n (n<3000);
+  mirror at the walker R1 (78495/78495 gaps from p=5; 2,3 outside its range); E2 gap 4 from 6 on.
+Not sparse (left out of the score): centre tell (first allowed h right 46-89%), left-out window LW(L) (misses 18-64%).
+
+== RANKED (tier A score >= 2) ==
+      2 score 11  power of 2                  self-count, counts n-1 twice, mod-4 law (even), step law (k=1), pure halving fixed, shared wings, same picture both mirrors, prime face, gap hand-off, imaginary side, even-prime seat law
+      3 score 11  wall 3*2^a         2^a+1    units word root, self-count, ratio-two line, mod-4 law (odd), step law (k=1), class by 8, shared wings, prime face, gap hand-off, deep/shallow axis, 3,5,7 run
+      1 score 10  unit 1                      units word root, self-count, ratio-two line, ratio-two sporadic, mod-4 law (odd), pure halving fixed, pure halving sporadic, shared wings, same picture both mirrors, missing-wing strands
+      5 score  8  prime              2^a+1    ratio-two line, mod-4 law (odd), class by 8, shared wings, spine folds, gap hand-off, 3,5,7 run, gap-4 balance
+     11 score  7  prime                       ratio-two line, ratio-two sporadic, counts n-1 twice, class by 8, offset swap, prime/composite balance, decimal mirrors below line
+      9 score  6  odd composite      2^a+1    ratio-two line, mod-4 law (odd), class by 8, spine folds, prime/composite balance, gap-4 balance
+      7 score  5  prime              3*2^a+1  ratio-two line, mod-4 law (odd), class by 8, pure halving sporadic, 3,5,7 run
+     13 score  5  prime              3*2^a+1  ratio-two line, mod-4 law (odd), class by 8, prime/composite balance, gap-4 balance
+     15 score  4  odd composite               ratio-two line, ratio-two sporadic, counts n-1 twice, class by 8
+     33 score  4  odd composite      2^a+1    ratio-two line, mod-4 law (odd), spine folds, decimal mirrors below line
+      4 score  3  power of 2         3*2^a+1  self-count, pure halving fixed, even-prime seat law
+      6 score  3  wall 3*2^a         2^a+2    self-count, mod-4 law (even), deep/shallow axis
+     17 score  3  prime              2^a+1    ratio-two line, mod-4 law (odd), spine folds
+     65 score  3  odd composite      2^a+1    ratio-two line, mod-4 law (odd), spine folds
+    129 score  3  odd composite      2^a+1    ratio-two line, mod-4 law (odd), spine folds
+    257 score  3  prime              2^a+1    ratio-two line, mod-4 law (odd), spine folds
+    513 score  3  odd composite      2^a+1    ratio-two line, mod-4 law (odd), spine folds
+   1025 score  3  odd composite      2^a+1    ratio-two line, mod-4 law (odd), spine folds
+   2049 score  3  odd composite      2^a+1    ratio-two line, mod-4 law (odd), spine folds
+   4097 score  3  odd composite      2^a+1    ratio-two line, mod-4 law (odd), spine folds
+   8193 score  3  odd composite      2^a+1    ratio-two line, mod-4 law (odd), spine folds
+  16385 score  3  odd composite      2^a+1    ratio-two line, mod-4 law (odd), spine folds
+  32769 score  3  odd composite      2^a+1    ratio-two line, mod-4 law (odd), spine folds
+  65537 score  3  prime              2^a+1    ratio-two line, mod-4 law (odd), spine folds
+ 131073 score  3  odd composite      2^a+1    ratio-two line, mod-4 law (odd), spine folds
+      8 score  2  power of 2                  self-count, pure halving fixed
+     16 score  2  power of 2                  self-count, pure halving fixed
+     18 score  2  E2-only (2 mod 4)  2^a+2    mod-4 law (even), E2 split points (first)
+     25 score  2  odd composite      3*2^a+1  ratio-two line, mod-4 law (odd)
+     32 score  2  power of 2                  self-count, pure halving fixed
+     49 score  2  odd composite      3*2^a+1  ratio-two line, mod-4 law (odd)
+     64 score  2  power of 2                  self-count, pure halving fixed
+     66 score  2  E2-only (2 mod 4)  2^a+2    mod-4 law (even), decimal mirrors below line
+     97 score  2  prime              3*2^a+1  ratio-two line, mod-4 law (odd)
+    128 score  2  power of 2                  self-count, pure halving fixed
+    193 score  2  prime              3*2^a+1  ratio-two line, mod-4 law (odd)
+    256 score  2  power of 2                  self-count, pure halving fixed
+    385 score  2  odd composite      3*2^a+1  ratio-two line, mod-4 law (odd)
+    512 score  2  power of 2                  self-count, pure halving fixed
+    769 score  2  prime              3*2^a+1  ratio-two line, mod-4 law (odd)
+   1024 score  2  power of 2                  self-count, pure halving fixed
+   1537 score  2  odd composite      3*2^a+1  ratio-two line, mod-4 law (odd)
+   2048 score  2  power of 2                  self-count, pure halving fixed
+   3073 score  2  odd composite      3*2^a+1  ratio-two line, mod-4 law (odd)
+   4096 score  2  power of 2                  self-count, pure halving fixed
+   6145 score  2  odd composite      3*2^a+1  ratio-two line, mod-4 law (odd)
+   8192 score  2  power of 2                  self-count, pure halving fixed
+  12289 score  2  prime              3*2^a+1  ratio-two line, mod-4 law (odd)
+  16384 score  2  power of 2                  self-count, pure halving fixed
+  24577 score  2  odd composite      3*2^a+1  ratio-two line, mod-4 law (odd)
+  32768 score  2  power of 2                  self-count, pure halving fixed
+  49153 score  2  odd composite      3*2^a+1  ratio-two line, mod-4 law (odd)
+  65536 score  2  power of 2                  self-count, pure halving fixed
+  98305 score  2  odd composite      3*2^a+1  ratio-two line, mod-4 law (odd)
+ 131072 score  2  power of 2                  self-count, pure halving fixed
+ 196609 score  2  odd composite      3*2^a+1  ratio-two line, mod-4 law (odd)
+ 262144 score  2  power of 2                  self-count, pure halving fixed
+ 262145 score  2  odd composite      2^a+1    ratio-two line, mod-4 law (odd)
+ 393217 score  2  odd composite      3*2^a+1  ratio-two line, mod-4 law (odd)
+ 524288 score  2  power of 2                  self-count, pure halving fixed
+ 524289 score  2  odd composite      2^a+1    ratio-two line, mod-4 law (odd)
+ 786433 score  2  prime              3*2^a+1  ratio-two line, mod-4 law (odd)
+score-1 numbers: 40 first: [10, 12, 22, 24, 34, 36, 44, 48, 88, 96, 130, 192, 258, 272, 384, 514, 768, 1026, 1536, 2050, 2112, 3072, 4098, 4224, 6144, 8194, 8448, 12288, 16386, 24576]
+
+== THINNING (count of rule-breakers per range; sum of scores) ==
+        1-10       breakers   10  score sum   60  score>=2   9  share of range 1.000000
+       11-100      breakers   23  score sum   51  score>=2  14  share of range 0.255556
+      101-1000     breakers   16  score sum   28  score>=2   9  share of range 0.017778
+     1001-10000    breakers   21  score sum   36  score>=2  11  share of range 0.002333
+    10001-100000   breakers   17  score sum   30  score>=2  10  share of range 0.000189
+   100001-1000000  breakers   15  score sum   25  score>=2   9  share of range 0.000017
+  fit C(x) = -5.895 + 5.5474*log2(x), max |residual| 2.75 (x = 2..2^19); C(2^19) = 98
+  tier B for contrast: {'mirror walk break (prime squares)': [2, 2, 7, 14, 40, 103], 'broken side absent (twin lower)': [2, 6, 27, 170, 1019, 6945]}
+
+== HUGGING (partners that are also breakers) vs random numbers of the same size ==
+  breakers with at least one breaker partner: 0.9902   random same-size: 0.2631
+    2n            breakers 0.6186   random 0.1415
+    n+1           breakers 0.5980   random 0.1786
+    block mirror  breakers 0.2475   random 0.1672
+    11-n          breakers 1.0000   random 1.0000
+    n-1           breakers 0.6040   random 0.1804
+    n/2           breakers 0.9677   random 0.2487
+  odd breakers > 1: 39; with an even breaker beside them: 39; without: []
+
+== FAMILIES ==
+  odd composite      breakers   26  score sum   70
+  power of 2         breakers   19  score sum   48
+  wall 3*2^a         breakers   19  score sum   31
+  E2-only (2 mod 4)  breakers   13  score sum   15
+  prime              breakers   12  score sum   44
+  left-out 4k        breakers    7  score sum    7
+  even prime 2p      breakers    5  score sum    5
+  unit 1             breakers    1  score sum   10
+  relativity (same number, rule it breaks vs rule it fits):
+         1 unit 1           breaks: units word root, self-count, ratio-two line, ratio-two sporadic, mod-4 law (odd), pure halving fixed, pure halving sporadic, shared wings, same picture both mirrors, missing-wing strands   fits: -
+         2 power of 2       breaks: self-count, counts n-1 twice, mod-4 law (even), step law (k=1), pure halving fixed, shared wings, same picture both mirrors, prime face, gap hand-off, imaginary side, even-prime seat law   fits: -
+         3 wall 3*2^a       breaks: units word root, self-count, ratio-two line, mod-4 law (odd), step law (k=1), class by 8, shared wings, prime face, gap hand-off, deep/shallow axis, 3,5,7 run   fits: pure halving sporadic
+         5 prime            breaks: ratio-two line, mod-4 law (odd), class by 8, shared wings, spine folds, gap hand-off, 3,5,7 run, gap-4 balance   fits: pure halving sporadic, self-count
+         7 prime            breaks: ratio-two line, mod-4 law (odd), class by 8, pure halving sporadic, 3,5,7 run   fits: self-count
+        11 prime            breaks: ratio-two line, ratio-two sporadic, counts n-1 twice, class by 8, offset swap, prime/composite balance, decimal mirrors below line   fits: mod-4 law (odd), pure halving sporadic, self-count
+        15 odd composite    breaks: ratio-two line, ratio-two sporadic, counts n-1 twice, class by 8   fits: mod-4 law (odd), pure halving sporadic, self-count
+        17 prime            breaks: ratio-two line, mod-4 law (odd), spine folds   fits: pure halving sporadic, self-count
+        18 E2-only (2 mod 4) breaks: mod-4 law (even), E2 split points (first)   fits: self-count
+        25 odd composite    breaks: ratio-two line, mod-4 law (odd)   fits: pure halving sporadic, self-count
+        36 left-out 4k      breaks: E2 split points (first)   fits: self-count
+       121 odd composite    breaks: -   fits: ratio-two line, mod-4 law (odd), pure halving sporadic, self-count
+       257 prime            breaks: ratio-two line, mod-4 law (odd), spine folds   fits: pure halving sporadic, self-count
+     65537 prime            breaks: ratio-two line, mod-4 law (odd), spine folds   fits: pure halving sporadic, self-count
+
+== STRONGEST ODDITY: sporadic breakers (off every strand, not a power or wall) ==
+   [(11, 7), (15, 4), (22, 1), (36, 1), (44, 1), (88, 1), (272, 1), (2112, 1), (4224, 1), (8448, 1)]
+        11 prime            u=20 u/n=1.8182 neighbours: 10:B 12:B 2n:B  rules: ratio-two line, ratio-two sporadic, counts n-1 twice, class by 8, offset swap, prime/composite balance, decimal mirrors below line
+        15 odd composite    u=28 u/n=1.8667 neighbours: 14:. 16:B 2n:.  rules: ratio-two line, ratio-two sporadic, counts n-1 twice, class by 8
+        22 even prime 2p    u=40 u/n=1.8182 neighbours: 21:. 23:. 2n:B  rules: decimal mirrors below line
+        36 left-out 4k      u=60 u/n=1.6667 neighbours: 35:. 37:. 2n:.  rules: E2 split points (first)
+        44 left-out 4k      u=80 u/n=1.8182 neighbours: 43:. 45:. 2n:B  rules: decimal mirrors below line
+        88 left-out 4k      u=160 u/n=1.8182 neighbours: 87:. 89:. 2n:.  rules: decimal mirrors below line
+       272 left-out 4k      u=496 u/n=1.8235 neighbours: 271:. 273:. 2n:.  rules: decimal mirrors below line
+      2112 left-out 4k      u=4032 u/n=1.9091 neighbours: 2111:. 2113:. 2n:B  rules: decimal mirrors below line
+      4224 left-out 4k      u=8064 u/n=1.9091 neighbours: 4223:. 4225:. 2n:B  rules: decimal mirrors below line
+      8448 left-out 4k      u=16128 u/n=1.9091 neighbours: 8447:. 8449:. 2n:.  rules: decimal mirrors below line
+
+== HUGGING away from 0 (breakers > 100 only, so small-number crowding does not lift the baseline) ==
+  69 breakers > 100: with a breaker partner 0.9855   random same-size 0.024928
+    2n            breakers 0.5938   random 0.006497
+    n-1           breakers 0.5652   random 0.009220
+    n+1           breakers 0.5652   random 0.009515
+    block mirror  breakers 0.1159   random 0.007966
+    n/2           breakers 0.9535   random 0.020936
+  note: n+-1 and 2n hugging is partly built in (a strand is an anchor + 1; anchors double into anchors).
+
+== FOLLOW: the even counterparts of the below-line odds ==
+  evens below u = 2n to 1e6: 375; every one has its odd core below the line (asserted)
+  core 11: doublings below the line [22, 44, 88, 176, 352, 704]  u/n = 20/11
+  core 15: doublings below the line [30, 60, 120, 240, 480, 960]  u/n = 28/15
+  core  1: doublings below the line [2, 4, 8, 16, 32, 64]  u/n = 1/1  (2^a are self-count)
+  core  7: doublings below the line [14, 28, 56, 112, 224, 448]  u/n = 10/7
+  decimal mirrors below the line by odd core: {11: 4, 33: 5, 17: 1}  (11, 33 = 2^5+1, 17 = 2^4+1, 33*64 = 2112)
+  11 and 15 are the only odd cores below the line that sit off both strands; 11 = 5,6,5 (wall 6 inside) and 15 = 7,8,7 (power 8 inside).
+  11's even neighbours 10 (2*5, 5 = 2^2+1) and 12 (wall) are both breakers; 15's are 14 (fits) and 16 (power).

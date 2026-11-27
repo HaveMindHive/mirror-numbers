@@ -1,0 +1,19 @@
+blocks from the walk: 78571 (largest 1000999) in 0.0s
+primes <= 10 : 4
+primes <= 100 : 25
+primes <= 1000 : 168
+primes <= 10000 : 1229
+primes <= 100000 : 9592
+primes <= 1000000 : 78498
+primes <= 10000000 : 664579
+primes <= 100000000 : 5761455
+primes <= 1000000000 : 50847534
+primes <= 10000000000 : 455052511
+primes <= 100000000000 : 4118054813
+primes <= 1000000000000 : 37607912018
+walk to 1000000000000 on 12 threads: 185.1s
+blocks from the walk: 203280275 (largest 4294968289) in 3.2s
+edge of 2^64: walls 3074457345118258602 to 3074457345618258602 (1000000002 seats)
+named 67611645 primes, first 18446744070709551631, last 18446744073709551557
+Miller-Rabin set A disagrees on 0, set B on 0; closed seats 932388357, without a dividing block 0
+on 12 threads: 142.7s

@@ -1,0 +1,1 @@
+Build completed successfully (18180 jobs); WallMirror.lean, Lean v4.36.0-rc2, Mathlib via symlinked packages; axioms: propext, Classical.choice, Quot.sound only (see lean-axiom-check_v1.0_11-26-2026.txt)

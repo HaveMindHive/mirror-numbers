@@ -1,0 +1,14 @@
+build | self-count cores | line | off-strand odd points below u=2n (kind, deficit 2n-u) to 2^20
+T={} | [1] | u=2n never | 1(root,1), 7(pair,2)
+T={3} | [1, 3] | u=2n never | 1(root,1), 11(pair,2), 15(pair,2)
+T={5} | [1, 5] | u=2n never | 1(root,1), 7(pair,2), 19(pair,2)
+T={7} | [1, 7] | u=2n never | 1(root,1), 7(turn,7), 13(near-turn,3), 31(pair,2)
+T={3, 5} | [1, 3, 5] | u=2n never | 1(root,1), 15(pair,2), 19(pair,2), 23(pair,2)
+T={3, 7} | [1, 3, 7] | u=2n never | 1(root,1), 11(pair,2), 27(pair,2), 31(pair,2)
+T={5, 7} | [1, 5, 7] | u=2n never | 1(root,1), 7(turn,7), 13(near-turn,3), 19(pair,2), 31(pair,2)
+T={3, 5, 7} | [1, 3, 5, 7] | u=2n never | 1(root,1), 19(pair,2), 23(pair,2), 27(pair,2), 31(pair,2)
+T={9} | [1, 9] | u=2n never | 1(root,1), 7(pair,2), 35(pair,2)
+T={13} | [1, 13] | u=2n never | 1(root,1), 7(pair,2), 13(turn,13), 25(near-turn,5)
+T={15} | [1, 15] | u=2n never | 1(root,1), 7(pair,2), 15(turn,15), 63(pair,2)
+sweep 171 turn sets to 2^15: self-count = c*2^a, u=2n never, every off-strand point is root/turn/pair/near-turn, pair points match prediction.
+single turn t: own pair points = {4t-1 if t-1 is a power of 2} + {4t+3 if t+1 is a power of 2}; root pair 7 stays unless 3 is a turn. Checked t < 200.

@@ -1,0 +1,59 @@
+PySR finds log, 11-27-2026 (mirror-numbers paper v5.3, claim audit rows)
+Folder: /Users/paymore/HaveMindHive/PRIMES_Fold_v1.0_11-20-2026/pysr-finds_v1.0_11-27-2026/
+Scripts: pysr-finds-data_v1.0_11-27-2026.py (exact data from his facing-code scripts), pysr-finds-run_v1.0_11-27-2026.py (PySR, one job at a time, 150 s cap),
+         pysr-finds-check_v1.0_11-27-2026.py (exact integer / Fraction checks of the snapped forms). Raw PySR tables: pysr-out-*.txt.
+Lean: MirrorNumbersAll/PySRFinds.lean, checked with `lake env lean MirrorNumbersAll/PySRFinds.lean` (no errors; 8 deprecation warnings for if_pos / if_neg).
+Axioms: every theorem on propext / Classical.choice / Quot.sound or fewer (scratch #print axioms run). No sorry, no admit, no native_decide.
+
+FIND 1. Row 109 (block r takes 1/(r-1)), single rule over one full turn of the 6r-run
+ Data: rule-hierarchy hand-off; for each prime r, off classes c mod 6r (gcd(c,6r)=1), count those whose first seat off 2 and 3 is an r-seat.
+ Count is 2 of 2(r-1) for every prime r from 5 to 1097.
+ PySR (train r = 5..97): r / ((r*r) - r), loss 0 = 1/(r-1).
+ Held-out: r = 101..1097 (all primes), exact Fraction match, 182 primes total.
+ Lean: PySRFinds.above_classes (r) (hr : r.Prime) (h5 : 5 <= r) :
+   ((Finset.range (6*r)).filter (fun c => Nat.Coprime c (6*r) ∧ handOff c % r = 0)).card = 2
+   PySRFinds.off_classes : ((Finset.range (6*r)).filter (fun c => Nat.Coprime c (6*r))).card = 2*(r-1)
+   PySRFinds.above_share : (that card : ℚ) / (off card) = 1 / (r - 1)
+   The two classes: r-2 and 5r-4 when r = 1 mod 6; 5r-2 and r-4 when r = 5 mod 6 (5: 23, 1; 7: 5, 31).
+ Stacked ("of what the smaller blocks leave"), Python over full turns: [5] 2/8 = 1/4; [5,7] 6/36 = 1/6; [5,7,11] 30/300 = 1/10; [5,7,11,13] 270/3240 = 1/12.
+ Lean (decide +kernel over the full turn): PySRFinds.stack_seven (mod 210: 36 left by 5, 7 takes 6), PySRFinds.stack_eleven (mod 2310: 300 left by 5 and 7, 11 takes 30).
+ Not proven: the stacked share for every r (needs independence of the wall residues over the full turn); 13 rests on the Python count.
+
+FIND 2. Row 49 (ladder length), new statement
+ Data: ladder() from ladder-shorthand_v1.0_11-26-2026.py, n = 2..20000.
+ PySR (train n = 2..1000): floor(log2(n + 1.0068524) - 0.58684516) at loss 0 (also floor(log2(n) - 0.58310765), loss 1.0e-3); snapped: log2(floor(n/3)) + 1, floor log.
+ Held-out: n = 1001..20000, exact match.
+ Lean: PySRFinds.ladder_length (n) (hn : 2 <= n) : (ladder n).length = Nat.log 2 (n / 3) + 1
+ Row 49 itself (ends 2|3 or 1|2 by range): PySR found no exact formula for the end pair (best loss 0.036 at size 16, pysr-out-ladend.txt).
+ The paper's range statement proven directly (checked n = 4..20000 first):
+   PySRFinds.ladder_ends_two_three (m n) : 2^(m+2) <= n -> n < 3*2^(m+1) -> (ladder n).getLast? = some (2, 3)
+   PySRFinds.ladder_ends_one_two (m n) : 3*2^(m+1) <= n -> n < 2^(m+3) -> (ladder n).getLast? = some (1, 2)
+   (paper's M = m + 2 >= 2; at n = 2 the ladder is 1|2, so the first range starts at M = 2).
+
+FIND 3. Row 92 (even-line primes, a fixed quarter)
+ Data: even_world_prime() from even-primes_v1.0_11-26-2026.py, running count up to X = 2..6000.
+ PySR (train X = 2..500): floor((X * 0.24997856) - 0.36964256), loss 0; snapped: floor((X+2)/4) - 1.
+ Held-out: X = 501..6000, exact match.
+ Lean: PySRFinds.evenWorldPrime_iff (n) (hn : 0 < n) : evenWorldPrime n ↔ n % 4 = 2 ∧ n ≠ 2
+       PySRFinds.even_world_count (X) (hX : 2 <= X) : ((Finset.Icc 1 X).filter evenWorldPrime).card = (X + 2) / 4 - 1
+ (evenWorldPrime is the script's test word for word: even, not 2, no even a in [2, n) with n % a = 0 and n / a even.)
+
+FIND 4. Row 71 (mark notation length on 3^k), new statement
+ Data: len(notation_a(T(3^k))) from two-mirrors_v1.0_11-26-2026.py: 3, 14, 49, 156, 479, 1450, 4365, 13112 (k = 1..8).
+ PySR (train k = 1..5): (((2.9982462 ^ k) + -1.0243287) / 0.49848792) - k, loss 1.1e-3; snapped: 2*3^k - k - 2.
+ Held-out: k = 6..12 with his own code (k = 12: 1062868 symbols), exact match (range is 2.4x in k, 6561x in n = 3^k).
+ Lean: PySRFinds.markT_length (h) : (markT h).length + (h + 1) + 2 = 2 * 3 ^ (h + 1)   [markT h = notation A string of T(3^(h+1))]
+       PySRFinds.markT_27 : (markT 2).length = 49   (the paper's 27: 49 symbols)
+
+EXTRA (no PySR needed). Row 95 depth part
+ Data: every odd p from 3 to 200001 (prime or not): shallow side depth 2, deep side depth 1 + v2(p -+ 1), deep left iff p = 1 mod 4; no failure.
+ Lean: PySRFinds.depth_one_mod_four (p) (hp : p % 4 = 1) (h5 : 5 <= p) :
+         padicValNat 2 (2p+2) = 2 ∧ padicValNat 2 (2p-2) = padicValNat 2 (p-1) + 1 ∧ 3 <= padicValNat 2 (2p-2)
+       PySRFinds.depth_three_mod_four (p) (hp : p % 4 = 3) :
+         padicValNat 2 (2p-2) = 2 ∧ padicValNat 2 (2p+2) = padicValNat 2 (p+1) + 1 ∧ 3 <= padicValNat 2 (2p+2)
+ Holds for every odd p, not only primes.
+
+NO EXACT LAW / NOT ATTEMPTED
+ Row 49 end pair as one formula: PySR nothing exact (range statement proven instead, above).
+ Rows 79, 80, 85, 89, 91, 114, 123, 133, 134, 135: counts and shares over primes in a finite window; no full-period law to fit, skipped.
+ Row 21 (mirror-word counts): the counts are binomials C(floor(L/2), floor(w/2)) (zero for L even, w odd); not in PySR's operator set, not run, not proven here.

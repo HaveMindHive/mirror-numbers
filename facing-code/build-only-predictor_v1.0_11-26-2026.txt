@@ -1,0 +1,44 @@
+== 1. Exact identities (build readings only) ==
+gap 2: u(p)+u(q)-2u(m) = d(k-1)+u(k+1) > 0 for every even centre m=2k (k<2e5): never balanced
+gap 4: u(p)+u(q) = 2u(m) exactly when m = 8j+5, j>=2 (21, 29, 37, ...), and m = 9 (checked m < 4e5)
+       9 is the one balance that comes from the word 3 = 111 (the turn root); 13 = 8+5 misses (word region)
+       proof: k = 4j+2 gives u(4j+1)=6u(j)+u(j+1), u(4j+2)=4u(j)+2u(j+1), u(4j+4)=4u(j+1) -> D = 0
+gap-4 prime splits balanced: 3997/15940 = 0.2508; all odd centres: 0.2500  (same share: not a prime tell)
+zeros at a common width 3^L: Zp + Zq = 2Zm  <=>  u(p)+u(q) = 2u(m) (width cancels): same law
+
+D/u(m) mean, prime splits vs all odd pairs (same gap, p in [1e5,2e6)):
+  gap  2: primes +1.22005 (n=14893)  all +1.21889
+  gap  4: primes +0.07193 (n=14725)  all +0.06436
+  gap  6: primes +1.34568 (n=24735)  all +1.33687
+  gap  8: primes +0.09265 (n=10400)  all +0.09656
+  gap 10: primes +1.40594 (n=13192)  all +1.40232
+  gap 12: primes +0.12692 (n=15550)  all +0.13003
+  gap 18: primes +1.41687 (n=9964)  all +1.41092
+  gap 30: primes +1.37249 (n=4315)  all +1.38744
+
+== 2. Predict q from p (build readings only) ==
+band [1000,10000) test primes 530: mode gap 6 0.2340 | facing {'t,t+1,t': 4, 't+1,t,t+1': 2} 0.3226 | balance rule 0.1906 | A (no T) 0.1509 | B (+T picture) 0.2943 | C (+evens) 0.1660 | D p-table 0.2057 | D2 p T+R only 0.3226
+band [10000,100000) test primes 4198: mode gap 6 0.2018 | facing {'t,t+1,t': 4, 't+1,t,t+1': 2} 0.2375 | balance rule 0.1689 | A (no T) 0.1210 | B (+T picture) 0.2382 | C (+evens) 0.1289 | D p-table 0.2132 | D2 p T+R only 0.2375
+band [100000,1000000) test primes 34567: mode gap 6 0.1698 | facing {'t,t+1,t': 4, 't+1,t,t+1': 2} 0.2028 | balance rule 0.1471 | A (no T) 0.1016 | B (+T picture) 0.2027 | C (+evens) 0.1047 | D p-table 0.1941 | D2 p T+R only 0.2028
+band [1000000,2000000) test primes 35275: mode gap 6 0.1554 | facing {'t,t+1,t': 4, 't+1,t,t+1': 2} 0.1887 | balance rule 0.1351 | A (no T) 0.0960 | B (+T picture) 0.1883 | C (+evens) 0.0960 | D p-table 0.1783 | D2 p T+R only 0.1887
+
+== 3. Prime share of odd c by single build reading, c in [1e5,2e6) ==
+  u mod 4: 0: 0.1467 (n=949992), 2: 0.2500 (n=4), 3: 0.0000 (n=4)
+  ladder bottom: (1, 2): 0.1456 (n=458480), (2, 3): 0.1477 (n=491520)
+  u-decile: 0: 0.1475 (n=44594), 1: 0.1453 (n=59628), 2: 0.1493 (n=69713), 3: 0.1451 (n=78671), 4: 0.1481 (n=87961), 5: 0.1458 (n=97254), 6: 0.1466 (n=107849), 7: 0.1476 (n=119806), 8: 0.1465 (n=133560), 9: 0.1458 (n=150964)
+  T picture: t+1,t,t+1: 0.2201 (n=316667), t,t+1,t: 0.2199 (n=316667), ttt: 0.0000 (n=316666)
+  u-decile of even c-1: 0: 0.1470 (n=151030), 1: 0.1469 (n=134999), 2: 0.1465 (n=124262), 3: 0.1462 (n=114562), 4: 0.1482 (n=104425), 5: 0.1471 (n=94066), 6: 0.1448 (n=82206), 7: 0.1478 (n=68352), 8: 0.1446 (n=51483), 9: 0.1459 (n=24615)
+  lit centre: False: 0.1467 (n=949996), True: 0.0000 (n=4)
+
+== 4. Strand seats ==
+  2^a+1 prime: [17, 257, 65537]   3*2^a+1 prime: [13, 97, 193, 769, 12289, 786433]
+
+== 5. PySR h from build readings of p (n=3484, var(h)=32.150) ==
+   complexity       loss                                                                         equation
+0           1  32.150173                                                                         6.914087
+1           3  32.077210                                                                   L * 0.35540268
+2           7  32.070446                                              lad + ((L * 0.45262206) - 3.372032)
+3          11  32.022370                       lad + ((((L - lad) + -2.6774879) - 3.372032) * 0.45262206)
+4          15  32.016277  (L / L) - (((L - ((1.2649952 * -0.8670724) * lad)) * -0.31611222) - -0.8670724)
+
+D/u(m), gap 4, all odd m by m's 3-seat: [np.float64(0.06435), np.float64(0.06435), np.float64(0.06435)]  5-seat: [np.float64(0.06435), np.float64(0.06435), np.float64(0.06435), np.float64(0.06435), np.float64(0.06435)] (analysis only, not in the predictor)

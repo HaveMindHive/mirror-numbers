@@ -1,0 +1,91 @@
+WALL FRAME (exact on all 78496 splits 5 <= p < 1e6): h = 3w + 2s with w = walls (multiples of 6) crossed, s = seat step (+1: 6k+1 -> 6k+5, -1: 6k+5 -> 6k+7, 0: same seat). The 4-side flips exactly when w is odd; the 3-facing flips exactly when s != 0. The two flips are two coordinates of the hop, not of the family.
+THE MISSING MIRROR: the old reading counted side flips by START family. w = 0 (no wall) exists only for the first seat 6k+1 (the cousin hop, gap 4); the last seat 6k-1 must cross a wall. Counted from the END seat, w = 0 exists only into 6k-1. Neither family owns the flip: the hop does.
+
+(s, w) TABLE per family, shares of the family's hops (band [1e5,1e6)); side kept = w even, facing kept = s = 0.
+  family 6k+1 n=34447: w=0: s=+1 0.201 | w=1: s=+0 0.167 s=+1 0.179 | w=2: s=+0 0.103 s=+1 0.074 | w=3: s=+0 0.065 s=+1 0.057 | w=4: s=+0 0.035 s=+1 0.033 | w=5: s=+0 0.026 s=+1 0.015 | w=6: s=+0 0.010 s=+1 0.011
+    side kept (w even) 0.4748;  w=0 share 0.2011;  facing kept (s=0) 0.4203
+  family 6k-1 n=34459: w=0:  | w=1: s=-1 0.202 s=+0 0.170 | w=2: s=-1 0.139 s=+0 0.102 | w=3: s=-1 0.109 s=+0 0.063 | w=4: s=-1 0.063 s=+0 0.036 | w=5: s=-1 0.032 s=+0 0.025 | w=6: s=-1 0.015 s=+0 0.011
+    side kept (w even) 0.3782;  w=0 share 0.0000;  facing kept (s=0) 0.4205
+
+EXACT BALANCE (the prime walk is one path, so what leaves a class comes back):
+  [1000,10000): facing flips 6k+1->6k-1 322 vs 6k-1->6k+1 321 (diff 1);  side flips 1->3 mod 4 324 vs 3->1 323 (diff 1);  in - out per class mod 12 {1: 1, 5: 0, 7: 0, 11: -1}
+  [10000,100000): facing flips 6k+1->6k-1 2490 vs 6k-1->6k+1 2491 (diff -1);  side flips 1->3 mod 4 2437 vs 3->1 2437 (diff 0);  in - out per class mod 12 {1: 0, 5: 0, 7: -1, 11: 1}
+  [100000,1000000): facing flips 6k+1->6k-1 19969 vs 6k-1->6k+1 19969 (diff 0);  side flips 1->3 mod 4 19760 vs 3->1 19760 (diff 0);  in - out per class mod 12 {1: 0, 5: 0, 7: 0, 11: 0}
+  [5,1000000): facing flips 6k+1->6k-1 22837 vs 6k-1->6k+1 22838 (diff -1);  side flips 1->3 mod 4 22572 vs 3->1 22571 (diff 1);  in - out per class mod 12 {1: 0, 5: 1, 7: -1, 11: 0}
+  So each family flips its facing exactly as often as the other (to within 1), and each 4-side flips as often as the other. The lopsided number was the side flip read by start family only.
+
+DIRECTION x FAMILY: share with the side kept, reading forward from the start seat's family and backward into the end seat's family (p mod 12 / q mod 12). The per-block mirror 6a+r <-> 6a+6-r keeps every seat's 4-side (1 = 5 mod 4) and keeps w; it swaps families and direction: 'forward from f' pairs with 'backward into -f'.
+  band [1000,10000)  forward from   1: 0.4811   5: 0.2943   7: 0.4719  11: 0.3132
+  band [1000,10000)  backward into  1: 0.2852   5: 0.4906   7: 0.2959  11: 0.4887   (pairs: fwd 1 <-> bwd 11, fwd 5 <-> bwd 7, fwd 7 <-> bwd 5, fwd 11 <-> bwd 1)
+  band [10000,100000)  forward from   1: 0.4807   5: 0.3524   7: 0.4802  11: 0.3560
+  band [10000,100000)  backward into  1: 0.3549   5: 0.4767   7: 0.3586  11: 0.4782   (pairs: fwd 1 <-> bwd 11, fwd 5 <-> bwd 7, fwd 7 <-> bwd 5, fwd 11 <-> bwd 1)
+  band [100000,1000000)  forward from   1: 0.4731   5: 0.3778   7: 0.4764  11: 0.3785
+  band [100000,1000000)  backward into  1: 0.3775   5: 0.4734   7: 0.3769  11: 0.4780   (pairs: fwd 1 <-> bwd 11, fwd 5 <-> bwd 7, fwd 7 <-> bwd 5, fwd 11 <-> bwd 1)
+  Exact part: the facing-flipping hops (s != 0) forward from 6k+1 ARE the hops backward into 6k-1 (same pairs). Approximate part: same-seat hops 6k+1 -> 6k+1 vs 6k-1 -> 6k-1, by walls w (gap 6w), counts to 1e6:
+    w=1: 6705 / 6844  w=2: 4020 / 3985  w=3: 2475 / 2434  w=4: 1328 / 1354  w=5: 984 / 930  w=6: 368 / 399  w=7: 256 / 220  w=8: 86 / 110  (all w: 16394 / 16427)
+
+PER-BLOCK MIRROR cell by cell (to 1e6): 6k+1's hop (s=+1, w) has gap 6w+4; its mirror 6k-1's hop (s=-1, w) has gap 6w-4. Same walls, same side rule, the hop is 8 shorter. Counts N(6w+4) / N(6w-4):
+    w=0: 8143 / 0  w=1: 7079 / 8168  w=2: 2881 / 5569  w=3: 2172 / 4233  w=4: 1234 / 2402  w=5: 557 / 1175  w=6: 424 / 550  w=7: 155 / 330
+  The side-kept gap (0.47 vs 0.38) is this length difference and nothing else: shorter hops are commoner, and the mirror hands the shorter hop to 6k-1 for odd w (gap 2, 14, 26: flips) and to 6k+1 for even w (gap 4, 16: keeps).
+
+ROTATION FRAME: seats mod 12 on the cycle 1 -> 5 -> 7 -> 11 -> 1 (steps +4, +2, +4, +2). A hop moves k steps, k in {0, +1, 2, -1}. For 6k+1 'side kept' = {0, +1}; for 6k-1 'side kept' = {0, -1}: the families counter-rotate. Shares per family and band:
+  band [1000,10000)  6k+1: 0:0.100 +1:0.377 2:0.294 -1:0.230   6k-1: 0:0.113 +1:0.415 2:0.281 -1:0.191
+  band [10000,100000)  6k+1: 0:0.133 +1:0.347 2:0.270 -1:0.250   6k-1: 0:0.132 +1:0.372 2:0.274 -1:0.222
+  band [100000,1000000)  6k+1: 0:0.152 +1:0.322 2:0.268 -1:0.257   6k-1: 0:0.153 +1:0.355 2:0.267 -1:0.225
+
+THE m LINE on the split (carried mirror n -> 11(2j+1) - n, first odd multiple of 11 above q): keeps the gap, so keeps h, w and both flips; moves the families. Family of the image start seat (11(2j+1) - q) by family of p, to 1e6:
+    p 6k+1 -> image start mod 6 = 0: 10928  p 6k+1 -> image start mod 6 = 2: 16758  p 6k+1 -> image start mod 6 = 4: 11545  p 6k-1 -> image start mod 6 = 0: 12603  p 6k-1 -> image start mod 6 = 2: 14598  p 6k-1 -> image start mod 6 = 4: 12064
+  The m line throws the image start onto every seat of the block (the offset 11 is 5 mod 6); it cannot show the side flip because the flip rides on the gap, which it keeps. Read: not the missing mirror; a frame change only.
+
+THE LAKE on the split (his slide rule K^2/x with K^2 = pq, so p <-> q and the inside of the gap turns over): the lake image of the true centre m is 2pq/(p+q), BELOW m by exactly h^2/m (exact identity m - 2pq/(p+q) = h^2/m). The lake centre is the asymmetric centre: it leans to p's side. Its offset h^2/m, to 1e6:
+    (5,7): centre 6, lake centre 35/6 = m - 1/6
+    (7,11): centre 9, lake centre 77/9 = m - 4/9
+    (11,13): centre 12, lake centre 143/12 = m - 1/12
+    (7937,7949): centre 7943, lake centre 63091213/7943 = m - 36/7943
+    (7949,7951): centre 7950, lake centre 63202499/7950 = m - 1/7950
+  RECURSIVE INVERSE of the hand-off H(p,q) = (h, m): H(h, m) = ((m-h)/2, (m+h)/2) = (p/2, q/2). Twice through the hand-off returns the split one level down (v): the hand-off is a lake mirror; the 1 x 1 = 2 sits at its centre.
+
+OPPOSITES OF THE CENTRE (what each pair carries):
+  (a) centre of the gap m  <->  centre of the centres (m_i + m_{i+1})/2. The prime p_{i+1} sits off the centre of the centres by exactly (g_i - g_{i+1})/4: reading the prime against the two centres reads the CHANGE of gap.
+    next gap after a 6k+1 prime: grows 0.5042, same 0.0378, shrinks 0.4581  (n=39231)
+    next gap after a 6k-1 prime: grows 0.4584, same 0.0385, shrinks 0.5031  (n=39264)
+    all primes: grows 37779 vs shrinks 37723 (walking down swaps them; the walk itself has no preferred direction here).
+  (b) centre of the gap  <->  the wall nearest it. Twins: the centre IS the wall (6k+6, both 2 and 3 on m). Cousins: the centre is the half wall 6k+3 (3 on m, 2 on h). Gap 6 from 6k+1: wall at (5 from p, 1 from q); from 6k-1: wall at (1, 5). The per-block mirror swaps the two. Offsets (first wall - p, q - last wall) to 1e6:
+    ('none', 1): 8143  ((1, 1), -1): 22838  ((1, 5), -1): 16427  ((5, 1), 1): 16394  ((5, 5), 1): 14694
+  (c) centre of the gap  <->  centre of the wings. Wing of n = n//2 (2k, 2k+1 share wing k). The wing centre of (p, q) is (m-1)/2 when h is odd... exact: wings (p-1)/2 and (q-1)/2 have centre (m-1)/2; it is a whole seat exactly when m is odd, i.e. when h is even (side kept). So: side kept <=> the wing centre is a seat; side flipped <=> the wing centre falls between two wings (the centre m is even and is itself a wing's even half).
+
+THE TELL: the reading whose opposite completes it is the side flip. Read from p it belongs to 6k+1 (the hop with no wall is 6k+1 -> 6k+5); read from q it belongs to 6k-1 (the same hop arrives at 6k+5). In the wall frame it belongs to neither: side flip = odd walls, facing flip = seat step, and the exact balance is #(+1 steps) = #(-1 steps) (to 1).
+
+RANGE CLOSING (seats holding q for 90% / 99% of the band, mean rank, share named first). B = packed passed places read. Old best was nearest-first. New orderings use the rule of change read below the band, keyed by p's family and the PREVIOUS hop (walking down from p is fair: it is below p).
+ordering                               B |                [1e3,1e4) |                [1e4,1e5) |                [1e5,1e6)
+walk (nearest first)                   0 |       6/ 10   2.83 0.313 |       7/ 13   3.59 0.243 |       9/ 17   4.35 0.201
+family p mod 12                        0 |       6/ 10   2.83 0.313 |       7/ 13   3.59 0.243 |       9/ 17   4.36 0.201
+family + prev gap                      0 |       6/ 10   2.85 0.298 |       7/ 13   3.63 0.246 |       9/ 17   4.37 0.209
+family + prev walls                    0 |       6/ 10   2.85 0.308 |       7/ 13   3.63 0.243 |       9/ 17   4.37 0.207
+family + prev (w,s)                    0 |       6/ 10   2.85 0.298 |       7/ 13   3.63 0.247 |       9/ 17   4.38 0.207
+both ends: p fam + q fam (h mod 3)     0 |       6/ 10   2.84 0.303 |       7/ 13   3.60 0.241 |       9/ 17   4.36 0.201
+
+walk (nearest first)                   7 |       2/  3   1.16 0.863 |       2/  4   1.39 0.720 |       3/  5   1.65 0.602
+family p mod 12                        7 |       2/  3   1.20 0.838 |       2/  4   1.41 0.712 |       3/  6   1.67 0.596
+family + prev gap                      7 |       2/  3   1.20 0.833 |       2/  4   1.47 0.671 |       3/  6   1.73 0.563
+family + prev walls                    7 |       2/  3   1.20 0.832 |       2/  4   1.47 0.675 |       3/  6   1.71 0.572
+family + prev (w,s)                    7 |       2/  3   1.20 0.833 |       2/  4   1.47 0.672 |       3/  6   1.73 0.562
+both ends: p fam + q fam (h mod 3)     7 |       2/  3   1.22 0.808 |       2/  4   1.44 0.692 |       3/  6   1.69 0.586
+
+walk (nearest first)                  31 |       1/  1   1.00 1.000 |       1/  2   1.05 0.957 |       2/  3   1.21 0.829
+family p mod 12                       31 |       1/  2   1.03 0.972 |       1/  2   1.06 0.941 |       2/  3   1.23 0.814
+family + prev gap                     31 |       1/  2   1.04 0.964 |       2/  2   1.12 0.893 |       2/  3   1.28 0.774
+family + prev walls                   31 |       1/  2   1.04 0.963 |       2/  3   1.12 0.895 |       2/  3   1.26 0.787
+family + prev (w,s)                   31 |       1/  2   1.04 0.964 |       2/  2   1.12 0.893 |       2/  3   1.28 0.773
+both ends: p fam + q fam (h mod 3)    31 |       1/  2   1.06 0.939 |       1/  2   1.09 0.917 |       2/  3   1.24 0.803
+
+walk (nearest first)                  95 |       1/  1   1.00 1.000 |       1/  1   1.00 1.000 |       1/  2   1.02 0.979
+family p mod 12                       95 |       1/  2   1.03 0.972 |       1/  2   1.02 0.982 |       1/  2   1.04 0.958
+family + prev gap                     95 |       1/  2   1.04 0.964 |       1/  2   1.07 0.933 |       1/  2   1.09 0.912
+family + prev walls                   95 |       1/  2   1.04 0.963 |       1/  2   1.07 0.933 |       1/  2   1.07 0.929
+family + prev (w,s)                   95 |       1/  2   1.04 0.964 |       1/  2   1.07 0.933 |       1/  2   1.09 0.912
+both ends: p fam + q fam (h mod 3)    95 |       1/  2   1.06 0.939 |       1/  2   1.04 0.957 |       1/  2   1.06 0.946
+
+[8.8s] range table done
+
+WHERE IT FRAYS: the wall frame makes the side flip exact and even-handed, but it is a relabeling of h; it cannot say which w the next hop takes. The count asymmetry between mirror cells (6w+4 vs 6w-4) is the gap length falloff, the same fact reached by a different route as the gap frequencies. Previous-hop rules move the first-guess share by a little and the 90/99 range by 0-1 seat; the range still closes by strands (B), not by ordering.

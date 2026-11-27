@@ -1,0 +1,33 @@
+  walked to 19: 8 named (0s)
+  walked to 361: 72 named (0s)
+  walked to 128,881: 12,064 named (0s)
+  walked to 600,128,881: 31,331,098 named (4s)
+  walked to 1,200,128,881: 60,460,821 named (9s)
+  walked to 1,800,128,881: 88,868,472 named (13s)
+  walked to 2,400,128,881: 116,824,394 named (19s)
+  walked to 3,000,128,881: 144,455,443 named (24s)
+  walked to 3,600,128,881: 171,833,073 named (30s)
+  walked to 4,200,128,881: 199,001,917 named (39s)
+  walked to 4,294,999,999: 203,281,710 named (41s)
+WALK: every seat from 2 to 4,295,000,000. Named 203,281,710; answer key (sympy.primepi) 203,281,710; EXACT, no prime missed, no composite let through
+  blocks kept for the far windows: 203,281,708 (largest 4,294,999,991) (41s)
+WINDOW at the edge of 2^64 = 18,446,744,073,709,551,616: walls 3,074,457,345,618,208,602 to 3,074,457,345,618,258,601 (100,000 seats), blocks up to 4,294,967,291 (203,280,219 blocks). Named 6,694 primes in order, first 18,446,744,073,709,251,611, last 18,446,744,073,709,551,557 (2^64 minus 59); sympy.isprime (definitive below 2^64) disagrees on 0; 93,306 closed seats each carry a dividing block. (46s)
+done in 46s
+       46.12 real        35.49 user        10.49 sys
+         15499100160  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+             5812783  page reclaims
+                  15  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   1  voluntary context switches
+                3374  involuntary context switches
+        528653582163  instructions retired
+        204652739661  cycles elapsed
+         13867287088  peak memory footprint

@@ -1,0 +1,8 @@
+'HandOff.two_hand_off' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HandOff.three_hand_off' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HandOff.never_both' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HandOff.half_gap_facing' depends on axioms: [propext, Quot.sound]
+'HandOff.side_kept' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HandOff.facing_kept' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HandOff.e2_neighbour' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HandOff.family_classes' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,39 @@
+even primes: [4, 6, 10, 14, 22, 26, 34, 38, 46, 58, 62, 74, 82, 86, 94, 106, 118, 122, 134, 142, 146, 158, 166, 178, 194]
+left out:    [8, 12, 16, 18, 20, 24, 28, 30, 32, 36, 40, 42, 44, 48, 50, 52, 54, 56, 60, 64, 66, 68, 70, 72, 76, 78, 80, 84, 88, 90, 92, 96, 98, 100, 102, 104, 108, 110, 112, 114, 116, 120, 124, 126, 128, 130, 132, 136, 138, 140, 144, 148, 150, 152, 154, 156, 160, 162, 164, 168, 170, 172, 174, 176, 180, 182, 184, 186, 188, 190, 192, 196, 198, 200]
+
+left-out evens by their equal even-copy faces:
+    8 depth 3  core   1  faces [(2, 4)]
+   12 depth 2  core   3  faces [(3, 4), (2, 6)]
+   16 depth 4  core   1  faces [(4, 4), (2, 8)]
+   18 depth 1  core   9  faces [(3, 6)]
+   20 depth 2  core   5  faces [(5, 4), (2, 10)]
+   24 depth 3  core   3  faces [(6, 4), (4, 6), (3, 8), (2, 12)]
+   28 depth 2  core   7  faces [(7, 4), (2, 14)]
+   30 depth 1  core  15  faces [(5, 6), (3, 10)]
+   32 depth 5  core   1  faces [(8, 4), (4, 8), (2, 16)]
+   36 depth 2  core   9  faces [(9, 4), (6, 6), (3, 12), (2, 18)]
+   40 depth 3  core   5  faces [(10, 4), (5, 8), (4, 10), (2, 20)]
+   42 depth 1  core  21  faces [(7, 6), (3, 14)]
+   44 depth 2  core  11  faces [(11, 4), (2, 22)]
+   48 depth 4  core   3  faces [(12, 4), (8, 6), (6, 8), (4, 12), (3, 16), (2, 24)]
+   50 depth 1  core  25  faces [(5, 10)]
+   52 depth 2  core  13  faces [(13, 4), (2, 26)]
+
+each even prime between its two left-out neighbours (depth = halvings to the odd core):
+    4 (d2) |   6 |   8 (d3)   p = 3 = 3 mod 4   deep side right
+    8 (d3) |  10 |  12 (d2)   p = 5 = 1 mod 4   deep side left
+   12 (d2) |  14 |  16 (d4)   p = 7 = 3 mod 4   deep side right
+   20 (d2) |  22 |  24 (d3)   p = 11 = 3 mod 4   deep side right
+   24 (d3) |  26 |  28 (d2)   p = 13 = 1 mod 4   deep side left
+   32 (d5) |  34 |  36 (d2)   p = 17 = 1 mod 4   deep side left
+   36 (d2) |  38 |  40 (d3)   p = 19 = 3 mod 4   deep side right
+   44 (d2) |  46 |  48 (d4)   p = 23 = 3 mod 4   deep side right
+   56 (d3) |  58 |  60 (d2)   p = 29 = 1 mod 4   deep side left
+   60 (d2) |  62 |  64 (d6)   p = 31 = 3 mod 4   deep side right
+   72 (d3) |  74 |  76 (d2)   p = 37 = 1 mod 4   deep side left
+   80 (d4) |  82 |  84 (d2)   p = 41 = 1 mod 4   deep side left
+   84 (d2) |  86 |  88 (d3)   p = 43 = 3 mod 4   deep side right
+   92 (d2) |  94 |  96 (d5)   p = 47 = 3 mod 4   deep side right
+  104 (d3) | 106 | 108 (d2)   p = 53 = 1 mod 4   deep side left
+
+checked for odd primes p < 200000: deep side left exactly when p = 1 mod 4; shallow side depth 2; deep side depth = 1 + halvings of p-1 (or p+1)

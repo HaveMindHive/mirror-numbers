@@ -1,0 +1,43 @@
+n   even-line pos   2p=prime position  E=prime in the evens alone
+  4  pos  2  2p     depth 1  core  2  |0,(2)
+  6  pos  3  2p E   depth 1  core  3  |0,(3)
+  8  pos  4         depth 2  core  2  |0,(|0,(2))
+ 10  pos  5  2p E   depth 1  core  5  |0,(|3,(2))
+ 12  pos  6         depth 2  core  3  |0,(|0,(3))
+ 14  pos  7  2p E   depth 1  core  7  |0,(||0,(2),(3))
+ 16  pos  8         depth 3  core  2  |0,(|0,(|0,(2)))
+ 18  pos  9     E   depth 1  core  9  |0,(||3,(2),(|0,(2)))
+ 20  pos 10         depth 2  core  5  |0,(|0,(|3,(2)))
+ 22  pos 11  2p E   depth 1  core 11  |0,(||0,(3),(|3,(2)))
+ 24  pos 12         depth 3  core  3  |0,(|0,(|0,(3)))
+ 26  pos 13  2p E   depth 1  core 13  |0,(|||0,(2),(3),(|0,(3)))
+ 28  pos 14         depth 2  core  7  |0,(|0,(||0,(2),(3)))
+ 30  pos 15     E   depth 1  core 15  |0,(||0,(|0,(2)),(||0,(2),(3)))
+ 32  pos 16         depth 4  core  2  |0,(|0,(|0,(|0,(2))))
+ 34  pos 17  2p E   depth 1  core 17  |0,(|||3,(2),(|0,(2)),(|0,(|0,(2))))
+ 36  pos 18         depth 2  core  9  |0,(|0,(||3,(2),(|0,(2))))
+ 38  pos 19  2p E   depth 1  core 19  |0,(||0,(|3,(2)),(||3,(2),(|0,(2))))
+ 40  pos 20         depth 3  core  5  |0,(|0,(|0,(|3,(2))))
+ 42  pos 21     E   depth 1  core 21  |0,(|||0,(3),(|3,(2)),(|0,(|3,(2))))
+ 44  pos 22         depth 2  core 11  |0,(|0,(||0,(3),(|3,(2))))
+ 46  pos 23  2p E   depth 1  core 23  |0,(||0,(|0,(3)),(||0,(3),(|3,(2))))
+ 48  pos 24         depth 4  core  3  |0,(|0,(|0,(|0,(3))))
+ 50  pos 25     E   depth 1  core 25  |0,(||||0,(2),(3),(|0,(3)),(|0,(|0,(3))))
+ 52  pos 26         depth 2  core 13  |0,(|0,(|||0,(2),(3),(|0,(3))))
+ 54  pos 27     E   depth 1  core 27  |0,(||0,(||0,(2),(3)),(|||0,(2),(3),(|0,(3))))
+ 56  pos 28         depth 3  core  7  |0,(|0,(|0,(||0,(2),(3))))
+ 58  pos 29  2p E   depth 1  core 29  |0,(|||0,(|0,(2)),(||0,(2),(3)),(|0,(||0,(2),(3))))
+ 60  pos 30         depth 2  core 15  |0,(|0,(||0,(|0,(2)),(||0,(2),(3))))
+
+First E that is not 2p: 18
+Evens with two different even-world factorings (pairs), up to 200:
+  36 = 2x18 = 6x6
+  60 = 2x30 = 6x10
+  84 = 2x42 = 6x14
+  100 = 2x50 = 10x10
+  108 = 2x54 = 6x18
+  132 = 2x66 = 6x22
+  140 = 2x70 = 10x14
+  156 = 2x78 = 6x26
+  180 = 2x90 = 6x30 = 10x18
+  196 = 2x98 = 14x14
