@@ -1,0 +1,79 @@
+=== old wall-walk-max walk 1e11 12 ===
+blocks from the walk: 27373 (largest 317227) in 0.0s
+primes <= 10 : 4
+primes <= 100 : 25
+primes <= 1000 : 168
+primes <= 10000 : 1229
+primes <= 100000 : 9592
+primes <= 1000000 : 78498
+primes <= 10000000 : 664579
+primes <= 100000000 : 5761455
+primes <= 1000000000 : 50847534
+primes <= 10000000000 : 455052511
+primes <= 100000000000 : 4118054813
+walk to 100000000000 on 12 threads: 16.2s
+=== new wall-walk-thirty 1e11 12 ===
+wall law k = f fr^-1 kr checked against k = -f 30^-1 on 218920 block-wings: 218920 agree
+blocks from the walk: 27372 (largest 317227), 6539 small, 706 buckets, 50863 stretches of 65536 walls, chunks of 706, in 0.0s
+primes <= 10 : 4
+primes <= 100 : 25
+primes <= 1000 : 168
+primes <= 10000 : 1229
+primes <= 100000 : 9592
+primes <= 1000000 : 78498
+primes <= 10000000 : 664579
+primes <= 100000000 : 5761455
+primes <= 1000000000 : 50847534
+primes <= 10000000000 : 455052511
+primes <= 100000000000 : 4118054813
+walk to 100000000000 on 12 threads (walls of 30): 3.0s
+=== old wall-walk-max walk 1e12 12 ===
+blocks from the walk: 78571 (largest 1000999) in 0.0s
+primes <= 10 : 4
+primes <= 100 : 25
+primes <= 1000 : 168
+primes <= 10000 : 1229
+primes <= 100000 : 9592
+primes <= 1000000 : 78498
+primes <= 10000000 : 664579
+primes <= 100000000 : 5761455
+primes <= 1000000000 : 50847534
+primes <= 10000000000 : 455052511
+primes <= 100000000000 : 4118054813
+primes <= 1000000000000 : 37607912018
+walk to 1000000000000 on 12 threads: 170.1s
+(the first new 1e12 and 1e13 attempts ran out of memory: one bucket per stretch kept its peak capacity; replaced by a ring of buckets plus a sorted far list)
+=== new wall-walk-thirty 1e12 12 ===
+wall law k = f fr^-1 kr checked against k = -f 30^-1 on 628512 block-wings: 628512 agree
+blocks from the walk: 78571 (largest 1001003), 6539 small, 32 buckets, 508627 stretches of 65536 walls, chunks of 4096, in 0.0s
+primes <= 10 : 4
+primes <= 100 : 25
+primes <= 1000 : 168
+primes <= 10000 : 1229
+primes <= 100000 : 9592
+primes <= 1000000 : 78498
+primes <= 10000000 : 664579
+primes <= 100000000 : 5761455
+primes <= 1000000000 : 50847534
+primes <= 10000000000 : 455052511
+primes <= 100000000000 : 4118054813
+primes <= 1000000000000 : 37607912018
+walk to 1000000000000 on 12 threads (walls of 30): 40.6s
+=== new wall-walk-thirty 1e13 12 ===
+wall law k = f fr^-1 kr checked against k = -f 30^-1 on 1821624 block-wings: 1821624 agree
+blocks from the walk: 227710 (largest 3163261), 6539 small, 64 buckets, 5086264 stretches of 65536 walls, chunks of 4096, in 0.0s
+primes <= 10 : 4
+primes <= 100 : 25
+primes <= 1000 : 168
+primes <= 10000 : 1229
+primes <= 100000 : 9592
+primes <= 1000000 : 78498
+primes <= 10000000 : 664579
+primes <= 100000000 : 5761455
+primes <= 1000000000 : 50847534
+primes <= 10000000000 : 455052511
+primes <= 100000000000 : 4118054813
+primes <= 1000000000000 : 37607912018
+primes <= 10000000000000 : 346065536839
+walk to 10000000000000 on 12 threads (walls of 30): 1051.3s
+=== done ===

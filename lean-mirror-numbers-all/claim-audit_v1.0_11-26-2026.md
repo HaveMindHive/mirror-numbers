@@ -1,4 +1,4 @@
-# Claim audit: unit-counting-paper v5.5 (11-27-2026; first made for v5.1, 11-26-2026)
+# Claim audit: unit-counting-paper v5.6 (11-27-2026; first made for v5.1, 11-26-2026)
 
 Paper: `unit-counting-paper_v5.1_11-26-2026.tex`. Library: `lean-mirror-numbers-all_v1.0_11-26-2026` (one Lake project, 15 modules; `Gems` added 11-27-2026).
 
@@ -96,7 +96,7 @@ Classes: **P** proven in Lean (module.theorem) · **C** checked by computer to a
 | 84 | §19 | Open wings are prime seats; next prime = first open seat (3..10^4; 10^9..10^9+2 10^4) | P (v5.4) | Upgrades.open_iff_prime, missing_iff_not_prime; WallWalk.wall_walk | every wing; walk exact to 1e12 and 1e9 seats below 2^64 (wall-walk-max) |
 | 85 | §19 | 148932 open wings to 10^6; 74416 even, 74516 odd | M |  |  |
 | 86 | §19 | Even open wings belong to primes that are sums of two squares, odd ones do not (w < 50000) | P (v5.4) | Upgrades.even_wing_iff_two_squares, two_squares_mod_four | sum of two squares proven; a+-bi split read from it |
-| 87 | §20 | Centre seat fixes half-gap seat (four cases, every gap to 10^6) | P (new) | PrimeHandOff.centre_fixes_half_gap, hand_off_primes; HandOff.two_hand_off, three_hand_off | every pair of primes 3 < p < q |
+| 87 | §20 | Centre seat fixes half-gap seat (four cases, every gap to 10^6) | P (new) | PrimeHandOff.centre_fixes_half_gap, hand_off_primes; HandOff.two_hand_off, three_hand_off; FableImprovements.hand_off_every_block, hand_off_primes' | every pair of primes 3 < p < q |
 | 88 | §20 | 2k and 2k+1 share the wing k; the right side is broken | D/R |  |  |
 | 89 | §20 | Walker names q in all 78495 gaps to 10^6 | M |  |  |
 | 90 | §20 | Blocks cross only through the centre (194071 pairs, 46084 shared) | P/M | HandOff.never_both; PrimeHandOff.never_both_primes | structure P, counts M |
@@ -120,7 +120,7 @@ Classes: **P** proven in Lean (module.theorem) · **C** checked by computer to a
 | 108 | §24 | Rules stack in size order; block r above the hand-off from two seats per run of 6r | P | RuleHierarchy.five_above_handoff, seven_above_handoff, eleven_above_handoff, allowed_mod_30 |  |
 | 109 | §24 | Block r takes 1/(r-1) of what is left: 0.2503, 0.1250, 0.0626 to 10^6 | P/M (v5.4) | PySRFinds.above_classes, off_classes, above_share, stack_seven, stack_eleven | exact 1/(r-1) over each run of 6r, every prime block; measured shares kept |
 | 110 | §24 | Offset-11 mirror, per-block mirror, lake change the picture, not the verdict | P/R | RuleHierarchy.offset_keeps_gap, block_mirror_even; WallMirror.block_mirror_hop, lake_centre |  |
-| 111 | §24 | Hop: h = 3w + 2s, s in {-1,0,1}; side flips iff w odd; facing flips iff s is not 0 | P (new on primes) | WallMirror.half_gap_walls, step_cases, side_is_walls, facing_is_step; PrimeHandOff.hop_primes | now stated for primes 3 < p < q |
+| 111 | §24 | Hop: h = 3w + 2s, s in {-1,0,1}; side flips iff w odd; facing flips iff s is not 0 | P (new on primes) | WallMirror.half_gap_walls, step_cases, side_is_walls, facing_is_step; PrimeHandOff.hop_primes; FableImprovements.hop_reads_centre, hop_and_hand_off | now stated for primes 3 < p < q |
 | 112 | §24 | Wall-free hop of 4 leaves 6k+1 and lands on 6k-1 | P | WallMirror.no_wall_needs_first_seat, no_wall_lands_last_seat |  |
 | 113 | §24 | Flip counts 22837/22838 and 22572/22571 to 10^6; differ by at most one on any walk | M/P | WallMirror.flips_balance, flips_balance_bound; Gems.gap_class_balance_exact, gap_class_balance, gap_class_balance_primes | gap reading 11-27 (G4): #(gap = 2 mod 6) - #(gap = 4 mod 6) = [p_0 = 5 mod 6] - [p_n = 5 mod 6] on any walk of seats off 2 and 3, so in {-1, 0, 1}; the counts stay M |
 | 114 | §24 | Range table 28/50 ... 1/2; chance 0.39-0.45 nearly flat | M |  |  |
@@ -139,10 +139,10 @@ Classes: **P** proven in Lean (module.theorem) · **C** checked by computer to a
 | 127 | §28 | Within half a turn of 6, 30, 210 every open seat is 1 or a prime; frays at 2310 at 169 | P | TwoZero.near_zero_seats_210, fray_at_2310 | 6 and 30 are the small cases of row 126 |
 | 128 | §28 | ... holds while W/2 is below the next block squared | R |  | general criterion, reading |
 | 129 | §28 | Twins straddle a multiple of 6; 6k-1: p-2 on 3's zero; 6k+1: p+2 (to 10^7) | P | TwoZero.twin_straddles_wall; TheSolve.two_step_minus, two_step_plus | every k |
-| 130 | §29 | Wall law: r = 6kr + fr closes wing f of wall k iff k = f fr kr (mod r); one residue for both wings (blocks 5..281, walls to 200000) | P (new on primes) | TheSolve.wing_identity, wing_closed, wings_mirror, wall_reads_both_wings, five_closes, seven_closes; PrimeHandOff.wall_law_prime, wall_both_wings_prime | every prime block r >= 5 and every wall |
+| 130 | §29 | Wall law: r = 6kr + fr closes wing f of wall k iff k = f fr kr (mod r); one residue for both wings (blocks 5..281, walls to 200000) | P (new on primes) | TheSolve.wing_identity, wing_closed, wings_mirror, wall_reads_both_wings, five_closes, seven_closes; PrimeHandOff.wall_law_prime, wall_both_wings_prime; FableImprovements.wall_law_width, wall_law_six, wall_law_inverse (any width, no coprimality clause) | every prime block r >= 5 and every wall |
 | 131 | §29 | Two families one strand through zero; equal count under negation | P | TheSolve.family_through_zero, neg_swaps_family, family_count_mirror |  |
-| 132 | §29 | Hop 2h = 6w + (f_q - f_p) | P (new on primes) | TheSolve.hop_wall_frame; PrimeHandOff.hop_facings |  |
-| 133 | §29 | Facing flips ~57%; side kept 47.5% / 38%; same wall 20% from 6k-1, none from 6k+1 (to 10^7) | M |  | "none from 6k+1" follows from the wall frame (6k+1 is the upper wing); the shares are M |
+| 132 | §29 | Hop 2h = 6w + (f_q - f_p) | P (new on primes) | TheSolve.hop_wall_frame; PrimeHandOff.hop_facings; FableImprovements.hop_and_hand_off |  |
+| 133 | §29 | Facing flips ~57%; side kept 47.5% / 38%; same wall 20% from 6k-1, none from 6k+1 (to 10^7) | P/M (v5.6) | FableImprovements.same_wall_twin | "none from 6k+1" proven: primes sharing a wall are 6k-1, 6k+1; the shares stay measured |
 | 134 | §29 | Next prime within 1/1, 2/4, 3/5, 3/6 seats (90/99%) by band; walls at half the reading cost | M |  |  |
 | 135 | §29 | 6k-1 leads 6k+1 in every band (22, 34, 189); offset 66 pairs equal; lead rides in the qQq | M/R |  | Chebyshev's bias by another route |
 | 136 | §30 | The method as waves | R |  |  |
@@ -171,4 +171,4 @@ Rows 15, 16, 18, 24, 25, 26, 27, 28, 30, 42, 57, 59, 66, 67, 73, 74, 75, 82, 87,
 - M rows (79, 80, 85, 89, 91, 109, 113 counts, 114, 123, 133, 134, 135): shares and counts.
 - Row 32 is flagged for his reading: the ternary build as defined has zero excess at every n.
 - Row 140 (G3): the packed-place record equality needs the packing function in Lean first; only its bound minFac y <= sqrt q is proven (Gems.small_block_le_sqrt). Row 141 (G5): a finite list of ten off-strand breakers to 10^6, not a general statement.
-| 142 | §35 | One formula: seat n = 6k+f is prime iff no block 6j+g with (6j+g)^2 <= n divides k - f g j; p_n + 1 = #{a <= 2^(n+1) : pi(a) <= n} | P (v5.5) | WallFormula.wall_formula, nth_prime_formula, nth_prime_le_pow | a computation, said plainly |
+| 142 | §35 | One formula: seat n = 6k+f is prime iff no block 6j+g with (6j+g)^2 <= n divides k - f g j; p_n + 1 = #{a <= 2^(n+1) : pi(a) <= n} | P (v5.5) | WallFormula.wall_formula, nth_prime_formula, nth_prime_le_pow; FableImprovements.prime_count_walls (= Nat.primeCounting), prime_iff_passes | a computation, said plainly |

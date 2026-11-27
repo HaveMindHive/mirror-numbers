@@ -17,6 +17,7 @@ import MirrorNumbersAll.WallWalk
 import MirrorNumbersAll.Upgrades
 import MirrorNumbersAll.PySRFinds
 import MirrorNumbersAll.WallFormula
+import MirrorNumbersAll.FableImprovements
 
 /-!
 # Mirror numbers, all (tUrUq, Turaq Rayn-McLean, 11-26-2026)
