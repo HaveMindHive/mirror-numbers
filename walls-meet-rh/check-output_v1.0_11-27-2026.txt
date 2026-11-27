@@ -1,0 +1,6 @@
+'riemannHypothesis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WallsMeetRH.prime_count_walls' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WallsMeetRH.psi_sub_le_rpow_of_RH' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WallsMeetRH.primeCounting_sub_logIntegral_le_rpow_of_RH' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WallsMeetRH.walls_meet_rh' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WallsMeetRH.rhOfPiLiBigO_holds' depends on axioms: [propext, Classical.choice, Quot.sound]

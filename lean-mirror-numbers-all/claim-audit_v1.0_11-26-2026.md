@@ -1,4 +1,4 @@
-# Claim audit: unit-counting-paper v5.6 (11-27-2026; first made for v5.1, 11-26-2026)
+# Claim audit: unit-counting-paper v5.7 (11-27-2026; first made for v5.1, 11-26-2026)
 
 Paper: `unit-counting-paper_v5.1_11-26-2026.tex`. Library: `lean-mirror-numbers-all_v1.0_11-26-2026` (one Lake project, 15 modules; `Gems` added 11-27-2026).
 
@@ -172,3 +172,4 @@ Rows 15, 16, 18, 24, 25, 26, 27, 28, 30, 42, 57, 59, 66, 67, 73, 74, 75, 82, 87,
 - Row 32 is flagged for his reading: the ternary build as defined has zero excess at every n.
 - Row 140 (G3): the packed-place record equality needs the packing function in Lean first; only its bound minFac y <= sqrt q is proven (Gems.small_block_le_sqrt). Row 141 (G5): a finite list of ten off-strand breakers to 10^6, not a general statement.
 | 142 | §35 | One formula: seat n = 6k+f is prime iff no block 6j+g with (6j+g)^2 <= n divides k - f g j; p_n + 1 = #{a <= 2^(n+1) : pi(a) <= n} | P (v5.5) | WallFormula.wall_formula, nth_prime_formula, nth_prime_le_pow; FableImprovements.prime_count_walls (= Nat.primeCounting), prime_iff_passes | a computation, said plainly |
+| 143 | §35 | Walls and RH: from the proved Riemann hypothesis, |wall count - Li(N)| <= C N^(1-delta) for some delta > 0 | P (v5.7) | WallsMeetRH.walls_meet_rh (walls-meet-rh/WallsMeetRH_v1.0_11-27-2026.lean, checked in the environment of leanprover-community/riemann-hypothesis) | consequence of RH via Tau Ceti Ingham transfer; sqrt(N) log^2 N not yet formalized |
