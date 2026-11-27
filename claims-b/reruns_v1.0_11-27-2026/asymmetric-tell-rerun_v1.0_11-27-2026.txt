@@ -1,0 +1,38 @@
+== 1. Mirror pairs across the centre (consecutive primes 5 <= p < q <= 1e6, n = 78495 ) ==
+centre seat fixes the half-gap seat: 78495 of 78495
+mirrored missing seats: 194071; identical block sets: 0; smallest block x largest block = the seat: 194071 of 194071
+mirror pairs sharing at least one block: 46084 (0.2375); shared blocks that are blocks of the centre and of j: 46084 of 46084
+strand totals left side vs right side: {'level': 23684, 'right busier': 27347, 'left busier': 27464}
+wing-pair lean: {'even centre pairs right': 45143, 'odd centre pairs left': 33352}
+odd squares / cubes inside gaps, left of centre vs right: {'cube-evenL': 20, 'square-evenR': 252, 'square-oddL': 233, 'cube-oddR': 21, 'square-oddR': 222, 'sq+cube-oddL': 2, 'square-evenL': 179, 'cube-oddL': 24, 'cube-evenR': 16, 'sq+cube-oddR': 2, 'sq+cube-evenR': 1}
+faces beside the centre (m-1, m+1), non-'other' only: {('cube', 'other'): 12, ('other', 'square'): 118, ('square', 'cube'): 1, ('square', 'other'): 60, ('other', 'cube'): 7, ('sq+cube', 'other'): 1, ('other', 'sq+cube'): 2}
+
+== 2. Forward naming from p ==
+band [5,1000) n=166: facing guess 0.4458 | random centre (runs 2+) 0.3696
+   R1 mirror at walker: exact 1.0000, stops at centre 1.0000, laid 0.5000 of walk
+   R4(3) window tell: exact 0.4458, stops at centre 0.4458, laid 0.2450 of walk
+   R4(7) window tell: exact 0.6807, stops at centre 0.6747, laid 0.3616 of walk
+   R4(13) window tell: exact 0.8554, stops at centre 0.8373, laid 0.4303 of walk
+   R4(23) window tell: exact 0.9819, stops at centre 0.9458, laid 0.4960 of walk
+   R4(31) window tell: exact 1.0000, stops at centre 0.9518, laid 0.5129 of walk
+band [1000,10000) n=1061: facing guess 0.3129 | random centre (runs 2+) 0.3086
+   R1 mirror at walker: exact 1.0000, stops at centre 1.0000, laid 0.5000 of walk
+   R4(3) window tell: exact 0.3129, stops at centre 0.3129, laid 0.1769 of walk
+   R4(7) window tell: exact 0.5090, stops at centre 0.5090, laid 0.2578 of walk
+   R4(13) window tell: exact 0.6117, stops at centre 0.6117, laid 0.3086 of walk
+   R4(23) window tell: exact 0.7220, stops at centre 0.7220, laid 0.3577 of walk
+   R4(31) window tell: exact 0.7832, stops at centre 0.7832, laid 0.3883 of walk
+band [10000,100000) n=8363: facing guess 0.2430 | random centre (runs 2+) 0.2668
+   R1 mirror at walker: exact 1.0000, stops at centre 1.0000, laid 0.5000 of walk
+   R4(3) window tell: exact 0.2430, stops at centre 0.2430, laid 0.1393 of walk
+   R4(7) window tell: exact 0.3871, stops at centre 0.3871, laid 0.2027 of walk
+   R4(13) window tell: exact 0.4726, stops at centre 0.4726, laid 0.2414 of walk
+   R4(23) window tell: exact 0.5621, stops at centre 0.5621, laid 0.2832 of walk
+   R4(31) window tell: exact 0.6031, stops at centre 0.6031, laid 0.3024 of walk
+band [100000,1000000) n=68905: facing guess 0.2013 | random centre (runs 2+) 0.2376
+   R1 mirror at walker: exact 1.0000, stops at centre 1.0000, laid 0.5000 of walk
+   R4(3) window tell: exact 0.2013, stops at centre 0.2013, laid 0.1148 of walk
+   R4(7) window tell: exact 0.3228, stops at centre 0.3228, laid 0.1675 of walk
+   R4(13) window tell: exact 0.3910, stops at centre 0.3910, laid 0.1997 of walk
+   R4(23) window tell: exact 0.4632, stops at centre 0.4632, laid 0.2342 of walk
+   R4(31) window tell: exact 0.4971, stops at centre 0.4971, laid 0.2509 of walk

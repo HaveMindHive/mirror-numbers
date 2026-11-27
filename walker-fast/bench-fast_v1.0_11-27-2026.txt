@@ -1,0 +1,122 @@
+build: clang -O3 -mcpu=native -o wall-walk-fast wall-walk-fast_v1.0_11-27-2026.c -lpthread
+build: clang -O3 -mcpu=native -o wall-walk-thirty-old ../fable-improvements_v1.0_11-27-2026/wall-walk-thirty_v1.0_11-27-2026.c -lpthread
+machine: Apple M4 Max, 16 cores, shared with other jobs
+=== old wall-walk-thirty 1e11 8 ===
+12:17  up 64 days, 17:28, 5 users, load averages: 4.51 6.81 6.69
+wall law k = f fr^-1 kr checked against k = -f 30^-1 on 218920 block-wings: 218920 agree
+blocks from the walk: 27372 (largest 317227), 6539 small, 8 buckets, 50863 stretches of 65536 walls, chunks of 1059, in 0.0s
+primes <= 10 : 4
+primes <= 100 : 25
+primes <= 1000 : 168
+primes <= 10000 : 1229
+primes <= 100000 : 9592
+primes <= 1000000 : 78498
+primes <= 10000000 : 664579
+primes <= 100000000 : 5761455
+primes <= 1000000000 : 50847534
+primes <= 10000000000 : 455052511
+primes <= 100000000000 : 4118054813
+walk to 100000000000 on 8 threads (walls of 30): 3.7s
+=== new wall-walk-fast 1e11 8 ===
+12:17  up 64 days, 17:28, 5 users, load averages: 5.03 6.88 6.71
+wall law against the eight-step turn on 218888 block-wings: 218888 agree
+blocks from the walk: 27372 (largest 317227), 12237 small, 2 buckets, 3179 stretches of 1048576 walls in pieces of 131072, chunks of 66, in 0.0s
+primes <= 10 : 4
+primes <= 100 : 25
+primes <= 1000 : 168
+primes <= 10000 : 1229
+primes <= 100000 : 9592
+primes <= 1000000 : 78498
+primes <= 10000000 : 664579
+primes <= 100000000 : 5761455
+primes <= 1000000000 : 50847534
+primes <= 10000000000 : 455052511
+primes <= 100000000000 : 4118054813
+walk to 100000000000 on 8 threads (fast walls of 30): 1.00s
+=== old wall-walk-thirty 1e12 8 ===
+12:17  up 64 days, 17:28, 5 users, load averages: 5.03 6.88 6.71
+wall law k = f fr^-1 kr checked against k = -f 30^-1 on 628512 block-wings: 628512 agree
+blocks from the walk: 78571 (largest 1001003), 6539 small, 32 buckets, 508627 stretches of 65536 walls, chunks of 4096, in 0.0s
+primes <= 10 : 4
+primes <= 100 : 25
+primes <= 1000 : 168
+primes <= 10000 : 1229
+primes <= 100000 : 9592
+primes <= 1000000 : 78498
+primes <= 10000000 : 664579
+primes <= 100000000 : 5761455
+primes <= 1000000000 : 50847534
+primes <= 10000000000 : 455052511
+primes <= 100000000000 : 4118054813
+primes <= 1000000000000 : 37607912018
+walk to 1000000000000 on 8 threads (walls of 30): 55.0s
+=== new wall-walk-fast 1e12 8 ===
+12:18  up 64 days, 17:29, 5 users, load averages: 8.20 7.48 6.95
+wall law against the eight-step turn on 628472 block-wings: 628472 agree
+blocks from the walk: 78570 (largest 1000999), 12237 small, 2 buckets, 31790 stretches of 1048576 walls in pieces of 131072, chunks of 662, in 0.0s
+primes <= 10 : 4
+primes <= 100 : 25
+primes <= 1000 : 168
+primes <= 10000 : 1229
+primes <= 100000 : 9592
+primes <= 1000000 : 78498
+primes <= 10000000 : 664579
+primes <= 100000000 : 5761455
+primes <= 1000000000 : 50847534
+primes <= 10000000000 : 455052511
+primes <= 100000000000 : 4118054813
+primes <= 1000000000000 : 37607912018
+walk to 1000000000000 on 8 threads (fast walls of 30): 14.24s
+=== bench pair done ===
+=== new wall-walk-fast 1e13 8 (1e12 time predicts about 14.24 s x 12 = 171 s) ===
+12:18  up 64 days, 17:29, 5 users, load averages: 10.12 8.00 7.15
+wall law against the eight-step turn on 1821592 block-wings: 1821592 agree
+blocks from the walk: 227710 (largest 3163261), 12237 small, 2 buckets, 317892 stretches of 1048576 walls in pieces of 131072, chunks of 4096, in 0.0s
+primes <= 10 : 4
+primes <= 100 : 25
+primes <= 1000 : 168
+primes <= 10000 : 1229
+primes <= 100000 : 9592
+primes <= 1000000 : 78498
+primes <= 10000000 : 664579
+primes <= 100000000 : 5761455
+primes <= 1000000000 : 50847534
+primes <= 10000000000 : 455052511
+primes <= 100000000000 : 4118054813
+primes <= 1000000000000 : 37607912018
+primes <= 10000000000000 : 346065536839
+walk to 10000000000000 on 8 threads (fast walls of 30): 186.20s
+      186.20 real      1428.84 user         1.12 sys
+            67158016  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+                4283  page reclaims
+                   1  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                   0  voluntary context switches
+              243805  involuntary context switches
+      22670215662066  instructions retired
+       5412963150219  cycles elapsed
+            66797976  peak memory footprint
+1e14 not run: 1e13 took 186.20 s, over the 3 minute line.
+=== correctness checks (new walker, 8 threads) ===
+primes <= 12345 : 1474
+primes <= 3000000 : 216816
+known counts 1e1..1e13: 4 25 168 1229 9592 78498 664579 5761455 50847534 455052511 4118054813 37607912018 346065536839 (all equal in the 1e13 run above)
+against sympy.primepi:
+7777777 sympy.primepi=525763 walk=525763 MATCH
+123456789 sympy.primepi=7027260 walk=7027260 MATCH
+987654321 sympy.primepi=50251452 walk=50251452 MATCH
+2147483647 sympy.primepi=105097565 walk=105097565 MATCH
+31415926535 sympy.primepi=1358643895 walk=1358643895 MATCH
+271828182845 sympy.primepi=10750458952 walk=10750458952 MATCH
+large-block path stressed with tiny stretches and lines (TOP THREADS SW PW SMALL):
+  1e10 8 12 10 100 -> primes <= 10000000000 : 455052511
+  1e10 8 14 11 2048 -> primes <= 10000000000 : 455052511
+  1e10 3 20 12 4000 -> primes <= 10000000000 : 455052511

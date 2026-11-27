@@ -1,0 +1,8 @@
+row 79: centre first mirror, primes 5..10^6: {2: 39321, 3: 19610, 5: 4868, 7: 2478, 'prime': 4299} | primes counted: 78496
+row 80: longest strand length below 10^6: 6 | strands of that length: [[16651, 33301, 66601, 133201, 266401, 532801]]
+row 85: open wings to 10^6: 148932 | even: 74416 | odd: 74516 | pi(2*10^6+1) - 1 = 148932
+row 89: consecutive prime gaps with 5 <= p < q <= 10^6: 78495
+row 113: facing flips 6k+1->6k-1: 22837 | 6k-1->6k+1: 22837 | side flips 1->3 mod 4: 22572 | 3->1 mod 4: 22571 | first p, last q: 5 999983
+row 113 (hops from every prime 5 <= p < 10^6): 78496 hops | facing flips 6k+1->6k-1: 22837 | 6k-1->6k+1: 22838 | side flips 1->3 mod 4: 22572 | 3->1 mod 4: 22571 | last hop: (999983, 1000003)
+row 135: lead (6k-1 count minus 6k+1 count) at 10^3..10^7: {1000: 6, 10000: 5, 100000: 22, 1000000: 34, 10000000: 189} | least lead over every x in [5, 10^7]: 0 first reached at x = 7
+row 92: first even number with b builds (b = 2, 3, 4, 5): {2: 36, 3: 180, 4: 360, 5: 840} | 36 builds: 2

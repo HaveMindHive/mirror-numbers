@@ -1,0 +1,15 @@
+'riemannHypothesis' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WallsMeetRHVonKoch.prime_count_walls' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WallsMeetRHVonKoch.logDeriv_bound_of_RH_dist' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WallsMeetRHVonKoch.sum_order_div_norm_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WallsMeetRHVonKoch.residue_neg_logDeriv_riemannZeta_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WallsMeetRHVonKoch.tsum_mul_smoothCutoff_eq_contour_add_sum_residue' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'WallsMeetRHVonKoch.psi_sub_le_sqrt_log_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WallsMeetRHVonKoch.psi_sub_le_sqrt_log_sq_of_RH' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WallsMeetRHVonKoch.theta_sub_le_sqrt_log_sq_of_RH' depends on axioms: [propext, Classical.choice, Quot.sound]
+'WallsMeetRHVonKoch.primeCounting_sub_logIntegral_le_sqrt_log_of_RH' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'WallsMeetRHVonKoch.walls_meet_rh_sqrt_log' depends on axioms: [propext, Classical.choice, Quot.sound]

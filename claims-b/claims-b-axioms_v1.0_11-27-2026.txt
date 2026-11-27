@@ -1,0 +1,40 @@
+'ClaimsB.arrowNest' does not depend on any axioms
+'ClaimsB.arrow_runs' depends on axioms: [propext, Quot.sound]
+'ClaimsB.arrow_examples' does not depend on any axioms
+'ClaimsB.arrow_shorthand' does not depend on any axioms
+'ClaimsB.first_false_prime' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.false_prime_seat' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.false_prime_25' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.false_prime_49' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.false_prime_121' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.longest_strand_chain' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.wing_examples' does not depend on any axioms
+'ClaimsB.strand' does not depend on any axioms
+'ClaimsB.strand_start' depends on axioms: [propext]
+'ClaimsB.strand_step' depends on axioms: [propext]
+'ClaimsB.strand_missing' does not depend on any axioms
+'ClaimsB.strand_examples' does not depend on any axioms
+'ClaimsB.open_wings_image' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.open_wings_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.open_wings_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.even_open_wings_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.wing_shared' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.gap_sides' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.walker_names' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.place_product' depends on axioms: [propext]
+'ClaimsB.half_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.half_product_hom' depends on axioms: [propext, Quot.sound]
+'ClaimsB.fifty_five' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.twenty_two_three' does not depend on any axioms
+'ClaimsB.offset_eleven_line' does not depend on any axioms
+'ClaimsB.offset_22_pairs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.offset_66_pairs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.offset_33_pairs' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.near_zero_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.near_zero_6' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.near_zero_30' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.near_zero_210' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.frays_2310' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.seat_210_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.wall_walk_210' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ClaimsB.prime_count_width' depends on axioms: [propext, Classical.choice, Quot.sound]

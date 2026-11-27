@@ -1,0 +1,18 @@
+row 9/10  2^(1/2)     true 1.41421356237309504880168872421  printed 1.4142135623730951  |error| < 1e-16  nearest-double-repr True  correctly-rounded False
+row 9/10  3^(1/3)     true 1.44224957030740838232163831078  printed 1.4422495703074083  |error| < 1e-16  nearest-double-repr True  correctly-rounded False
+row 9/10  4^(1/4)     true 1.41421356237309504880168872421  printed 1.4142135623730951  |error| < 1e-16  nearest-double-repr True  correctly-rounded False
+row 9/10  5^(1/5)     true 1.37972966146121483239006346422  printed 1.379729661461215  |error| < 1e-15  nearest-double-repr True  correctly-rounded True
+row 9/10  6^(1/6)     true 1.3480061545972776673742363139  printed 1.3480061545972777  |error| < 1e-16  nearest-double-repr True  correctly-rounded False
+row 9/10  7^(1/7)     true 1.3204692477561237918093273315  printed 1.3204692477561237  |error| < 1e-16  nearest-double-repr True  correctly-rounded False
+row 9/10  8^(1/8)     true 1.29683955465100966593375411779  printed 1.2968395546510096  |error| < 1e-16  nearest-double-repr True  correctly-rounded True
+row 9/10  10^(1/10)   true 1.2589254117941672104239541064  printed 1.2589254117941673  |error| < 1e-16  nearest-double-repr True  correctly-rounded False
+row 9/10  e^(1/e)     true 1.4446678610097661336583391086  printed 1.444667861009766  |error| < 1e-15  nearest-double-repr True  correctly-rounded True
+row 9/10  sqrt2       true 1.41421356237309504880168872421  printed 1.4142135623730951  |error| < 1e-16  nearest-double-repr True  correctly-rounded False
+row 9/10  sqrt3       true 1.73205080756887729352744634151  printed 1.7320508075688772  |error| < 1e-16  nearest-double-repr True  correctly-rounded True
+row 9/10  sqrt3/sqrt2 true 1.22474487139158904909864203735  printed 1.224744871391589  |error| < 1e-15  nearest-double-repr True  correctly-rounded True
+row 9/10  sqrt(2/3)   true 0.816496580927726032732428024902  printed 0.816496580927726  |error| < 1e-15  nearest-double-repr True  correctly-rounded True
+row 9/10  1/sqrt2     true 0.707106781186547524400844362105  printed 0.7071067811865475  |error| < 1e-16  nearest-double-repr False  correctly-rounded True
+row 9  peak of x^(1/x) at x = 2.71828182845904523536028747135 (= e)
+row 40  n = 2..1999: 17177 faces, every arrangement its own string, n units, mirror
+row 71  n = 1..2999: notation A of the reflection and of the turn decodes to its tree; 27: 189 vs 49
+all exact checks pass

@@ -1,0 +1,19 @@
+== 1. crossings on the per-block mirror n <-> (2j+1)*11 - n (multiples of 11 fold to the block below) ==
+kind P = prime n facing a fray even; kind C = other odd composite facing 2q
+n < 100: 33<->22C 39<->38C 63<->58C 67<->76P 69<->74C 73<->70P 93<->94C 97<->90P
+n < 300: 33<->22C 39<->38C 63<->58C 67<->76P 69<->74C 73<->70P 93<->94C 97<->90P 101<->108P 107<->102P 127<->126P 133<->142C 137<->138P 141<->134C 149<->148P 157<->162P 161<->158C 163<->156P 167<->174P 173<->168P 175<->166C 179<->184P 181<->182P 185<->178C 197<->188P 201<->206C 205<->202C 215<->214C 223<->228P 225<->226C 229<->222P 239<->234P 241<->232P 251<->244P 255<->262C 265<->274C 269<->270P 271<->268P 277<->284P 281<->280P 293<->290P
+first kind P: [(67, 76), (73, 70), (97, 90), (101, 108), (107, 102), (127, 126), (137, 138), (149, 148), (157, 162), (163, 156)]
+first kind C: [(33, 22), (39, 38), (63, 58), (69, 74), (93, 94), (133, 142), (141, 134), (161, 158), (175, 166), (185, 178)]
+counts odd n < 200000: kind P 15996, kind C 7676
+== 2. two-digit law, base 10: M(n) = rev(n) + 11*((2j+1) - (a+b)), so M(n) = rev(n) exactly when a+b = 2j+1 ==
+two-digit n (01..99) with M(n) = rev(n): [1, 10, 12, 21, 23, 32, 34, 43, 45, 54, 56, 65, 67, 76, 78, 87, 89, 98]
+= exactly the neighbour-digit pairs |a-b| = 1: nine pairs a(a+1) <-> (a+1)a, each sum 11(2a+1), each difference 9
+classes on the nine pairs: 1<->10:c/2^a+1 21<->12:c/self 23<->32:P/self 43<->34:P/2^a+1 45<->54:c/fray 65<->56:c/3*2^a+1 67<->76:P/fray 87<->78:c/fray 89<->98:P/3*2^a+1
+== 3. any base B, two digits (a,c), O = B+1: M(n) = rev(n) iff |a - c| = 1 (B - 1 pairs) ==
+checked B = 2..40; base 2: 1 <-> 2 (01 <-> 10) on O = 3; base 100 is the scale-up 101: 1 <-> 100, 102 <-> 201, ..., 809 <-> 908 on O = 101
+three-digit decimal n with M_101(n) = rev(n): [1, 100, 102, 201, 203, 302, 304, 403, 405, 504, 506, 605, 607, 706, 708, 807, 809, 908]
+== 4. longer numbers: rev(n) = -n mod 11 for even length, rev(n) = +n mod 11 for odd length; rev(n) = n mod 9 always ==
+n in 100..99999 with M_11(n) = rev(n): 0; first 20: []
+three-digit ones all have n divisible by 11 (odd length: M = -n, rev = +n mod 11, they agree only when 11 | n): True
+== 5. crossings that are digit mirrors (M(n) = rev(n)) below 200000 ==
+[(67, 76, 'P')] count 1
