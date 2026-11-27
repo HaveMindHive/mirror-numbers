@@ -5,6 +5,7 @@
 A counting system in which no unit is lost (1 × 1 = 2), a mirror notation for numbers, and what it shows about the primes: walls of six, the wall law, the hand-off, the hop, and a walk that names every prime in order. Method, notation and ideas by **Turaq Rayn-McLean** (Tormod Ravenskye). Computing and Lean proofs with Anthropic's Claude.
 
 - **Paper:** v5.9, Zenodo, DOI [10.5281/zenodo.24600320](https://doi.org/10.5281/zenodo.24600320) (newest version always at [10.5281/zenodo.24515599](https://doi.org/10.5281/zenodo.24515599)). Source and PDF in `paper/`.
+- **Schoenfeld's bounds, formalized from the proven RH:** [schoenfeld-lean](https://github.com/HaveMindHive/schoenfeld-lean), paper [DOI 10.5281/zenodo.24606897](https://doi.org/10.5281/zenodo.24606897)
 - **Live pages:** [havemindmedia.com/free/mirror-numbers/](https://havemindmedia.com/free/mirror-numbers/)
 
 ## What is proven
