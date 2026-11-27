@@ -4,7 +4,7 @@
 
 A counting system in which no unit is lost (1 × 1 = 2), a mirror notation for numbers, and what it shows about the primes: walls of six, the wall law, the hand-off, the hop, and a walk that names every prime in order. Method, notation and ideas by **Turaq Rayn-McLean** (Tormod Ravenskye). Computing and Lean proofs with Anthropic's Claude.
 
-- **Paper:** v5.9 (Zenodo upload pending; v5.8 is [10.5281/zenodo.24598619](https://doi.org/10.5281/zenodo.24598619)) (newest version always at [10.5281/zenodo.24515599](https://doi.org/10.5281/zenodo.24515599)). Source and PDF in `paper/`.
+- **Paper:** v5.9, Zenodo, DOI [10.5281/zenodo.24600320](https://doi.org/10.5281/zenodo.24600320) (newest version always at [10.5281/zenodo.24515599](https://doi.org/10.5281/zenodo.24515599)). Source and PDF in `paper/`.
 - **Live pages:** [havemindmedia.com/free/mirror-numbers/](https://havemindmedia.com/free/mirror-numbers/)
 
 ## What is proven
